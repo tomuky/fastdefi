@@ -1,0 +1,27 @@
+.container{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0 0 0;
+}
+.title{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    padding: 20px 0;
+}
+.titleImage{
+    width: 60px;
+    margin-right: 20px;
+    filter: invert(1);
+}
+.intro{
+    font-size: 20px;
+    text-align: center;
+}
+.intro p{
+    padding: 10px 0;
+}

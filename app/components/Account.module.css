@@ -1,0 +1,137 @@
+.accountArea{
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s; 
+}
+
+.addressArea{
+    width: 100%;
+    border-radius: 12px;
+    height: 50px;
+    padding: 20px;
+    background-color: #1a1b1f;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+.addressArea:hover{
+    background-color: #222325;
+}
+.addressLabel{
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+.accountImage{
+    filter: invert(1);
+    width: 18px;
+    margin-right: 6px;
+}
+.chainArea{
+    width: 100%;
+    border-radius: 12px;
+    height: 50px;
+    padding: 0 20px;
+    background-color: #1a1b1f;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    margin-top: 10px;
+}
+.chainArea:hover{
+    background-color: #222325;
+}
+.chainLabel{
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.walletArea{
+    width: 100%;
+    border-radius: 12px;
+    padding: 10px 12px 10px 12px;
+    background-color: #1a1b1f;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.walletLabel{
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.balanceArea{
+    width: 100%;
+    border-radius: 12px;
+    margin-top: 10px;
+    padding: 4px 8px;
+    background-color: #1a1b1f;
+}
+table.tokens{
+    font-size: 16px;
+    width: 100%;
+    border-collapse: collapse;
+    cursor: default;
+}
+table.tokens th, table.tokens td{
+    padding: 8px 8px;
+}
+table.tokens tr{
+    border-radius: 12px;
+    overflow: hidden;
+}
+.tokenName{
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+}
+table.tokens th{
+    font-size: 12px;
+    text-align: right;
+    border-top: 1px solid rgb(55,55,55);
+    border-bottom: 1px solid rgb(55,55,55);
+}
+table.tokens th:first-child{
+    text-align: left;
+}
+table.tokens td{
+    text-align: right;
+    font-size: 12px;
+}
+table.tokens td:first-child{
+    text-align: left;
+}
+.tokenImage{
+    width: 20px;
+    margin-right: 6px;
+}
+table.tokens tbody tr td:first-child {
+    border-top-left-radius: 12px; /* Round the top-left corner of the first cell */
+    border-bottom-left-radius: 12px; /* Round the bottom-left corner of the first cell */
+}
+
+table.tokens tbody tr td:last-child {
+    border-top-right-radius: 12px; /* Round the top-right corner of the last cell */
+    border-bottom-right-radius: 12px; /* Round the bottom-right corner of the last cell */
+}
+table.tokens tbody tr:hover {
+    background-color: #222325 !important;
+    transition: background-color 0.3s; 
+    border-radius: 12px;
+}

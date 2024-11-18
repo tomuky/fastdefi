@@ -1,0 +1,32 @@
+.container{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: -100px;
+}
+.title{
+    font-size: 70px;
+    font-weight: bold;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+}
+.intro{
+    font-size: 20px;
+    text-align: center;
+}
+.intro p{
+    padding: 10px 0;
+}
+.titleImage{
+    width: 50px;
+    margin-right: 20px;
+}

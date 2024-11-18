@@ -1,0 +1,58 @@
+.sidebarArea{
+    display: flex;
+    width: 400px;
+    height: 100vh;
+    background-color: #2d2d2d;
+    align-items: center;
+    flex-direction: column;
+    font-size: 18px;
+}
+.title{
+    font-size: 36px;
+    width: 100%;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    cursor: pointer;
+    transition: background-color 0.3s; 
+}
+.title:hover{
+    background-color: #363636;
+}
+.titleImage{
+    width: 30px;
+    margin-right: 10px;
+}
+.titleDivider{
+    width: 280px;
+    margin: 0 10px;
+    background-color: #363636;
+    height: 1px;
+}
+.title:hover + .titleDivider{
+    background-color: #2d2d2d;
+}
+
+.pagesArea{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.page{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    transition: background-color 0.3s; 
+    cursor: pointer;
+    padding: 20px;
+}
+.page:hover{
+    background-color: #363636;
+}
+.icon{
+    width: 20px;
+    filter: invert(1);
+    margin-right: 10px;
+}
