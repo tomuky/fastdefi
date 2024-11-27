@@ -12,6 +12,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: white;
   background-color: #1e1e1e;
+
+  /* stop the pull to refresh on mobil */
+  overscroll-behavior: contain;
+  overscroll-behavior-y: contain;
+  /* for older browsers/Safari */
+  -webkit-overflow-scrolling: touch;
 }
 
 * {
@@ -22,5 +28,5 @@ body {
 
 a {
   color: inherit;
-  text-decoration: none;
+  text-decoration: underline;
 }

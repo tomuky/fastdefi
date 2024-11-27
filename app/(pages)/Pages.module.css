@@ -3,7 +3,8 @@
     width: 100%;
     flex-direction: column;
     align-items: center;
-    padding: 50px 0 0 0;
+    padding: 50px 50px 50px 50px;
+    margin-left: 300px;
 }
 .title{
     width: 100%;
@@ -16,7 +17,6 @@
 .titleImage{
     width: 60px;
     margin-right: 20px;
-    filter: invert(1);
 }
 .intro{
     font-size: 20px;
@@ -24,4 +24,71 @@
 }
 .intro p{
     padding: 10px 0;
+}
+.invert{
+    filter: invert(1);
+}
+.steps{
+    font-size: 20px; 
+    padding: 10px 0;
+}
+.steps ul{
+    margin: 20px 0;
+    padding-inline-start: 20px;
+}
+.steps ol{
+    padding-inline-start: 20px;  /* Add this line */
+}
+.steps li{
+    margin: 20px 0;
+}
+
+.address{
+    font-weight: bold;
+    font-size: 16px;
+}
+.noteIcon{
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+.note{
+    display: flex;
+    vertical-align: center;
+}
+.finish{
+    font-size: 20px;
+    display: flex;
+    vertical-align: center;
+}
+.steps p{
+    padding-left: 20px;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .container{
+        margin-left: 0;
+        padding: 50px 20px 100px 20px;
+        margin-top: 20px;
+        height: 100vh;
+        margin-bottom: 50px;
+    }
+    .title{
+        font-size: 32px;
+    }
+    .titleImage{
+        width: 40px;
+        margin-right: 10px;
+    }
+    .intro p{
+        padding: 10px 0;
+    }
+    .steps{
+        font-size: 20px; 
+        padding: 10px 0;
+    }
+    .steps ol{
+        padding-inline-start: 20px;  /* Update this value to match */
+    }
 }

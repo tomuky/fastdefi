@@ -2,16 +2,12 @@
 import { useRouter } from 'next/navigation';
 import classes from './Button.module.css';
 
-const Button = ({title,style,target}) => {
+const Button = ({title,target,style}) => {
     
     const router = useRouter();
 
     return (
-        <div 
-            className={classes.button} 
-            style={style}
-            onClick={()=>router.push(target)}
-        >
+        <div style={style} className={classes.button} onClick={()=>router.push(target)}>
             {title}
         </div>
     )

@@ -1,11 +1,20 @@
 .sidebarArea{
     display: flex;
-    width: 400px;
+    width: 300px;
     height: 100vh;
     background-color: #2d2d2d;
     align-items: center;
     flex-direction: column;
     font-size: 18px;
+    position: fixed;
+    z-index: 888;
+    overflow-y: auto;
+    -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
+    scrollbar-width: none;     /* Hide scrollbar for Firefox */
+
+}
+.sidebarArea::-webkit-scrollbar {
+    display: none;  /* Hide scrollbar for Chrome, Safari and Opera */
 }
 .title{
     font-size: 36px;
@@ -14,45 +23,111 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px 0;
+    padding: 20px 0 10px 0;
     cursor: pointer;
+    background-color: inherit;
     transition: background-color 0.3s; 
 }
 .title:hover{
     background-color: #363636;
 }
+.completedTitle{
+    color: rgba(255,255,255, 0.2);
+}
 .titleImage{
     width: 30px;
     margin-right: 10px;
 }
-.titleDivider{
+.titleImage {
+    transition: transform 0.4s ease-in-out; /* Smooth transition */
+}
+
+.title:hover .titleImage {
+    transform: rotate(180deg); /* Spin effect on hover */
+}
+.divider{
     width: 280px;
-    margin: 0 10px;
+    margin: 0px 10px;
     background-color: #363636;
     height: 1px;
+    min-height: 1px;
 }
 .title:hover + .titleDivider{
     background-color: #2d2d2d;
 }
 
-.pagesArea{
+.stepsArea{
     display: flex;
     flex-direction: column;
     width: 100%;
+    padding: 10px 0 10px 10px;
+    background-color: inherit;
 }
-.page{
+.step{
     display: flex;
     width: 100%;
     align-items: center;
-    transition: background-color 0.3s; 
+    /* transition: background-color 0.3s;  */
     cursor: pointer;
-    padding: 20px;
+    padding: 10px 10px 10px 20px;
 }
-.page:hover{
+.completedStep {
+    opacity: 0.4;
+    transition: opacity 0.3s;
+}
+.completedStep:hover {
+    opacity: 0.8;
+}
+.indentStep{
+    padding-left: 48px;
+}
+.stepActive{
+    background-color: #1e1e1e !important;
+    border-radius: 12px 0 0 12px;
+}
+.step:hover{
     background-color: #363636;
+    border-radius: 12px 0 0 12px;
 }
 .icon{
     width: 20px;
+    margin-right: 8px;
+}
+.completedIcon{
+    width: 20px;
+    margin-left: 8px;
+}
+.invert{
     filter: invert(1);
-    margin-right: 10px;
+}
+
+.linksGroup{
+    padding: 10px 0 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .sidebarArea{
+        margin-top: 60px;
+        padding-top: 0px;
+    }
+    .title{
+        display: none;
+    }
+    .slideIn {
+        left: -300px; /* Hide by default on mobile */
+        transition: left 0.15s ease-in-out;
+    }
+
+    .slideOut {
+        left: 0;
+        transition: left 0.15s ease-in-out;
+    }
+
+    
 }

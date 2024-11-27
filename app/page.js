@@ -15,9 +15,9 @@ export default function Home() {
         </div>
 
         <Button 
+          style={{marginTop: '30px'}}
           title='Get started' 
-          style={{marginTop:'20px'}}
-          target={'/get-started'}
+          target={'/welcome'}
         />
 
       </div>
