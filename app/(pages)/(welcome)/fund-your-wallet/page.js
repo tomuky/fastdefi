@@ -15,6 +15,10 @@ export default function GetStarted() {
             <div className={classes.steps}>
                 <ol>
                     <li>In Fast-DeFi.com, click Connect Wallet to connect your wallet</li>
+                    <div className={classes.note}>
+                        <img src="/images/ui/info-icon.png" alt="info icon" className={classes.noteIcon}/>
+                        Connect your wallet to make things easier in these tutorials
+                    </div>
                     <li>Copy your wallet address by clicking the Address button</li>
                     <li>In Coinbase.com, click on Send Crypto</li>
                     <li>Choose ETH and type in amount (maybe do Max amount)</li>

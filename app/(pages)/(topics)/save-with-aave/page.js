@@ -4,15 +4,17 @@ import classes from '@/app/(pages)/Pages.module.css';
 import { useAccount } from 'wagmi';
 import { useReadContract } from 'wagmi';
 import abi from '@/app/_abi/ERC20.json';
-import BalanceDisplay from '@/app/components/BalanceDisplay';
+import AaveBalanceDisplay from '@/app/components/AaveBalanceDisplay';
+import ListNote from '@/app/components/ListNote';
+import ListFinish from '@/app/components/ListFinish';
 
 export default function SaveWithAave() {
 
-    const aBasUSDC_Address = '0x4e65fE4DbA92790696d040ac24Aa414708F5c0AB';
+    const aBaseUSDC_Address = '0x4e65fE4DbA92790696d040ac24Aa414708F5c0AB';
     const { address } = useAccount();
 
     const {data:balance, isLoading: isBalanceLoading, error: balanceError} = useReadContract({
-        address: aBasUSDC_Address,
+        address: aBaseUSDC_Address,
         abi: abi,
         functionName: 'balanceOf',
         args: [address],
@@ -35,22 +37,16 @@ export default function SaveWithAave() {
             <div className={classes.steps}>
                 <ol>
                     <li>Go to <a href='https://app.aave.com/?marketName=proto_base_v3' target='_blank'>app.aave.com</a> and click connect wallet</li>
-                    <div className={classes.note}>
-                        <img src="/images/ui/star.png" alt="caution icon" className={classes.noteIcon}/>
-                        Your balance shows up! No new account setup needed.
-                    </div>
+                    <ListNote>Your balance shows up! No new account setup needed.</ListNote>
                     <li>Click Supply next to USDC</li>
                     <li>You might be prompted to switch your network to Base</li>
                     <li>Type in $10, click Approve USDC and confirm tx in your wallet popup</li>
                     <li>After tx confirms, click Supply USDC and confirm tx in your wallet popup</li>
-                    <div className={classes.finish}>
-                        <img src="/images/ui/finish.png" alt="finish icon" className={`${classes.noteIcon} ${classes.invert}`}/>
-                        Done. You are earning interest every few seconds!
-                    </div>
+                    <ListFinish>Done. You are earning interest every few seconds!</ListFinish>
                 </ol>
             </div>
 
-            <BalanceDisplay style={{marginTop: 20}} title="Your USDC Balance" balance={balance} isBalanceLoading={isBalanceLoading}/>
+            <AaveBalanceDisplay style={{marginTop: 20}} title="Your USDC Balance" balance={balance} isBalanceLoading={isBalanceLoading}/>
 
             <NextNextButton title="Swap on Uniswap" target='/swap-on-uniswap'/>
 

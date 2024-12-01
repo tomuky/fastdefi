@@ -1,4 +1,4 @@
-import classes from './BalanceDisplay.module.css';
+import classes from './AaveBalanceDisplay.module.css';
 import useAnimatedBalance from '@/app/_hooks/useAnimatedBalance';
 
 const BalanceDisplay = ({title, balance=0, isBalanceLoading=false, style}) => {

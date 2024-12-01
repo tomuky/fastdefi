@@ -19,8 +19,8 @@ const Sidebar = ({isSidebarOpen, toggleSidebar}) => {
     const { isConnected, address } = useAccount(); // Get wallet connection status
     const { data: balanceData } = useBalance({address}); // Get balance data
 
-    console.log('isConnected',isConnected);
-    console.log('balanceData',balanceData);
+    // console.log('isConnected',isConnected);
+    // console.log('balanceData',balanceData);
 
     useEffect(() => {
         const checkWalletStatus = () => {
