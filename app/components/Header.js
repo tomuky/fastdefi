@@ -3,6 +3,8 @@ import classes from './Header.module.css';
 import { useAccountModal, useConnectModal } from '@rainbow-me/rainbowkit';
 import { useAccount } from 'wagmi';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
+
 const Header = ({toggleSidebar,isSidebarOpen}) => {
     const router = useRouter();
     const { isConnected } = useAccount();
@@ -17,7 +19,9 @@ const Header = ({toggleSidebar,isSidebarOpen}) => {
             </div>
             <div className={classes.titleArea}>
                 <img src="/images/fdt.png" alt="Fast DeFi Tutorial" className={classes.logo} />
-                <div className={classes.headerTitle}>Fast DeFi</div>
+                <Link href="/" passHref style={{textDecoration: 'none'}}>
+                    <div className={classes.headerTitle}>Fast DeFi</div>
+                </Link>
             </div>
             { !isConnected && (
                 <div className={classes.connectWallet} onTouchEnd={openConnectModal}>

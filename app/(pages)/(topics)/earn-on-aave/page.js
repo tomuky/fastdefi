@@ -7,7 +7,7 @@ import abi from '@/app/_abi/ERC20.json';
 import AaveBalanceDisplay from './AaveBalanceDisplay';
 import ListNote from '@/app/components/ListNote';
 import ListFinish from '@/app/components/ListFinish';
-
+import Spacer from '@/app/components/Spacer';
 export default function EarnOnAave() {
 
     const aBaseUSDC_Address = '0x4e65fE4DbA92790696d040ac24Aa414708F5c0AB';
@@ -50,7 +50,7 @@ export default function EarnOnAave() {
 
             <NextButton title="Swap on LlamaSwap" target='/swap-on-llamaswap'/>
 
-            <div style={{minHeight: '100px', width: '100%', backgroundColor: 'inherit'}}/>
+            <Spacer/>
         </div>
     )
 }

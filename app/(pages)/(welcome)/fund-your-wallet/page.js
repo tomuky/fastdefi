@@ -1,6 +1,7 @@
 'use client'
 import classes from '@/app/(pages)/Pages.module.css';
 import NextButton from '@/app/components/NextButton';
+
 export default function GetStarted() {
 
     return (
@@ -34,6 +35,8 @@ export default function GetStarted() {
                 <p>Your wallet is now funded and ready to use!</p>
             </div>
             <NextButton title="Save with Aave" target='/save-with-aave'/>
+
+            <Spacer/>
         </div>
     )
 }

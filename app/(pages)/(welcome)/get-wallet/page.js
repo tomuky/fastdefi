@@ -1,5 +1,6 @@
 import NextButton from '@/app/components/NextButton';
 import classes from '@/app/(pages)/Pages.module.css';
+import Spacer from '@/app/components/Spacer';
 
 export default function GetStarted() {
     return (
@@ -26,6 +27,8 @@ export default function GetStarted() {
             </div>
 
             <NextButton title="Get Coinbase" target='/get-coinbase'/>
+
+            <Spacer/>
         </div>
     )
 }

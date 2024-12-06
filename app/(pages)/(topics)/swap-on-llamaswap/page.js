@@ -6,7 +6,7 @@ import { useAccount, useBalance, useChainId } from 'wagmi';
 import ListFinish from '@/app/components/ListFinish';
 import ListNote from '@/app/components/ListNote';
 import { formatUnits } from 'viem';
-
+import Spacer from '@/app/components/Spacer';
 export default function SwapOnLlamaSwap() {
     const { address, isConnected } = useAccount();
     const chainId = useChainId();
@@ -77,7 +77,7 @@ export default function SwapOnLlamaSwap() {
 
             <NextNextButton title="Earn on Uniswap" target='/earn-on-uniswap'/>
 
-            <div style={{minHeight: '100px', width: '100%', backgroundColor: 'inherit'}}/>
+            <Spacer/>
         </div>
     )
 }

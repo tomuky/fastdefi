@@ -51,25 +51,18 @@ const Sidebar = ({isSidebarOpen, toggleSidebar}) => {
 
             <div className={classes.divider}/>
 
-            {/* <SidebarSection toggleSidebar={toggleSidebar} completed={false} paths={[
-                {path: '/try-things', title: 'Try things', role: 'header', icon: '/images/ui/magic-2.png'},
-                {path: '/save-with-aave', title: 'Save with Aave'}
-            ]}/> */}
-
-            <div className={classes.divider}/>
-
-            {/* <div className={classes.stepsArea}>  
-                <div className={classes.step} onClick={()=>router.push('/save-with-aave')}>
-                    <img className={classes.icon} src={'/images/logos/aave-logo.png'} alt="Aave"/>
-                    Save with Aave
-                </div>
-            </div> */}
-
             <SidebarLinkGroup>
                 <SidebarLink title="Earn on Aave" path='/earn-on-aave' icon='/images/logos/aave-logo.png' toggleSidebar={toggleSidebar}/>
                 <SidebarLink title="Swap on LlamaSwap" path='/swap-on-llamaswap' icon='/images/logos/llamaswap.png' toggleSidebar={toggleSidebar}/>
                 <SidebarLink title="Earn on Uniswap" path='/earn-on-uniswap' icon='/images/logos/uniswap-logo.png' toggleSidebar={toggleSidebar}/>
                 <SidebarLink title="Get a username" path='/get-a-username' icon='/images/logos/base.png' toggleSidebar={toggleSidebar}/>
+            </SidebarLinkGroup>
+
+            <div className={classes.divider}/>
+
+            <SidebarLinkGroup>
+                <SidebarLink title='Twitter/X' url='https://x.com/fastdefi' icon='/images/logos/x-logo.png'/>
+                <SidebarLink title='Github' url='https://github.com/tomuky/fastdefi' icon='/images/logos/github-logo.png'/>
             </SidebarLinkGroup>
 
         </div>

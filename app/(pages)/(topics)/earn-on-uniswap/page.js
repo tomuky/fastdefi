@@ -5,6 +5,7 @@ import ListFinish from '@/app/components/ListFinish';
 import Intro from '@/app/components/Intro';
 import NextNextButton from '@/app/components/NextButton';
 import LPBalance from './LPBalance';
+import Spacer from '@/app/components/Spacer';
 
 export default function EarnOnUniswap() {
     return (
@@ -34,7 +35,7 @@ export default function EarnOnUniswap() {
 
             <NextNextButton title="Get a username" target='/get-a-username'/>
 
-            <div style={{minHeight: '100px', width: '100%', backgroundColor: 'inherit'}}/>
+            <Spacer/>
         </div>
     )
 }
