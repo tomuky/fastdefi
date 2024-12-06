@@ -13,13 +13,12 @@
 }
 .balanceItemTitle{
     font-weight: bold;
-    font-size: 1rem;
 }
 .balanceItemValue{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 20px;
     text-align: center;
     font-size: 1.4rem;
     border-radius: 14px;

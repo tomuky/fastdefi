@@ -208,37 +208,36 @@ const LPBalance = ({ tokenAddress }) => {
 
     return (
         <div className={classes.balanceContainer}>
-            <div className={classes.balanceLabel}>
-                Your liquidity position:
-            </div>
-
             <div className={classes.tokenAmountsArea}>
 
                 <div className={classes.tokenAmountBox}>
 
                     <div className={classes.tokenAmountBoxTitle}>
-                        Underlying assets
+                        Your underlying assets:
                     </div>
 
-                    <div className={classes.tokenAmountBoxRow}>
-                        <div className={classes.tokenAmountBoxAsset}>
-                            <img src="/images/logos/eth.png" alt="ETH logo" className={classes.tokenAmountBoxIcon} />
-                            <div className={classes.tokenAmountBoxLabel}>ETH</div>
+                    <div className={classes.tokenAmountBoxBody}>
+
+                        <div className={classes.tokenAmountBoxRow}>
+                            <div className={classes.tokenAmountBoxAsset}>
+                                <img src="/images/logos/eth.png" alt="ETH logo" className={classes.tokenAmountBoxIcon} />
+                                <div className={classes.tokenAmountBoxLabel}>ETH</div>
+                            </div>
+                            <div className={classes.tokenAmountBoxValue}>{Number(positions.current.token0).toFixed(6)}</div>
                         </div>
-                        <div className={classes.tokenAmountBoxValue}>{Number(positions.current.token0).toFixed(6)}</div>
-                    </div>
 
-                    <div className={classes.tokenAmountBoxRow}>
-                        <div className={classes.tokenAmountBoxAsset}>
-                            <img src="/images/logos/usdc.png" alt="USDC logo" className={classes.tokenAmountBoxIcon} />
-                            <div className={classes.tokenAmountBoxLabel}>USDC</div>
+                        <div className={classes.tokenAmountBoxRow}>
+                            <div className={classes.tokenAmountBoxAsset}>
+                                <img src="/images/logos/usdc.png" alt="USDC logo" className={classes.tokenAmountBoxIcon} />
+                                <div className={classes.tokenAmountBoxLabel}>USDC</div>
+                            </div>
+                            <div className={classes.tokenAmountBoxValue}>{Number(positions.current.token1).toFixed(2)}</div>
                         </div>
-                        <div className={classes.tokenAmountBoxValue}>{Number(positions.current.token1).toFixed(2)}</div>
-                    </div>
 
-                    <div className={classes.tokenAmountBoxRow}>
-                        <div className={classes.tokenAmountBoxLabel}>Value</div>
-                        <div className={classes.tokenAmountBoxValue}>${positions.current.value.toFixed(2)}</div>
+                        <div className={classes.tokenAmountBoxRow}>
+                            <div className={classes.tokenAmountBoxLabel}>Value</div>
+                            <div className={classes.tokenAmountBoxValue}>${positions.current.value.toFixed(2)}</div>
+                        </div>
                     </div>
 
                 </div>
@@ -246,34 +245,37 @@ const LPBalance = ({ tokenAddress }) => {
                 <div className={classes.tokenAmountBox}>
 
                     <div className={classes.tokenAmountBoxTitle}>
-                        Changes since entry
+                        Changes since entry:
                     </div>
 
-                    <div className={classes.tokenAmountBoxRow}>
-                        <div className={classes.tokenAmountBoxAsset}>
-                            <img src="/images/logos/eth.png" alt="ETH logo" className={classes.tokenAmountBoxIcon} />
-                            <div className={classes.tokenAmountBoxLabel}>ETH</div>
-                        </div>
-                        <div className={classes.tokenAmountBoxValue}>
-                            {formatChange(positions.changes.token0, 6)}
-                        </div>
-                    </div>
+                    <div className={classes.tokenAmountBoxBody}>
 
-                    <div className={classes.tokenAmountBoxRow}>
-                        <div className={classes.tokenAmountBoxAsset}>
-                            <img src="/images/logos/usdc.png" alt="USDC logo" className={classes.tokenAmountBoxIcon} />
-                            <div className={classes.tokenAmountBoxLabel}>USDC</div>
+                        <div className={classes.tokenAmountBoxRow}>
+                            <div className={classes.tokenAmountBoxAsset}>
+                                <img src="/images/logos/eth.png" alt="ETH logo" className={classes.tokenAmountBoxIcon} />
+                                <div className={classes.tokenAmountBoxLabel}>ETH</div>
+                            </div>
+                            <div className={classes.tokenAmountBoxValue}>
+                                {formatChange(positions.changes.token0, 6)}
+                            </div>
                         </div>
-                        <div className={classes.tokenAmountBoxValue}>
-                            {formatChange(positions.changes.token1, 2)}
-                        </div>
-                    </div>
 
-                    <div className={classes.tokenAmountBoxRow}>
-                        <div className={classes.tokenAmountBoxLabel}>Value</div>
-                        <div className={classes.tokenAmountBoxValue}>
-                            {positions.changes.value > 0 ? '+' : ''}
-                            ${positions.changes.value.toFixed(2)}
+                        <div className={classes.tokenAmountBoxRow}>
+                            <div className={classes.tokenAmountBoxAsset}>
+                                <img src="/images/logos/usdc.png" alt="USDC logo" className={classes.tokenAmountBoxIcon} />
+                                <div className={classes.tokenAmountBoxLabel}>USDC</div>
+                            </div>
+                            <div className={classes.tokenAmountBoxValue}>
+                                {formatChange(positions.changes.token1, 2)}
+                            </div>
+                        </div>
+
+                        <div className={classes.tokenAmountBoxRow}>
+                            <div className={classes.tokenAmountBoxLabel}>Value</div>
+                            <div className={classes.tokenAmountBoxValue}>
+                                {positions.changes.value > 0 ? '+' : ''}
+                                ${positions.changes.value.toFixed(2)}
+                            </div>
                         </div>
                     </div>
 

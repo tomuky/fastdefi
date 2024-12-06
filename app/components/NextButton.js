@@ -9,7 +9,7 @@ const NextButton = ({title,target}) => {
     return (
         <div className={classes.button} onClick={()=>router.push(target)}>
             <img src="/images/ui/right-arrow.png" alt="right arrow" className={`${classes.icon} ${classes.invert}`}/>
-            {title}
+            {`Next: ${title}`}
         </div>
     )
 }

@@ -17,16 +17,22 @@
     gap: 20px;
 }
 .tokenAmountBox{
-    width: 25vw;
-    padding: 20px;
-    background-color: #2d2d2d;
+    width: 20vw;
+    /* background-color: #2d2d2d; */
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 .tokenAmountBoxTitle{
     font-weight: normal;
-    margin-bottom: 10px;
+}
+.tokenAmountBoxBody{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 14px;
+    border: 2px solid #424242;
+    padding: 20px;
 }
 .tokenAmountBoxRow{
     display: flex;
