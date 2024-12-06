@@ -12,7 +12,7 @@ const Account = () => {
 
     return (
         <div className={classes.accountArea}>
-            { (isConnecting||isReconnecting) && <><div style={{color:'rgba(255,255,255,.3)'}}>Connecting...</div></>}
+            { (isConnecting||isReconnecting) && <><div style={{color:'rgba(255,255,255,.3)',marginBottom:'10px'}}>Connecting...</div></>}
             { isDisconnected && <ConnectButton/> }
             { isConnected && (
                 <>

@@ -1,0 +1,54 @@
+.balanceContainer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 20px;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.balanceLabel{
+    margin-bottom: 10px;
+}
+.tokenAmountsArea{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.tokenAmountBox{
+    width: 25vw;
+    padding: 20px;
+    background-color: #2d2d2d;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.tokenAmountBoxTitle{
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+.tokenAmountBoxRow{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.tokenAmountBoxAsset{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.tokenAmountBoxIcon{
+    width: 26px;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .tokenAmountsArea{
+        flex-direction: column;
+    }
+    .tokenAmountBox{
+        width: 70vw;
+    }
+}

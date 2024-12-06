@@ -66,8 +66,10 @@ const Sidebar = ({isSidebarOpen, toggleSidebar}) => {
             </div> */}
 
             <SidebarLinkGroup>
-                <SidebarLink title="Save with Aave" path='/save-with-aave' icon='/images/logos/aave-logo.png' toggleSidebar={toggleSidebar}/>
-                <SidebarLink title="Swap on Uniswap" path='/swap-on-uniswap' icon='/images/logos/uniswap-logo.png' toggleSidebar={toggleSidebar}/>
+                <SidebarLink title="Earn on Aave" path='/earn-on-aave' icon='/images/logos/aave-logo.png' toggleSidebar={toggleSidebar}/>
+                <SidebarLink title="Swap on LlamaSwap" path='/swap-on-llamaswap' icon='/images/logos/llamaswap.png' toggleSidebar={toggleSidebar}/>
+                <SidebarLink title="Earn on Uniswap" path='/earn-on-uniswap' icon='/images/logos/uniswap-logo.png' toggleSidebar={toggleSidebar}/>
+                <SidebarLink title="Get a username" path='/get-a-username' icon='/images/logos/base.png' toggleSidebar={toggleSidebar}/>
             </SidebarLinkGroup>
 
         </div>

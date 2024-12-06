@@ -1,14 +1,14 @@
 'use client';
-import NextNextButton from '@/app/components/NextButton';
+import NextButton from '@/app/components/NextButton';
 import classes from '@/app/(pages)/Pages.module.css';
 import { useAccount } from 'wagmi';
 import { useReadContract } from 'wagmi';
 import abi from '@/app/_abi/ERC20.json';
-import AaveBalanceDisplay from '@/app/components/AaveBalanceDisplay';
+import AaveBalanceDisplay from './AaveBalanceDisplay';
 import ListNote from '@/app/components/ListNote';
 import ListFinish from '@/app/components/ListFinish';
 
-export default function SaveWithAave() {
+export default function EarnOnAave() {
 
     const aBaseUSDC_Address = '0x4e65fE4DbA92790696d040ac24Aa414708F5c0AB';
     const { address } = useAccount();
@@ -29,7 +29,7 @@ export default function SaveWithAave() {
         <div className={classes.container}>
             <div className={classes.title}>
                 <img src="/images/logos/aave-logo.png" alt="aave logo" className={classes.titleImage} />
-                Save with Aave
+                Earn with Aave
             </div>
             <div className={classes.intro}>
                 <p>You can earn interest with Aave's lending protocol</p>
@@ -48,7 +48,7 @@ export default function SaveWithAave() {
 
             <AaveBalanceDisplay style={{marginTop: 20}} title="Your USDC Balance" balance={balance} isBalanceLoading={isBalanceLoading}/>
 
-            <NextNextButton title="Swap on Uniswap" target='/swap-on-uniswap'/>
+            <NextButton title="Swap on LlamaSwap" target='/swap-on-llamaswap'/>
 
             <div style={{minHeight: '100px', width: '100%', backgroundColor: 'inherit'}}/>
         </div>
