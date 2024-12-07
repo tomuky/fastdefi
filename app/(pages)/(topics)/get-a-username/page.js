@@ -30,8 +30,8 @@ export default function GetAUsername() {
             </div>
 
             <div className={classes.intro}>
-                <p>Claim your Base username like fastdefi.base.eth</p>
-                <p>This will make your address easy to use</p>
+                <p>Claim a Base username like fastdefi.base.eth</p>
+                <p>Makes your address easy to use</p>
             </div>
 
             <div className={classes.steps}>

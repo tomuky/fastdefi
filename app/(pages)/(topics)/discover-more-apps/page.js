@@ -16,7 +16,7 @@ export default function GetAUsername() {
             </div>
 
             <div className={classes.intro}>
-                <p>Explore the ecosystem of apps on Base</p>
+                <p>Explore Base's ecosystem of apps</p>
             </div>
 
             <div className={classes.steps}>
@@ -25,6 +25,7 @@ export default function GetAUsername() {
                     <li>You can filter by category, or just scroll through the list</li>
                     <li>Let us know what app we should cover here next!</li>
                 </ol>
+                <p>Connect with us: <a href="https://x.com/fastdefi" target="_blank" rel="noopener noreferrer">x.com/fastdefi</a></p>
             </div>
 
             <Spacer/>

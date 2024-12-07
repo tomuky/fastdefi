@@ -12,7 +12,7 @@ export default function TrackWithZapper() {
                 Track with Zapper
             </div>
             <div className={classes.intro}>
-                <p>Zapper demonstrates the magic of DeFi</p>
+                <p>Demonstrates the magic of DeFi</p>
                 <p>Simply connect your wallet and all your balances show up</p>
             </div>
             <div className={classes.steps}>
@@ -21,8 +21,8 @@ export default function TrackWithZapper() {
                     <li>Click Connect Wallet in top right corner</li>
                     <li>See your token balances on the <a href='https://zapper.xyz/dashboard?tab=dashboard' target='_blank'>Zapper Dashboard</a></li>
                     <li>See your Aave and Uniswap positions on the <a href='https://zapper.xyz/dashboard?tab=apps' target='_blank'>Zapper Positions</a></li>
-                    <ListNote>You didn't need to create an account, your money is on the blockchain</ListNote>
-                    <ListFinish style={{marginTop: '20px'}}>Done. Zapper reads all your balances from the blockchain</ListFinish>
+                    <ListNote>You didn't need to create an account, Zapper reads your balances from the blockchain</ListNote>
+                    <ListFinish style={{marginTop: '20px'}}>Done. Bookmark your Zapper dashboard for easy tracking</ListFinish>
                 </ol>
             </div>
 

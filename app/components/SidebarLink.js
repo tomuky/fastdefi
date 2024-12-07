@@ -2,7 +2,7 @@ import classes from './Sidebar.module.css';
 import { useRouter, usePathname } from 'next/navigation';
 import { useState } from 'react';
 
-const SidebarLink = ({title, path, icon, completed, toggleSidebar}) => {
+const SidebarLink = ({title, path, url, icon, completed, toggleSidebar}) => {
     const router = useRouter();
     const pathname = usePathname();
     const [isSwiping, setIsSwiping] = useState(false);
@@ -10,10 +10,14 @@ const SidebarLink = ({title, path, icon, completed, toggleSidebar}) => {
     const handleTouchStart = () => setIsSwiping(false);
     const handleTouchMove = () => setIsSwiping(true);
 
-    const handleClick = (path) => {
+    const handleClick = (path, url) => {
         if (!isSwiping) {
-            toggleSidebar(false);
-            router.push(path);
+            if (url) {
+                window.open(url, '_blank');
+            } else {
+                toggleSidebar(false);
+                router.push(path);
+            }
         }
     };
 
@@ -21,7 +25,7 @@ const SidebarLink = ({title, path, icon, completed, toggleSidebar}) => {
         <div className={classes.stepsArea} style={{paddingBottom:'0px',paddingTop:'0px'}}>
             <div 
                 className={`${classes.step} ${completed && !show ? classes.completedStep : ''} ${pathname === path ? classes.stepActive :''}`}
-                onClick={() => handleClick(path)}
+                onClick={() => handleClick(path, url)}
                 onTouchStart={handleTouchStart}
                 onTouchMove={handleTouchMove}
             >

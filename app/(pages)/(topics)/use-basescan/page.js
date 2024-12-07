@@ -2,9 +2,11 @@
 import classes from '@/app/(pages)/Pages.module.css';
 import { useAccount } from 'wagmi';
 import { useEffect, useState } from 'react';
-import { getBasename } from '@/app/_apis/Basenames';
+import { getBasename } from '@/app/_apis/basenames';
 import ListNote from '@/app/components/ListNote';
 import ListFinish from '@/app/components/ListFinish';
+import NextButton from '@/app/components/NextButton';
+import Spacer from '@/app/components/Spacer';
 
 export default function UseBasescan() {
 
@@ -48,6 +50,9 @@ export default function UseBasescan() {
                 </ol>
             </div>
 
+            <NextButton title="Discover more apps" target='/discover-more-apps'/>
+
+            <Spacer/>
         </div>
     );
 }

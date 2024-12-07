@@ -1,6 +1,7 @@
 'use client'
 import classes from '@/app/(pages)/Pages.module.css';
 import NextButton from '@/app/components/NextButton';
+import Spacer from '@/app/components/Spacer';
 
 export default function GetStarted() {
 
@@ -15,7 +16,7 @@ export default function GetStarted() {
             </div>
             <div className={classes.steps}>
                 <ol>
-                    <li>In Fast-DeFi.com, click Connect Wallet to connect your wallet</li>
+                    <li>On this page, click Connect Wallet to connect your wallet</li>
                     <div className={classes.note}>
                         <img src="/images/ui/info-icon.png" alt="info icon" className={classes.noteIcon}/>
                         Connect your wallet to make things easier in these tutorials
@@ -34,7 +35,7 @@ export default function GetStarted() {
                 </ol>
                 <p>Your wallet is now funded and ready to use!</p>
             </div>
-            <NextButton title="Save with Aave" target='/save-with-aave'/>
+            <NextButton title="Earn on Aave" target='/earn-on-aave'/>
 
             <Spacer/>
         </div>
