@@ -24,7 +24,8 @@ const AccountAddress = () => {
         <div className={classes.addressArea} onClick={openAccountModal}>
             <div className={classes.addressLabel}>
                 <img src="/images/ui/user.png" alt="User" className={classes.accountImage} />
-                {basename && basename.length <= 18 && 'Account'}
+                {basename && basename.length < 17 && 'Account'}
+                {!basename && 'Account'}
             </div>
             <span className={classes.address} 
                 style={{ fontSize: basename && basename.length >= 13 ? '0.9em' : '1em' }}>

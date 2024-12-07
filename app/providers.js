@@ -7,8 +7,8 @@ import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { useState } from 'react';
 
 const config = getDefaultConfig({
-  appName: 'FastDeFiTutorial',
-  projectId: 'c3ec1ca5da4d9515628d909ef45635c8',
+  appName: 'Fast DeFi',
+  projectId: '45abc3fe2904a6faedd9dffae1616f91',
   chains: [ base, mainnet ],
   ssr: true
 });

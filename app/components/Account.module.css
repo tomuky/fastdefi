@@ -11,6 +11,7 @@
     background-color: inherit;
     position: relative;
     font-size: 16px;
+    min-height: 80px;
 }
 
 .addressArea{
@@ -143,3 +144,4 @@ table.tokens tbody tr:hover {
     transition: background-color 0.3s; 
     border-radius: 12px;
 }
+

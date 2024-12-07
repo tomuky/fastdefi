@@ -26,7 +26,7 @@ export default function TrackWithZapper() {
                 </ol>
             </div>
 
-            <NextButton title="Get a username" target='/get-a-username'/>
+            <NextButton title="Use Basescan" target='/use-basescan'/>
 
             <Spacer/>
         </div>

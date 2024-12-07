@@ -47,7 +47,7 @@ export default function GetAUsername() {
                 </ol>
             </div>
 
-            <NextButton title="Use Basescan" target='/use-basescan'/>
+            <NextButton title="Track with Zapper" target='/track-with-zapper'/>
 
             <Spacer/>
 

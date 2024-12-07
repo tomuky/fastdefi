@@ -131,3 +131,13 @@
 
     
 }
+
+.desktopOnly {
+    display: block;
+    width: 100%;
+}
+@media screen and (max-width: 768px) {
+    .desktopOnly {
+        display: none;
+    }
+}

@@ -1,45 +1,22 @@
-import { useReadContract } from 'wagmi';
+import { useState, useEffect } from 'react';
+import { useAccount } from 'wagmi';
+import { getBasename } from '@/app/_apis/basenames';
 
-const ENS_RESOLVER_ADDRESS = '0xC6d566A56A1aFf6508b41f6c90ff131615583BCD';
+export function useBasename() {
+    const { address, isConnected } = useAccount();
+    const [basename, setBasename] = useState(null);
+    const [loading, setLoading] = useState(false);
 
-const ENS_ABI = [
-  {
-    "inputs": [
-      {
-        "internalType": "bytes32",
-        "name": "node",
-        "type": "bytes32"
-      }
-    ],
-    "name": "name",
-    "outputs": [
-      {
-        "internalType": "string",
-        "name": "",
-        "type": "string"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  }
-];
+    useEffect(() => {
+        async function fetchData() {
+            if (!isConnected) return;
+            setLoading(true);
+            const fetchedBasename = await getBasename(address);
+            setBasename(fetchedBasename);
+            setLoading(false);
+        }
+        fetchData();
+    }, [address, isConnected]);
 
-export function useBaseNames(address) {
-  const {
-    data: name,
-    isError,
-    isPending
-  } = useReadContract({
-    address: ENS_RESOLVER_ADDRESS,
-    abi: ENS_ABI,
-    functionName: 'name',
-    args: [address],
-    chainId: 8453,
-  });
-
-  return {
-    name,
-    isLoading: isPending,
-    isError
-  };
+    return { basename, loading };
 }
