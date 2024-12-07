@@ -58,6 +58,7 @@ const Sidebar = ({isSidebarOpen, toggleSidebar}) => {
                 <SidebarLink title="Track with Zapper" path='/track-with-zapper' icon='/images/logos/zapper-logo.png' toggleSidebar={toggleSidebar}/>
                 <SidebarLink title="Get a username" path='/get-a-username' icon='/images/logos/base.png' toggleSidebar={toggleSidebar}/>
                 <SidebarLink title="Use Basescan" path='/use-basescan' icon='/images/logos/basescan-logo.png' toggleSidebar={toggleSidebar}/>
+                <SidebarLink title="Discover more apps" path='/discover-more-apps' icon='/images/ui/blockchain.png' toggleSidebar={toggleSidebar}/>
             </SidebarLinkGroup>
 
             <div className={classes.divider}/>
