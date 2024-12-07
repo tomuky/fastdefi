@@ -2,23 +2,12 @@ import classes from './Account.module.css';
 import { useAccountModal } from '@rainbow-me/rainbowkit';
 import { useAccount } from 'wagmi';
 import { useRouter } from 'next/navigation';
-import { getBasename } from '@/app/_apis/basenames';
-import { useEffect, useState } from 'react';
+import { useBasename } from '@/app/_hooks/useBaseNames';
 
 const AccountAddress = () => {
-    const router = useRouter();
-    const { address, isConnected } = useAccount();
+    const { address } = useAccount();
     const { openAccountModal } = useAccountModal();
-    const [basename, setBasename] = useState(null);
-
-    useEffect(() => {
-        async function fetchData() {
-            if (!isConnected) return;
-            const fetchedBasename = await getBasename(address);
-            setBasename(fetchedBasename);
-        }
-        fetchData();
-    }, [address, isConnected]);
+    const { basename } = useBasename();
 
     return (
         <div className={classes.addressArea} onClick={openAccountModal}>

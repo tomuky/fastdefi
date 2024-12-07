@@ -1,26 +1,13 @@
 'use client';
 import classes from '@/app/(pages)/Pages.module.css';
-import { useAccount } from 'wagmi';
-import { useEffect, useState } from 'react';
-import { getBasename } from '@/app/_apis/basenames';
 import ListNote from '@/app/components/ListNote';
 import ListFinish from '@/app/components/ListFinish';
 import NextButton from '@/app/components/NextButton';
 import Spacer from '@/app/components/Spacer';
+import { useBasename } from '@/app/_hooks/useBaseNames';
 
 export default function UseBasescan() {
-
-    const { address, isConnected } = useAccount();
-    const [basename, setBasename] = useState(null);
-
-    useEffect(() => {
-        async function fetchData() {
-            if (!isConnected) return;
-            const fetchedBasename = await getBasename(address);
-            setBasename(fetchedBasename);
-        }
-        fetchData();
-    }, [address, isConnected]);
+    const { basename } = useBasename();
 
     return (
         <div className={classes.container}>
