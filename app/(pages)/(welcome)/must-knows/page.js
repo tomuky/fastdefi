@@ -22,7 +22,7 @@ export default function GetStarted() {
                     <li>Don't confuse your Coinbase.com account with your Coinbase Wallet</li>
                 </ul>
             </div>
-            <NextButton title="Get a wallet" target='/get-wallet'/>
+            <NextButton title="Create a wallet" target='/create-a-wallet'/>
 
             <Spacer/>
         </div>

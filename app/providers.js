@@ -9,7 +9,7 @@ import { useState } from 'react';
 const config = getDefaultConfig({
   appName: 'Fast DeFi',
   projectId: '45abc3fe2904a6faedd9dffae1616f91',
-  chains: [ base, mainnet ],
+  chains: [ base ],
   ssr: true
 });
 

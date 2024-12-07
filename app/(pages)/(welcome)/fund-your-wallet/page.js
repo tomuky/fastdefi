@@ -2,8 +2,10 @@
 import classes from '@/app/(pages)/Pages.module.css';
 import NextButton from '@/app/components/NextButton';
 import Spacer from '@/app/components/Spacer';
+import { useAccount } from 'wagmi';
 
 export default function GetStarted() {
+    const { address, isConnected } = useAccount();
 
     return (
         <div className={classes.container}>
@@ -16,13 +18,11 @@ export default function GetStarted() {
             </div>
             <div className={classes.steps}>
                 <ol>
-                    <li>On this page, click Connect Wallet to connect your wallet</li>
-                    <div className={classes.note}>
-                        <img src="/images/ui/info-icon.png" alt="info icon" className={classes.noteIcon}/>
-                        Connect your wallet to make things easier in these tutorials
-                    </div>
+                    {!isConnected && (
+                        <li>On this page, click Create Wallet to create your wallet</li>
+                    )}
                     <li>Copy your wallet address by clicking the Address button</li>
-                    <li>In Coinbase.com, click on Send Crypto</li>
+                    <li>On Coinbase.com, click on Send Crypto</li>
                     <li>Choose ETH and type in amount (maybe do Max amount)</li>
                     <li>Click on "To" field and select Base network</li>
                     <div className={classes.note}>

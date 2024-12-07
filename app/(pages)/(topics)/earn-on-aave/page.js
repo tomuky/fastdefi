@@ -37,7 +37,7 @@ export default function EarnOnAave() {
             </div>
             <div className={classes.steps}>
                 <ol>
-                    <li>Go to <a href='https://app.aave.com/?marketName=proto_base_v3' target='_blank'>app.aave.com</a> and click connect wallet</li>
+                    <li>Go to <a href='https://app.aave.com/?marketName=proto_base_v3' target='_blank'>app.aave.com</a> and click connect wallet, choose Coinbase Wallet</li>
                     <ListNote>Your balance shows up! No new account setup needed.</ListNote>
                     <li>Click Supply next to USDC</li>
                     <li>You might be prompted to switch your network to Base</li>
