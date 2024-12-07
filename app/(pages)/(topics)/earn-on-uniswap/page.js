@@ -33,7 +33,7 @@ export default function EarnOnUniswap() {
 
             <LPBalance tokenAddress='0x88a43bbdf9d098eec7bceda4e2494615dfd9bb9c' />
 
-            <NextNextButton title="Get a username" target='/get-a-username'/>
+            <NextNextButton title="Track with Zapper" target='/track-with-zapper'/>
 
             <Spacer/>
         </div>

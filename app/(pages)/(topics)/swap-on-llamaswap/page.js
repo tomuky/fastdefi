@@ -71,7 +71,7 @@ export default function SwapOnLlamaSwap() {
                     { !hasBalance(cbBtcBalance) && <li>After you swap you will see your balances update below</li> }
                 </ol>
 
-                <Balances ethBalance={ethBalance} cbBtcBalance={cbBtcBalance} />
+                <Balances ethBalance={ethBalance} cbBtcBalance={cbBtcBalance} isConnected={isConnected} />
 
             </div>
 

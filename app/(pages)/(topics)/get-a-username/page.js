@@ -1,44 +1,49 @@
 'use client';
 import classes from '@/app/(pages)/Pages.module.css';
-import { useAccount, useEnsName } from 'wagmi';
-import { base } from 'wagmi/chains';
-//import { useBaseNames } from '@/app/_hooks/useBaseNames';
+import { useAccount } from 'wagmi';
+import { useEffect, useState } from 'react';
+import { getBasename, getBasenameAvatar, getBasenameTextRecord, BasenameTextRecordKeys } from '@/app/_apis/Basenames';
+import ListNote from '@/app/components/ListNote';
+import ListFinish from '@/app/components/ListFinish';
 
 export default function GetAUsername() {
-    const { address, isConnected } = useAccount();
-    const result = useEnsName({
-        address: address,
-        chainId: base.id,
-        universalResolverAddress: '0xc6d566a56a1aff6508b41f6c90ff131615583bcd',
-    });
-    console.log('result', result);
-    console.log('name', result.data)
+    const { address, isConnected, isLoading: isAccountLoading } = useAccount();
+    const [basename, setBasename] = useState(null);
+
+    useEffect(() => {
+        async function fetchData() {
+            if (!isConnected) return;
+            const fetchedBasename = await getBasename(address);
+            setBasename(fetchedBasename);
+        }
+        fetchData();
+    }, [address, isConnected]);
 
     return (
         <div className={classes.container}>
+
             <div className={classes.title}>
                 <img src="/images/logos/base.png" alt="base logo" className={classes.titleImage} />
                 Get a username
             </div>
+
             <div className={classes.intro}>
-                <p>Register a Base username and make your address easy to remember</p>
+                <p>Claim your Base username like fastdefi.base.eth</p>
+                <p>This will make your address easy to use</p>
             </div>
+
             <div className={classes.steps}>
                 <ol>
-                    <li>Connect your wallet</li>
-                    <li>Click the "Get a username" button below</li>
+                    <li>Go to <a href="https://base.org/names" target="_blank" rel="noopener noreferrer">Base.org/names</a> and click Connect</li>
+                    <li>Use the search field to find an available username</li>
+                    <li>Click on a result that you like</li>
+                    <li>Make sure "Set as primary" is checked</li>
+                    <ListNote>This allows your username to be used as your address</ListNote>
+                    <li>Click Register Name and confirm the popup in your wallet</li>
+                    {basename && <ListFinish>Done! Your new username on Base is {basename}</ListFinish>}
                 </ol>
             </div>
-            
-            {/* {isConnected && (
-                <div>
-                    {isLoading ? (
-                        <p>Loading your Base name...</p>
-                    ) : (
-                        <p>Your Base name: {baseName || 'No Base name found'}</p>
-                    )}
-                </div>
-            )} */}
+
         </div>
     );
 }

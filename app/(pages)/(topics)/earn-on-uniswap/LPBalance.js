@@ -27,9 +27,13 @@ const PAIR_ABI = [
 ];
 
 const LPBalance = ({ tokenAddress }) => {
-    const { address } = useAccount();
+    const { address, isConnected } = useAccount();
     const [entryBlock, setEntryBlock] = useState(null);
     const [isLoadingHistory, setIsLoadingHistory] = useState(true);
+
+    if (!isConnected) {
+        return <div style={{marginTop: '20px', marginBottom: '20px'}}>Connect your wallet to see your LP balance</div>;
+    }
 
     // 1. Find when user first acquired LP tokens
     useEffect(() => {

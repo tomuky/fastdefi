@@ -11,6 +11,10 @@ const Header = ({toggleSidebar,isSidebarOpen}) => {
     const { openAccountModal } = useAccountModal();
     const { openConnectModal } = useConnectModal();
 
+    const handleConnectWallet = () => {
+        openConnectModal();
+    }
+
     return (
         <div className={classes.header}>
             <div className={classes.hamburgerButton} onClick={toggleSidebar} >
@@ -24,12 +28,12 @@ const Header = ({toggleSidebar,isSidebarOpen}) => {
                 </Link>
             </div>
             { !isConnected && (
-                <div className={classes.connectWallet} onTouchEnd={openConnectModal}>
+                <div className={classes.connectWallet} onClick={handleConnectWallet}>
                     Connect
                 </div>
             )}
             { isConnected && (
-                <div className={classes.accountArea} onTouchEnd={(openAccountModal)}>
+                <div className={classes.accountArea} onClick={(openAccountModal)}>
                     <img src="/images/ui/user.png" className={`${classes.accountIcon} ${classes.invert}`} alt="account icon" />
                 </div>
             )}

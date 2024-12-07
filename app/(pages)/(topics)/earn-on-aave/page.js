@@ -8,10 +8,11 @@ import AaveBalanceDisplay from './AaveBalanceDisplay';
 import ListNote from '@/app/components/ListNote';
 import ListFinish from '@/app/components/ListFinish';
 import Spacer from '@/app/components/Spacer';
+
 export default function EarnOnAave() {
 
     const aBaseUSDC_Address = '0x4e65fE4DbA92790696d040ac24Aa414708F5c0AB';
-    const { address } = useAccount();
+    const { address, isConnected } = useAccount();
 
     const {data:balance, isLoading: isBalanceLoading, error: balanceError} = useReadContract({
         address: aBaseUSDC_Address,
@@ -46,7 +47,12 @@ export default function EarnOnAave() {
                 </ol>
             </div>
 
-            <AaveBalanceDisplay style={{marginTop: 20}} title="Your USDC Balance" balance={balance} isBalanceLoading={isBalanceLoading}/>
+            <AaveBalanceDisplay 
+                style={{marginTop: 20}} 
+                title="Your USDC Balance" 
+                balance={balance} 
+                isBalanceLoading={isBalanceLoading}
+                isConnected={isConnected}/>
 
             <NextButton title="Swap on LlamaSwap" target='/swap-on-llamaswap'/>
 
