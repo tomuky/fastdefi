@@ -16,7 +16,7 @@
 .addressArea{
     width: 100%;
     border-radius: 14px;
-    padding: 12px 18px;
+    padding: 12px 14px;
     background-color: #1a1b1f;
     /* border: 1px solid #1a1b1f; */
     display: flex;
@@ -41,7 +41,7 @@
 .chainArea{
     width: 100%;
     border-radius: 14px;
-    padding: 12px 18px;
+    padding: 12px 14px;
     background-color: #1a1b1f;
     display: flex;
     justify-content: space-between;
