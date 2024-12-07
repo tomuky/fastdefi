@@ -7,7 +7,7 @@ import ListNote from '@/app/components/ListNote';
 import ListFinish from '@/app/components/ListFinish';
 
 export default function GetAUsername() {
-    const { address, isConnected, isLoading: isAccountLoading } = useAccount();
+    const { address, isConnected } = useAccount();
     const [basename, setBasename] = useState(null);
 
     useEffect(() => {

@@ -4,7 +4,7 @@ const ListNote = ({children}) => {
     return (
         <div className={classes.note}>
             <img src="/images/ui/info-icon.png" alt="info icon" className={classes.noteIcon}/>
-            {children}
+            <span>{children}</span>
         </div>
     )
 }
