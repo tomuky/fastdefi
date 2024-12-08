@@ -25,7 +25,7 @@ export default function CreateAWallet() {
             </div>
             <div className={classes.steps}>
                 <ul>
-                    <li>Click on Creat Wallet on this page</li>
+                    <li>Click on Create Wallet on this page</li>
                     <li>Done! Get your wallet address by clicking the address</li>
                     <div className={classes.note} style={{marginLeft: '-24px'}}>
                         <img src="/images/ui/caution.png" alt="info icon" className={classes.noteIcon}/>
@@ -34,8 +34,7 @@ export default function CreateAWallet() {
                     {Number(data?.value) === 0 && (
                         <>
                             <li>You need some ETH in your wallet first</li>
-                            <li>Go get a <a href='https://coinbase.com/join/6A22LF6?src=referral-link' target='_blank'>coinbase.com account</a> to buy some ETH</li>
-                            <li>Afterwards, go to <a href='https://wallet.coinbase.com/' target='_blank'>wallet.coinbase.com</a> to set up Account Recovery</li>
+                            <li>Go get a <a href='/get-coinbase'>coinbase.com account</a> to buy some ETH</li>
                         </>
                     )}
                     {Number(data?.value) > 0 && (
