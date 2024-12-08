@@ -49,7 +49,7 @@ export default function EarnOnAave() {
 
             <AaveBalanceDisplay 
                 style={{marginTop: 20}} 
-                title="Your USDC Balance" 
+                title="Your USDC Deposit" 
                 balance={balance} 
                 isBalanceLoading={isBalanceLoading}
                 isConnected={isConnected}/>
