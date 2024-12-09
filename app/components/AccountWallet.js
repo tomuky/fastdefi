@@ -2,11 +2,10 @@
 import { useTokenPrice } from '../_hooks/useTokenPrice';
 import classes from './Account.module.css';
 import { useAccount } from 'wagmi';
-import { openChainModal, openAccountModal } from '@rainbow-me/rainbowkit';
 
 const AccountWallet = () => {
     
-    const { isConnected, isDisconnected, isConnecting, isReconnecting, address, chain } = useAccount();
+    const { address, chain } = useAccount();
     const usdcToken = useTokenPrice('0x833589fcd6edb6e08f4c7c32d4f71b54bda02913',address,2);
     const ethToken = useTokenPrice('',address,4);
 
@@ -16,10 +15,6 @@ const AccountWallet = () => {
                 <div className={classes.walletLabel}>
                     <img src="/images/ui/wallet.png" alt="Wallet" className={classes.accountImage} />
                     Wallet
-                </div>
-                <div className={classes.chain} onClick={openChainModal}>
-                    {chain && chain.name}
-                    {!chain && 'Wrong network'}
                 </div>
             </div>
             <table className={classes.tokens}>

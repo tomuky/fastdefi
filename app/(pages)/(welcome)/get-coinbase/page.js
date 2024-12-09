@@ -1,13 +1,9 @@
 'use client'
 import classes from '@/app/(pages)/Pages.module.css';
-import { useConnectModal } from '@rainbow-me/rainbowkit';
-import { useAccount } from 'wagmi';
 import NextButton from '@/app/components/NextButton';
 import Spacer from '@/app/components/Spacer';
 
 export default function GetStarted() {
-    const {address, isConnected} = useAccount();
-    const { openConnectModal } = useConnectModal();
 
     return (
         <div className={classes.container}>
