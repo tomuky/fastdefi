@@ -2,6 +2,7 @@ import classes from './Sidebar.module.css';
 import { useRouter, usePathname } from 'next/navigation';
 import NumberIcon from './NumberIcon';
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 const SidebarSection = ({paths,completed, toggleSidebar}) => {
     const router = useRouter();
@@ -33,9 +34,9 @@ const SidebarSection = ({paths,completed, toggleSidebar}) => {
                 onTouchStart={handleTouchStart}
                 onTouchMove={handleTouchMove}
             >
-                {paths[0].icon && <img className={classes.icon} src={paths[0].icon} alt={paths[0].title}/>}
+                {paths[0].icon && <Image className={classes.icon} src={paths[0].icon} alt={paths[0].title} width={20} height={20} /> }
                 <span>{paths[0].title}</span>
-                {completed && <img className={classes.completedIcon} src="/images/ui/check-mark.png" alt="completed"/>}
+                {completed && <Image className={classes.completedIcon} src="/images/ui/check-mark.png" alt="completed" width={20} height={20} />}
             </div>
             {show && (
                 <>

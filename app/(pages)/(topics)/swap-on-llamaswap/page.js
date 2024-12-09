@@ -7,6 +7,8 @@ import ListFinish from '@/app/components/ListFinish';
 import ListNote from '@/app/components/ListNote';
 import { formatUnits } from 'viem';
 import Spacer from '@/app/components/Spacer';
+import PageTitle from '@/app/components/PageTitle';
+
 export default function SwapOnLlamaSwap() {
     const { address, isConnected } = useAccount();
     const chainId = useChainId();
@@ -30,10 +32,7 @@ export default function SwapOnLlamaSwap() {
 
     return (
         <div className={classes.container}>
-            <div className={classes.title}>
-                <img src="/images/logos/llamaswap.png" alt="llamaswap logo" className={classes.titleImage} />
-                Swap on LlamaSwap
-            </div>
+            <PageTitle title="Swap on LlamaSwap" image="/images/logos/llamaswap.png"/>
             <div className={classes.intro}>
                 <p>Swap tokens directly from your wallet</p>
                 <p>LlamaSwap aggregates liquidity to give you the best price</p>

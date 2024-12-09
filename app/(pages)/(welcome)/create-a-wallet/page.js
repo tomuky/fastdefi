@@ -2,8 +2,9 @@
 import NextButton from '@/app/components/NextButton';
 import classes from '@/app/(pages)/Pages.module.css';
 import Spacer from '@/app/components/Spacer';
-import { useAccount } from 'wagmi';
-import { useBalance } from 'wagmi';
+import { useAccount, useBalance } from 'wagmi';
+import PageTitle from '@/app/components/PageTitle';
+import ListCaution from '@/app/components/ListCaution';
 
 export default function CreateAWallet() {
     const { address } = useAccount();
@@ -16,10 +17,9 @@ export default function CreateAWallet() {
 
     return (
         <div className={classes.container}>
-            <div className={classes.title}>
-                <img src="/images/logos/coinbase-wallet-logo.png" alt="coinbase wallet icon" className={classes.titleImage}/>
-                Create a wallet
-            </div>
+            
+            <PageTitle title="Create a wallet" image="/images/logos/coinbase-wallet-logo.png"/>
+
             <div className={classes.intro}>
                 <p>Create a wallet in seconds with Coinbase Smart Wallet</p>
             </div>
@@ -27,10 +27,7 @@ export default function CreateAWallet() {
                 <ul>
                     <li>Click on Create Wallet on this page</li>
                     <li>Done! Get your wallet address by clicking the address</li>
-                    <div className={classes.note} style={{marginLeft: '-24px'}}>
-                        <img src="/images/ui/caution.png" alt="info icon" className={classes.noteIcon}/>
-                        You should eventually add Account Recovery for better security
-                    </div>
+                    <ListCaution>You should eventually add Account Recovery for better security</ListCaution>
                     {Number(data?.value) === 0 && (
                         <>
                             <li>You need some ETH in your wallet first</li>

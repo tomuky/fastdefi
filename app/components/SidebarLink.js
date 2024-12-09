@@ -1,6 +1,7 @@
 import classes from './Sidebar.module.css';
 import { useRouter, usePathname } from 'next/navigation';
 import { useState } from 'react';
+import Image from 'next/image';
 
 const SidebarLink = ({title, path, url, icon, completed, toggleSidebar}) => {
     const router = useRouter();
@@ -29,9 +30,9 @@ const SidebarLink = ({title, path, url, icon, completed, toggleSidebar}) => {
                 onTouchStart={handleTouchStart}
                 onTouchMove={handleTouchMove}
             >
-                {icon && <img className={classes.icon} src={icon} alt={title}/>}
+                {icon && <Image className={classes.icon} src={icon} alt={title} width={20} height={20} />}
                 <span>{title}</span>
-                {completed && <img className={classes.completedIcon} src="/images/ui/check-mark.png" alt="completed"/>}
+                {completed && <Image className={classes.completedIcon} src="/images/ui/check-mark.png" alt="completed" width={20} height={20} />}
             </div>
         </div>
     )

@@ -7,6 +7,7 @@ import { useBasename } from '@/app/_hooks/useBaseNames';
 import Modal from './Modal';
 import { useState } from 'react';
 import { base, mainnet } from 'wagmi/chains';
+import Image from 'next/image';
 
 const Header = ({toggleSidebar,isSidebarOpen}) => {
     const { isConnected, address } = useAccount();
@@ -24,7 +25,7 @@ const Header = ({toggleSidebar,isSidebarOpen}) => {
         <div className={classes.header}>
 
             <div className={classes.titleArea}>
-                <img src="/images/fdt.png" alt="Fast DeFi Tutorial" className={classes.logo} />
+                <Image src="/images/fdt.png" alt="Fast DeFi Tutorial" className={classes.logo} width={20} height={20} />
                 <Link href="/" passHref style={{textDecoration: 'none'}}>
                     <div className={classes.headerTitle}>Fast DeFi</div>
                 </Link>
@@ -38,7 +39,7 @@ const Header = ({toggleSidebar,isSidebarOpen}) => {
                 )}
                 { isConnected && (
                     <div className={classes.accountArea} onClick={() => setModalOpen(true)}>
-                        <img src="/images/ui/user.png" className={`${classes.accountIcon} ${classes.invert}`} alt="account icon" />
+                        <Image src="/images/ui/user.png" className={`${classes.accountIcon} ${classes.invert}`} alt="account icon" width={14} height={14} />
                         {basename && (
                             <div style={{fontSize: '0.9em', marginLeft: '8px'}}>
                                 {basename}
@@ -53,8 +54,8 @@ const Header = ({toggleSidebar,isSidebarOpen}) => {
                 )}
                 
                 <div className={classes.hamburgerButton} onClick={toggleSidebar} >
-                    { isSidebarOpen && <img src="/images/ui/menu-bar.png" alt="hamburger icon" /> }
-                    { !isSidebarOpen && <img src="/images/ui/cross.png" alt="close menu icon" /> }
+                    { isSidebarOpen && <Image src="/images/ui/menu-bar.png" alt="hamburger icon" width={24} height={24} /> }
+                    { !isSidebarOpen && <Image src="/images/ui/cross.png" alt="close menu icon" width={24} height={24} /> }
                 </div>
             </div>
 

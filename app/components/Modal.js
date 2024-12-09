@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import classes from './Modal.module.css';
 import { useBasename } from '@/app/_hooks/useBaseNames';
+import Image from 'next/image';
 
 const Modal = ({ isOpen, onClose, address, chainName, chainId, onChangeNetwork, onSignOut }) => {
     const { basename } = useBasename();
@@ -34,18 +35,18 @@ const Modal = ({ isOpen, onClose, address, chainName, chainId, onChangeNetwork, 
         <div className={classes.modalBackground}>
             <div className={classes.modalContent}>
                 <div className={classes.modalTitleArea}>
-                    <img src="/images/ui/user.png" alt="User" className={classes.accountImage} />
+                    <Image src="/images/ui/user.png" alt="User" className={classes.accountImage} width={60} height={60} />
                     {basename && <div className={classes.accountName}>{basename}</div>}
                     {!basename && <div className={classes.accountName}>{address.slice(0, 5)}...{address.slice(-4)}</div>}
                 </div>
 
                 <div className={classes.modalButtonArea}>
                     <button className={classes.modalButton} onClick={handleCopyAddress}>
-                        <img src="/images/ui/copy.png" alt="Copy" className={classes.modalButtonIcon} />
+                        <Image src="/images/ui/copy.png" alt="Copy" className={classes.modalButtonIcon} width={20} height={20} />
                         {copied ? 'Copied!' : 'Copy Address'}
                     </button>
                     <button className={classes.modalButton} onClick={onSignOut}>
-                        <img src="/images/ui/logout.png" alt="Disconnect" className={classes.modalButtonIcon} />
+                        <Image src="/images/ui/logout.png" alt="Disconnect" className={classes.modalButtonIcon} width={20} height={20} />
                         Disconnect
                     </button>
                 </div>

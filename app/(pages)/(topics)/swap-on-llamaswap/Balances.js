@@ -1,5 +1,6 @@
 import classes from '@/app/(pages)/(topics)/swap-on-llamaswap/Balances.module.css';
 import { formatUnits } from 'viem';
+import Image from 'next/image';
 
 const Balances = ({ethBalance, cbBtcBalance, isConnected}) => {
 
@@ -14,7 +15,7 @@ const Balances = ({ethBalance, cbBtcBalance, isConnected}) => {
                     ETH:
                 </div>    
                 <div className={classes.balanceItemValue}>
-                    <img src="/images/logos/eth.png" alt="ETH logo" className={classes.balanceIcon} />
+                    <Image src="/images/logos/eth.png" alt="ETH logo" className={classes.balanceIcon} width={30} height={30} />
                     {ethBalance ? Math.round(formatUnits(ethBalance.value, ethBalance.decimals)*100000)/100000 : '0'}
                 </div>
             </div>
@@ -23,7 +24,7 @@ const Balances = ({ethBalance, cbBtcBalance, isConnected}) => {
                     cbBTC:
                 </div>
                 <div className={classes.balanceItemValue}>
-                    <img src="/images/logos/cbbtc.png" alt="cbBTC logo" className={classes.balanceIcon} />
+                    <Image src="/images/logos/cbbtc.png" alt="cbBTC logo" className={classes.balanceIcon} width={30} height={30} />
                     {cbBtcBalance ? Math.round(formatUnits(cbBtcBalance.value, cbBtcBalance.decimals)*1000000)/1000000 : '0'}
                 </div>
             </div>

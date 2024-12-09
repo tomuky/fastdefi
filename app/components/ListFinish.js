@@ -1,9 +1,16 @@
 import classes from '@/app/(pages)/Pages.module.css';
+import Image from 'next/image';
 
 const ListFinish = ({children,style}) => {  
     return (
         <div className={classes.finish} style={style}>
-            <img src="/images/ui/finish.png" alt="finish icon" className={`${classes.noteIcon} ${classes.invert}`}/>
+            <Image 
+                src="/images/ui/finish.png" 
+                alt="finish icon" 
+                width={20}
+                height={20}
+                className={`${classes.noteIcon} ${classes.invert}`}
+            />
             {children}
         </div>
     )

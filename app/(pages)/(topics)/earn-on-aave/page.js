@@ -8,6 +8,7 @@ import AaveBalanceDisplay from './AaveBalanceDisplay';
 import ListNote from '@/app/components/ListNote';
 import ListFinish from '@/app/components/ListFinish';
 import Spacer from '@/app/components/Spacer';
+import PageTitle from '@/app/components/PageTitle';
 
 export default function EarnOnAave() {
 
@@ -28,13 +29,13 @@ export default function EarnOnAave() {
 
     return (
         <div className={classes.container}>
-            <div className={classes.title}>
-                <img src="/images/logos/aave-logo.png" alt="aave logo" className={classes.titleImage} />
-                Earn with Aave
-            </div>
+
+            <PageTitle title="Earn with Aave" image="/images/logos/aave-logo.png"/>
+
             <div className={classes.intro}>
                 <p>You can earn interest with Aave's lending protocol</p>
             </div>
+            
             <div className={classes.steps}>
                 <ol>
                     <li>Go to <a href='https://app.aave.com/?marketName=proto_base_v3' target='_blank'>app.aave.com</a> and click connect wallet, choose Coinbase Wallet</li>

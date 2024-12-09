@@ -4,6 +4,7 @@ import { useBasename } from '@/app/_hooks/useBaseNames';
 import Modal from './Modal';
 import { useState } from 'react';
 import { base, mainnet } from 'wagmi/chains';
+import Image from 'next/image';
 
 const AccountAddress = () => {
     const { address } = useAccount();
@@ -25,7 +26,7 @@ const AccountAddress = () => {
         <div style={{ position: 'relative',width: '100%' }}>
             <div className={classes.addressArea} onClick={() => setModalOpen(true)}>
                 <div className={classes.addressLabel}>
-                    <img src="/images/ui/user.png" alt="User" className={classes.accountImage} />
+                    <Image src="/images/ui/user.png" alt="User" className={classes.accountImage} width={16} height={16} />
                     {basename && basename.length < 17 && 'Account'}
                     {!basename && 'Account'}
                 </div>

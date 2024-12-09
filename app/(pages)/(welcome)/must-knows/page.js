@@ -1,14 +1,14 @@
 import NextButton from '@/app/components/NextButton';
 import classes from '@/app/(pages)/Pages.module.css';
 import Spacer from '@/app/components/Spacer';
+import PageTitle from '@/app/components/PageTitle';
 
 export default function GetStarted() {
     return (
         <div className={classes.container}>
-            <div className={classes.title}>
-                <img src="/images/ui/exclamation.png" alt="info icon" className={classes.titleImage} />
-                Must-Knows
-            </div>
+
+            <PageTitle title="Must-Knows" image="/images/ui/exclamation.png"/>
+
             <div className={classes.intro}>
                 <p>Just a few things you absolutely need to know</p>
             </div>

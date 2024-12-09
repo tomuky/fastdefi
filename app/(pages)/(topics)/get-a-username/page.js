@@ -7,6 +7,7 @@ import ListNote from '@/app/components/ListNote';
 import ListFinish from '@/app/components/ListFinish';
 import NextButton from '@/app/components/NextButton';
 import Spacer from '@/app/components/Spacer';
+import PageTitle from '@/app/components/PageTitle';
 
 export default function GetAUsername() {
     const { address, isConnected } = useAccount();
@@ -23,11 +24,8 @@ export default function GetAUsername() {
 
     return (
         <div className={classes.container}>
-
-            <div className={classes.title}>
-                <img src="/images/logos/base.png" alt="base logo" className={classes.titleImage} />
-                Get a username
-            </div>
+            
+            <PageTitle title="Get a username" image="/images/logos/base.png"/>
 
             <div className={classes.intro}>
                 <p>Claim a Base username like fastdefi.base.eth</p>

@@ -5,6 +5,7 @@ import ListFinish from '@/app/components/ListFinish';
 import NextButton from '@/app/components/NextButton';
 import Spacer from '@/app/components/Spacer';
 import { useBasename } from '@/app/_hooks/useBaseNames';
+import PageTitle from '@/app/components/PageTitle';
 
 export default function UseBasescan() {
     const { basename } = useBasename();
@@ -12,10 +13,7 @@ export default function UseBasescan() {
     return (
         <div className={classes.container}>
 
-            <div className={classes.title}>
-                <img src="/images/logos/basescan-logo.png" alt="basescan logo" className={classes.titleImage} />
-                Use Basescan
-            </div>
+            <PageTitle title="Use Basescan" image="/images/logos/basescan-logo.png"/>
 
             <div className={classes.intro}>
                 <p>Basescan is a block explorer for the Base network</p>

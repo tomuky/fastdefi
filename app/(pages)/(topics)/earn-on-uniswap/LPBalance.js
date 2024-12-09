@@ -2,6 +2,7 @@ import classes from './LPBalance.module.css';
 import { useAccount, useReadContracts } from 'wagmi';
 import { useState, useEffect, useCallback } from 'react';
 import abi from '@/app/_abi/ERC20.json';
+import Image from 'next/image';
 
 // Add Uniswap V2 Pair ABI - you'll need the full ABI
 const PAIR_ABI = [
@@ -30,10 +31,6 @@ const LPBalance = ({ tokenAddress }) => {
     const { address, isConnected } = useAccount();
     const [entryBlock, setEntryBlock] = useState(null);
     const [isLoadingHistory, setIsLoadingHistory] = useState(true);
-
-    if (!isConnected) {
-        return <div style={{marginTop: '20px', marginBottom: '20px'}}>Connect your wallet to see your LP balance</div>;
-    }
 
     // 1. Find when user first acquired LP tokens
     useEffect(() => {
@@ -210,6 +207,10 @@ const LPBalance = ({ tokenAddress }) => {
         return value > 0 ? `+${formattedValue}` : formattedValue;
     };
 
+    if (!isConnected) {
+        return <div style={{marginTop: '20px', marginBottom: '20px'}}>Connect your wallet to see your LP balance</div>;
+    }
+
     return (
         <div className={classes.balanceContainer}>
             <div className={classes.tokenAmountsArea}>
@@ -224,7 +225,13 @@ const LPBalance = ({ tokenAddress }) => {
 
                         <div className={classes.tokenAmountBoxRow}>
                             <div className={classes.tokenAmountBoxAsset}>
-                                <img src="/images/logos/eth.png" alt="ETH logo" className={classes.tokenAmountBoxIcon} />
+                                <Image 
+                                    src="/images/logos/eth.png" 
+                                    alt="ETH logo" 
+                                    className={classes.tokenAmountBoxIcon}
+                                    width={26}
+                                    height={26}
+                                />
                                 <div className={classes.tokenAmountBoxLabel}>ETH</div>
                             </div>
                             <div className={classes.tokenAmountBoxValue}>{Number(positions.current.token0).toFixed(6)}</div>
@@ -232,7 +239,13 @@ const LPBalance = ({ tokenAddress }) => {
 
                         <div className={classes.tokenAmountBoxRow}>
                             <div className={classes.tokenAmountBoxAsset}>
-                                <img src="/images/logos/usdc.png" alt="USDC logo" className={classes.tokenAmountBoxIcon} />
+                                <Image 
+                                    src="/images/logos/usdc.png" 
+                                    alt="USDC logo" 
+                                    className={classes.tokenAmountBoxIcon}
+                                    width={26}
+                                    height={26}
+                                />
                                 <div className={classes.tokenAmountBoxLabel}>USDC</div>
                             </div>
                             <div className={classes.tokenAmountBoxValue}>{Number(positions.current.token1).toFixed(2)}</div>
@@ -256,7 +269,13 @@ const LPBalance = ({ tokenAddress }) => {
 
                         <div className={classes.tokenAmountBoxRow}>
                             <div className={classes.tokenAmountBoxAsset}>
-                                <img src="/images/logos/eth.png" alt="ETH logo" className={classes.tokenAmountBoxIcon} />
+                                <Image 
+                                    src="/images/logos/eth.png" 
+                                    alt="ETH logo" 
+                                    className={classes.tokenAmountBoxIcon}
+                                    width={26}
+                                    height={26}
+                                />
                                 <div className={classes.tokenAmountBoxLabel}>ETH</div>
                             </div>
                             <div className={classes.tokenAmountBoxValue}>
@@ -266,7 +285,13 @@ const LPBalance = ({ tokenAddress }) => {
 
                         <div className={classes.tokenAmountBoxRow}>
                             <div className={classes.tokenAmountBoxAsset}>
-                                <img src="/images/logos/usdc.png" alt="USDC logo" className={classes.tokenAmountBoxIcon} />
+                                <Image 
+                                    src="/images/logos/usdc.png" 
+                                    alt="USDC logo" 
+                                    className={classes.tokenAmountBoxIcon}
+                                    width={26}
+                                    height={26}
+                                />
                                 <div className={classes.tokenAmountBoxLabel}>USDC</div>
                             </div>
                             <div className={classes.tokenAmountBoxValue}>

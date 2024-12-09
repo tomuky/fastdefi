@@ -6,18 +6,19 @@ import Intro from '@/app/components/Intro';
 import NextNextButton from '@/app/components/NextButton';
 import LPBalance from './LPBalance';
 import Spacer from '@/app/components/Spacer';
+import PageTitle from '@/app/components/PageTitle';
 
 export default function EarnOnUniswap() {
     return (
         <div className={classes.container}>
-            <div className={classes.title}>
-                <img src="/images/logos/uniswap-logo.png" alt="uniswap logo" className={classes.titleImage} />
-                Earn on Uniswap
-            </div>
+            
+            <PageTitle title="Earn on Uniswap" image="/images/logos/uniswap-logo.png"/>
+            
             <Intro>
                 <p>Provide liquidity for token pairs</p>
                 <p>Earn fees from others using the pool to swap</p>
             </Intro>
+
             <div className={classes.steps}>
                 <ol>
                     <li>Go to <a href='https://app.uniswap.org/pools/v2' target='_blank'>app.uniswap.org/pools/v2</a> to create a v2 position</li>

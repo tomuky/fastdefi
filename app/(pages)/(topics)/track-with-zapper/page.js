@@ -3,14 +3,12 @@ import ListFinish from '@/app/components/ListFinish';
 import ListNote from '@/app/components/ListNote';
 import NextButton from '@/app/components/NextButton';
 import Spacer from '@/app/components/Spacer';
+import PageTitle from '@/app/components/PageTitle';
 
 export default function TrackWithZapper() {
     return (
         <div className={classes.container}>
-            <div className={classes.title}>
-                <img src="/images/logos/zapper-logo.png" alt="zapper logo" className={classes.titleImage} />
-                Track with Zapper
-            </div>
+            <PageTitle title="Track with Zapper" image="/images/logos/zapper-logo.png"/>
             <div className={classes.intro}>
                 <p>Demonstrates the magic of DeFi</p>
                 <p>Simply connect your wallet and all your balances show up</p>

@@ -1,13 +1,13 @@
 import NextButton from '@/app/components/NextButton';
 import classes from '@/app/(pages)/Pages.module.css';
+import PageTitle from '@/app/components/PageTitle';
 
 export default function GetStarted() {
     return (
         <div className={classes.container}>
-            <div className={classes.title}>
-                <img src="/images/ui/welcome-logo.png" alt="welcome logo" className={classes.titleImage} />
-                Welcome
-            </div>
+
+            <PageTitle title="Welcome" image="/images/ui/welcome-logo.png"/>
+
             <div className={classes.intro}>
                 <p>Fast DeFi is a learn-by-trying tutorial.</p>
                 <p>DeFi means decetralized finance.</p>

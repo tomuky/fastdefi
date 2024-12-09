@@ -2,6 +2,7 @@
 import { useTokenPrice } from '../_hooks/useTokenPrice';
 import classes from './Account.module.css';
 import { useAccount } from 'wagmi';
+import Image from 'next/image';\
 
 const AccountWallet = () => {
     
@@ -13,7 +14,7 @@ const AccountWallet = () => {
         <div className={classes.balanceArea}>
             <div className={classes.walletArea}>
                 <div className={classes.walletLabel}>
-                    <img src="/images/ui/wallet.png" alt="Wallet" className={classes.accountImage} />
+                    <Image src="/images/ui/wallet.png" alt="Wallet" className={classes.accountImage} width={16} height={16} />
                     Wallet
                 </div>
             </div>
@@ -27,7 +28,7 @@ const AccountWallet = () => {
                     <tr>
                         <td>
                             <div className={classes.tokenName}>
-                                <img src="https://assets.coingecko.com/coins/images/279/large/ethereum.png" alt="ETH" className={classes.tokenImage} />
+                                <Image src="https://assets.coingecko.com/coins/images/279/large/ethereum.png" alt="ETH" className={classes.tokenImage} width={16} height={16} />
                                 ETH
                             </div>
                         </td>
@@ -41,7 +42,7 @@ const AccountWallet = () => {
                     <tr>
                         <td>
                             <div className={classes.tokenName}>
-                                <img src="https://assets.coingecko.com/coins/images/6319/large/USD_Coin_icon.png" alt="USDC" className={classes.tokenImage} />
+                                <Image src="https://assets.coingecko.com/coins/images/6319/large/USD_Coin_icon.png" alt="USDC" className={classes.tokenImage} width={16} height={16} />
                                 USDC
                             </div>
                         </td>

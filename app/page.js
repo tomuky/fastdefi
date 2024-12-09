@@ -1,12 +1,19 @@
 import classes from './Home.module.css';
 import Button from "./components/Button";
+import Image from 'next/image';
 
 export default function Home() {
   return (
     <div className={classes.container}>
       <div className={classes.content}>
         <div className={classes.title}>
-          <img src="/images/fdt.png" alt="Fast DeFi Tutorial" className={classes.titleImage} />
+          <Image 
+            src="/images/fdt.png" 
+            alt="Fast DeFi Tutorial" 
+            className={classes.titleImage}
+            width={50}
+            height={70}
+          />
           Fast DeFi
         </div>
         <div className={classes.intro}>

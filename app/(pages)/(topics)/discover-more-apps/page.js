@@ -1,20 +1,16 @@
 'use client';
 import classes from '@/app/(pages)/Pages.module.css';
-import ListNote from '@/app/components/ListNote';
-import ListFinish from '@/app/components/ListFinish';
-import NextButton from '@/app/components/NextButton';
 import Spacer from '@/app/components/Spacer';
+import Image from 'next/image';
+import PageTitle from '@/app/components/PageTitle';
 
-export default function GetAUsername() {
+export default function DiscoverMoreApps() {
 
     return (
         <div className={classes.container}>
 
-            <div className={classes.title}>
-                <img src="/images/ui/blockchain.png" alt="blockchain logo" className={classes.titleImage} />
-                Discover more apps
-            </div>
-
+            <PageTitle title="Discover more apps" image="/images/ui/blockchain.png"/>
+            
             <div className={classes.intro}>
                 <p>Explore the Base ecosystem of apps</p>
             </div>
