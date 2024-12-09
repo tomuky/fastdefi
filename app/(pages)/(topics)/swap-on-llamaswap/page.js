@@ -63,7 +63,7 @@ export default function SwapOnLlamaSwap() {
                     <li>Select cbBTC as token to swap to</li>
                     <ListNote>cbBTC is tokenized BTC on Base, price is pegged to BTC</ListNote>
                     <li>Type in a sample amount to swap like 0.002 ETH</li>
-                    <li>Double check you're swapping right assets and on Base network</li>
+                    <li>Double check you&apos;re swapping right assets and on Base network</li>
                     <li>Select the best aggregator recommended by DeFi Llama</li>
                     <li>Click Swap, confirm the tx in your wallet popup</li>
                     { hasBalance(cbBtcBalance) && <ListFinish>Done. You swapped tokens directly from your wallet!</ListFinish> }

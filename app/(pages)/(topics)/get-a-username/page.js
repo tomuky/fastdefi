@@ -37,7 +37,7 @@ export default function GetAUsername() {
                     <li>Go to <a href="https://base.org/names" target="_blank" rel="noopener noreferrer">Base.org/names</a> and click Connect</li>
                     <li>Use the search field to find an available username</li>
                     <li>Click on a result that you like</li>
-                    <li>Make sure "Set as primary" is checked</li>
+                    <li>Make sure &ldquo;Set as primary&ldquo; is checked</li>
                     <ListNote>This allows your username to be used as your address</ListNote>
                     <li>Click Register Name and confirm the popup in your wallet</li>
                     {basename && <li>Complete more of your profile on <a href={`https://www.base.org/name/${basename}`} target="_blank" rel="noopener noreferrer">base.org/name/{basename}</a></li>}

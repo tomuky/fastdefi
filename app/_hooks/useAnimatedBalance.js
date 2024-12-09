@@ -25,7 +25,7 @@ export default function useAnimatedBalance(targetBalance, duration) {
         };
         
         requestAnimationFrame(animate);
-    }, [targetBalance, duration]);
+    }, [targetBalance, duration, animatedBalance]);
     
     return animatedBalance;
 }

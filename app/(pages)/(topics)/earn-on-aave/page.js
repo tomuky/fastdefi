@@ -33,7 +33,7 @@ export default function EarnOnAave() {
             <PageTitle title="Earn with Aave" image="/images/logos/aave-logo.png"/>
 
             <div className={classes.intro}>
-                <p>You can earn interest with Aave's lending protocol</p>
+                <p>You can earn interest with Aave&apos;s lending protocol</p>
             </div>
             
             <div className={classes.steps}>

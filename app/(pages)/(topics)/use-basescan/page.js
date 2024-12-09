@@ -29,7 +29,7 @@ export default function UseBasescan() {
                         </ListNote>
                     )}
                     <li>Find your address as the Resolved Address you can click on</li>
-                    <li>See a list of all your transactions you've made on the Base network</li>
+                    <li>See a list of all your transactions you&apos;ve made on the Base network</li>
                     <li>Click into a couple and see if you can decipher the details</li>
                     <ListFinish>Done. Basescan is a powerful tool for seeing what transactions are doing</ListFinish>
                 </ol>

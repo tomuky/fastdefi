@@ -26,7 +26,7 @@ export default function GetStarted() {
                     <li>Copy your wallet address by clicking the Address button</li>
                     <li>On Coinbase.com, click on Send Crypto</li>
                     <li>Choose ETH and type in amount (maybe do Max amount)</li>
-                    <li>Click on "To" field and select Base network</li>
+                    <li>Click on &quot;To&quot; field and select Base network</li>
                     <ListCaution>Be sure to choose Base network</ListCaution>
                     <li>Paste in your wallet address and click Preview Send</li>
                     <li>Check all details once more and then hit Send now</li>

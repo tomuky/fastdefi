@@ -11,7 +11,7 @@ export default function GetStarted() {
             <div className={classes.intro}>
                 <p>Fast DeFi is a learn-by-trying tutorial.</p>
                 <p>DeFi means decetralized finance.</p>
-                <p>Let's first cover the must-knows!</p>
+                <p>Let&apos;s first cover the must-knows!</p>
             </div>
             <NextButton title='The must-knows' target={'/must-knows'}/>
         </div>
