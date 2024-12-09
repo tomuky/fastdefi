@@ -14,7 +14,6 @@ const config = getDefaultConfig({
 });
 
 export function Providers({ children }) {
-  // Create a new QueryClient instance for each session
   const [queryClient] = useState(() => new QueryClient());
 
   return (

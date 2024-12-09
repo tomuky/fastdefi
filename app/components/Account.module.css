@@ -1,12 +1,10 @@
 .accountArea{
     width: 100%;
     padding: 10px 20px 20px 20px;
-    
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
     transition: background-color 0.3s; 
     background-color: inherit;
     position: relative;
@@ -25,6 +23,7 @@
     align-items: center;
     text-align: center;
     position: relative;
+    cursor: pointer;
 }
 .addressArea:hover{
     background-color: #222325;
@@ -50,6 +49,7 @@
     text-align: center;
     position: relative;
     margin-top: 10px;
+    cursor: pointer;
 }
 .chainArea:hover{
     background-color: #222325;

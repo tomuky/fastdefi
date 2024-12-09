@@ -1,7 +1,6 @@
 import classes from './Account.module.css';
 import { useAccountModal } from '@rainbow-me/rainbowkit';
 import { useAccount } from 'wagmi';
-import { useRouter } from 'next/navigation';
 import { useBasename } from '@/app/_hooks/useBaseNames';
 
 const AccountAddress = () => {
@@ -9,8 +8,13 @@ const AccountAddress = () => {
     const { openAccountModal } = useAccountModal();
     const { basename } = useBasename();
 
+    const handleClick = () => {
+        console.log('clicked');
+        openAccountModal();
+    }
+
     return (
-        <div className={classes.addressArea} onClick={openAccountModal}>
+        <div className={classes.addressArea} onClick={handleClick}>
             <div className={classes.addressLabel}>
                 <img src="/images/ui/user.png" alt="User" className={classes.accountImage} />
                 {basename && basename.length < 17 && 'Account'}
