@@ -112,7 +112,7 @@ export function BlackCreateWalletButton({ height = 48, width = 200, mobile = fal
       connect({ connector: coinbaseWalletConnector });
     }
   }, [connectors, connect]);
- 
+
   return (
     <button style={buttonStyles} onClick={createWallet}>
       <div style={styles.gradientContainer}>

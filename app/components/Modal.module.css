@@ -1,0 +1,94 @@
+.modalBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modalContent {
+    background-color: #2d2d2d;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: slideIn 0.3s ease-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 400px;
+}
+.modalTitleArea{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.accountImage{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    padding: 14px;
+    background-color: #fff;
+    filter: invert(1);
+}
+.accountName{
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+}
+.modalButtonArea{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+}
+.modalButton{
+    flex: 1;
+    background-color: #fff;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+}
+.modalButton:hover{
+    background-color: #dfdfdf;
+    color: #000;
+}
+.modalButtonIcon{
+    width: 20px;
+}
+.modalButtonTitle{
+    margin-bottom: 5px;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) { 
+    .modalContent{
+        width: 90%;
+    }
+    .modalButton{
+        font-size: 14px;
+        padding: 14px;
+    }
+}

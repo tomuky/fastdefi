@@ -1,27 +1,29 @@
 'use client'
-import '@rainbow-me/rainbowkit/styles.css';
-import { getDefaultConfig, RainbowKitProvider, darkTheme } from '@rainbow-me/rainbowkit';
-import { WagmiProvider } from 'wagmi';
-import { base, mainnet } from 'wagmi/chains';
+import { createConfig, WagmiProvider, http} from 'wagmi';
+import { mainnet, base } from 'wagmi/chains';
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
-import { useState } from 'react';
+import { coinbaseWallet, injected } from 'wagmi/connectors'
 
-const config = getDefaultConfig({
-  appName: 'Fast DeFi',
-  projectId: '45abc3fe2904a6faedd9dffae1616f91',
-  chains: [ base ],
-  ssr: true
+const config = createConfig({
+  chains: [mainnet, base],
+  transports: {
+    [mainnet.id]: http(),
+    [base.id]: http(),
+  },
+  connectors: [
+    coinbaseWallet({ appName: 'Fast DeFi'}),
+    injected(),
+    coinbaseWallet({chains: [mainnet, base],options: {appName: 'Fast DeFi'}}),
+  ],
 });
 
-export function Providers({ children }) {
-  const [queryClient] = useState(() => new QueryClient());
+const queryClient = new QueryClient()
 
+export function Providers({ children }) {
   return (
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
-        <RainbowKitProvider theme={darkTheme()}>
-          {children}
-        </RainbowKitProvider>
+        {children}
       </QueryClientProvider>
     </WagmiProvider>
   );

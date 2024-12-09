@@ -1,18 +1,24 @@
 'use client'
 import classes from './Header.module.css';
-import { useAccountModal, useConnectModal } from '@rainbow-me/rainbowkit';
-import { useAccount } from 'wagmi';
-import { useRouter } from 'next/navigation';
+import { useAccount, useChainId, useSwitchChain, useDisconnect } from 'wagmi';
 import Link from 'next/link';
 import { BlackCreateWalletButton } from './BlackCreateWalletButton';
 import { useBasename } from '@/app/_hooks/useBaseNames';
+import Modal from './Modal';
+import { useState } from 'react';
+import { base, mainnet } from 'wagmi/chains';
 
 const Header = ({toggleSidebar,isSidebarOpen}) => {
-    const router = useRouter();
     const { isConnected, address } = useAccount();
-    const { openAccountModal } = useAccountModal();
-    const { openConnectModal } = useConnectModal();
     const { basename, loading } = useBasename();
+    const chainId = useChainId();
+    const { switchChain } = useSwitchChain();
+    const { disconnect } = useDisconnect();
+    const [isModalOpen, setModalOpen] = useState(false);
+
+    // Get chain name based on chainId
+    const chainName = chainId === 8453 ? 'Base' : 
+        chainId === 1 ? 'Ethereum' : 'Wrong Network';
 
     return (
         <div className={classes.header}>
@@ -31,7 +37,7 @@ const Header = ({toggleSidebar,isSidebarOpen}) => {
                     </div>
                 )}
                 { isConnected && (
-                    <div className={classes.accountArea} onClick={(openAccountModal)}>
+                    <div className={classes.accountArea} onClick={() => setModalOpen(true)}>
                         <img src="/images/ui/user.png" className={`${classes.accountIcon} ${classes.invert}`} alt="account icon" />
                         {basename && (
                             <div style={{fontSize: '0.9em', marginLeft: '8px'}}>
@@ -51,6 +57,19 @@ const Header = ({toggleSidebar,isSidebarOpen}) => {
                     { !isSidebarOpen && <img src="/images/ui/cross.png" alt="close menu icon" /> }
                 </div>
             </div>
+
+            <Modal
+                isOpen={isModalOpen}
+                onClose={() => setModalOpen(false)}
+                address={address}
+                chainId={chainId}
+                chainName={chainName}
+                onChangeNetwork={() => switchChain({chainId: base.id})}
+                onSignOut={() => {
+                    disconnect();
+                    setModalOpen(false);
+                }}
+            />
 
         </div>
     )
