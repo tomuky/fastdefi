@@ -80,10 +80,10 @@ export function BlackCreateWalletButton({ height = 48, width = 200, mobile = fal
         background:
           'conic-gradient(from 180deg, #45E1E5 0deg, #0052FF 86.4deg, #B82EA4 165.6deg, #FF9533 255.6deg, #7FD057 320.4deg, #45E1E5 360deg)',
         position: 'absolute',
-        top: -buttonHeight - GRADIENT_BORDER_WIDTH,
-        left: -GRADIENT_BORDER_WIDTH,
-        width: gradientDiameter,
-        height: gradientDiameter,
+        width: gradientDiameter * 1.5,
+        height: gradientDiameter * 1.5,
+        top: -(gradientDiameter * 1.5 - buttonHeight) / 2,
+        left: -(gradientDiameter * 1.5 - buttonWidth) / 2,
       },
       buttonBody: {
         display: 'flex',
