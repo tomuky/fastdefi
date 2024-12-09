@@ -16,7 +16,7 @@ export default function GetAUsername() {
             </div>
 
             <div className={classes.intro}>
-                <p>Explore Base's ecosystem of apps</p>
+                <p>Explore the Base ecosystem of apps</p>
             </div>
 
             <div className={classes.steps}>
