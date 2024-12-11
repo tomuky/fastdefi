@@ -46,19 +46,20 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    gap: 10px;
+    gap: 20px;
 }
 .modalButton{
     flex: 1;
     background-color: #fff;
     color: #000;
+    border: none;
     padding: 10px 20px;
     border-radius: 10px;
     font-weight: bold;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4px;
+    gap: 5px;
     cursor: pointer;
 }
 .modalButton:hover{

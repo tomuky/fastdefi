@@ -31,7 +31,7 @@ export default function CreateAWallet() {
                     {Number(data?.value) === 0 && (
                         <>
                             <li>You need some ETH in your wallet first</li>
-                            <li>Go get a <a href='/get-coinbase'>coinbase.com account</a> to buy some ETH</li>
+                            <li>Go get a <a href='/get-coinbase'>coinbase.com account</a> and buy some ETH</li>
                         </>
                     )}
                     {Number(data?.value) > 0 && (

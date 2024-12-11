@@ -22,8 +22,8 @@ export default function Home() {
         </div>
 
         <Button 
-          style={{marginTop: '30px'}}
-          title='Get started' 
+          style={{marginTop: '30px',padding: '14px 36px'}}
+          title='Start' 
           target={'/welcome'}
         />
 
