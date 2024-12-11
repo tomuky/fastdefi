@@ -25,7 +25,7 @@ const Header = ({toggleSidebar,isSidebarOpen}) => {
         <div className={classes.header}>
 
             <div className={classes.titleArea}>
-                <Image src="/images/fdt.png" alt="Fast DeFi Tutorial" className={classes.logo} width={20} height={20} />
+                <Image src="/images/fdt.png" alt="Fast DeFi Tutorial" className={classes.logo} width={20} height={24} />
                 <Link href="/" passHref style={{textDecoration: 'none'}}>
                     <div className={classes.headerTitle}>Fast DeFi</div>
                 </Link>

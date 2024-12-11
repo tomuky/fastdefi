@@ -34,42 +34,45 @@ const Sidebar = ({isSidebarOpen, toggleSidebar}) => {
 
     return (
         <div className={`${classes.sidebarArea} ${isSidebarOpen ? classes.slideIn : classes.slideOut}`}>
+            <div className={classes.sidebarContent}>
+                <SidebarTitle/>
+                
+                <div className={classes.desktopOnly}>
+                    <Account/>
+                </div>
 
-            <SidebarTitle/>
-            
-            <div className={classes.desktopOnly}>
-                <Account/>
+                <div className={classes.divider}/>
+
+                <SidebarSection toggleSidebar={toggleSidebar} completed={completedSections.welcome} paths={[
+                    {path: '/welcome', title: 'Welcome', role: 'header', icon: '/images/ui/welcome-logo.png'},
+                    {path: '/must-knows', title: 'Know the must-knows'},
+                    {path: '/create-a-wallet', title: 'Create a wallet'},
+                    {path: '/get-coinbase', title: 'Get Coinbase'},
+                    {path: '/fund-your-wallet', title: 'Fund your wallet'}
+                ]}/>
+
+                <div className={classes.divider}/>
+
+                <SidebarLinkGroup>
+                    <SidebarLink title="Earn on Aave" path='/earn-on-aave' icon='/images/logos/aave-logo.png' toggleSidebar={toggleSidebar}/>
+                    <SidebarLink title="Swap on LlamaSwap" path='/swap-on-llamaswap' icon='/images/logos/llamaswap.png' toggleSidebar={toggleSidebar}/>
+                    <SidebarLink title="Earn on Uniswap" path='/earn-on-uniswap' icon='/images/logos/uniswap-logo.png' toggleSidebar={toggleSidebar}/>
+                    <SidebarLink title="Get a username" path='/get-a-username' icon='/images/logos/base.png' toggleSidebar={toggleSidebar}/>
+                    <SidebarLink title="Track with Zapper" path='/track-with-zapper' icon='/images/logos/zapper-logo.png' toggleSidebar={toggleSidebar}/>
+                    <SidebarLink title="Use Basescan" path='/use-basescan' icon='/images/logos/basescan-logo.png' toggleSidebar={toggleSidebar}/>
+                    <SidebarLink title="Discover more apps" path='/discover-more-apps' icon='/images/ui/blockchain.png' toggleSidebar={toggleSidebar}/>
+                </SidebarLinkGroup>
+
+                <div className={classes.divider}/>
+
+                <SidebarLinkGroup>
+                    <SidebarLink title='Twitter/X' url='https://x.com/fastdefi' icon='/images/logos/x-logo.png'/>
+                    <SidebarLink title='Github' url='https://github.com/tomuky/fastdefi' icon='/images/logos/github-logo.png'/>
+                </SidebarLinkGroup>
+
+                <div style={{width:'100%',minHeight:'200px'}}/>
+
             </div>
-
-            <div className={classes.divider}/>
-
-            <SidebarSection toggleSidebar={toggleSidebar} completed={completedSections.welcome} paths={[
-                {path: '/welcome', title: 'Welcome', role: 'header', icon: '/images/ui/welcome-logo.png'},
-                {path: '/must-knows', title: 'Know the must-knows'},
-                {path: '/create-a-wallet', title: 'Create a wallet'},
-                {path: '/get-coinbase', title: 'Get Coinbase'},
-                {path: '/fund-your-wallet', title: 'Fund your wallet'}
-            ]}/>
-
-            <div className={classes.divider}/>
-
-            <SidebarLinkGroup>
-                <SidebarLink title="Earn on Aave" path='/earn-on-aave' icon='/images/logos/aave-logo.png' toggleSidebar={toggleSidebar}/>
-                <SidebarLink title="Swap on LlamaSwap" path='/swap-on-llamaswap' icon='/images/logos/llamaswap.png' toggleSidebar={toggleSidebar}/>
-                <SidebarLink title="Earn on Uniswap" path='/earn-on-uniswap' icon='/images/logos/uniswap-logo.png' toggleSidebar={toggleSidebar}/>
-                <SidebarLink title="Get a username" path='/get-a-username' icon='/images/logos/base.png' toggleSidebar={toggleSidebar}/>
-                <SidebarLink title="Track with Zapper" path='/track-with-zapper' icon='/images/logos/zapper-logo.png' toggleSidebar={toggleSidebar}/>
-                <SidebarLink title="Use Basescan" path='/use-basescan' icon='/images/logos/basescan-logo.png' toggleSidebar={toggleSidebar}/>
-                <SidebarLink title="Discover more apps" path='/discover-more-apps' icon='/images/ui/blockchain.png' toggleSidebar={toggleSidebar}/>
-            </SidebarLinkGroup>
-
-            <div className={classes.divider}/>
-
-            <SidebarLinkGroup>
-                <SidebarLink title='Twitter/X' url='https://x.com/fastdefi' icon='/images/logos/x-logo.png'/>
-                <SidebarLink title='Github' url='https://github.com/tomuky/fastdefi' icon='/images/logos/github-logo.png'/>
-            </SidebarLinkGroup>
-
         </div>
     )
 }

@@ -16,7 +16,7 @@
         align-items: center;
         justify-content: space-between;
         padding: 0 20px;
-        z-index: 999;
+        z-index: 80;
     }
 
     .logo{
@@ -78,7 +78,6 @@
     .createWallet{
         margin-right: 14px;
         position: relative;
-        z-index: 10;
     }
 
     .accountIcon{

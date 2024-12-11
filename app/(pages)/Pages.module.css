@@ -5,6 +5,7 @@
     align-items: center;
     padding: 50px 50px 50px 50px;
     margin-left: 280px;
+    position: relative;
 }
 .title{
     width: 100%;
@@ -72,14 +73,6 @@
         margin-left: 0;
         padding: 70px 20px 100px 20px;
         height: 100vh;
-    }
-    .title{
-        font-size: 30px;
-        text-align: center;
-    }
-    .titleImage{
-        width: 40px;
-        margin-right: 10px;
     }
     .intro p{
         padding: 10px 0;

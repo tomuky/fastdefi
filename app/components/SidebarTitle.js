@@ -8,7 +8,7 @@ const SidebarTitle = () => {
 
     return (
         <div className={classes.title} onClick={()=>router.push('/')}>
-            <Image src="/images/fdt.png" alt="Fast DeFi Tutorial" className={classes.titleImage} width={26} height={26} />
+            <Image src="/images/fdt.png" alt="Fast DeFi Tutorial" className={classes.titleImage} width={26} height={30} />
             Fast DeFi
         </div>
     )
