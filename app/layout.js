@@ -31,6 +31,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <meta property="og:image" content="https://www.fast-defi.com/images/fdt-social-1200-x630.png" />
+        <meta name="twitter:image" content="https://www.fast-defi.com/images/fdt-social-1200-x630.png" />
+      </head>
       <body>          
         <Providers>
           {children}
