@@ -1,13 +1,15 @@
 import "./globals.css";
 import { Providers } from './providers'
+import { Analytics } from '@vercel/analytics/react'
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
+      <body>          
         <Providers>
           {children}
-        </Providers>
+          <Analytics />
+        </Providers>          
       </body>
     </html>
   );
