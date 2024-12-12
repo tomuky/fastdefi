@@ -19,7 +19,8 @@ export default function TrackWithZapper() {
                     <li>Click Connect Wallet in top right corner</li>
                     <li>See your token balances on the <a href='https://zapper.xyz/dashboard?tab=dashboard' target='_blank'>Zapper Dashboard</a></li>
                     <li>See your Aave and Uniswap positions on the <a href='https://zapper.xyz/dashboard?tab=apps' target='_blank'>Zapper Positions</a></li>
-                    <ListNote>You didn&apos;t need to create an account, Zapper reads your balances from the blockchain</ListNote>
+                    <ListNote>No need to create an account</ListNote>
+                    <ListNote>Zapper reads your balances from the blockchain</ListNote>
                     <ListFinish style={{marginTop: '20px'}}>Done. Bookmark your Zapper dashboard for easy tracking</ListFinish>
                 </ol>
             </div>
