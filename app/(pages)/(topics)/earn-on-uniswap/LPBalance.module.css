@@ -18,6 +18,7 @@
 }
 .tokenAmountBox{
     width: 20vw;
+    font-size: 18px;
     /* background-color: #2d2d2d; */
     display: flex;
     flex-direction: column;

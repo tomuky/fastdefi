@@ -252,7 +252,7 @@ const LPBalance = ({ tokenAddress }) => {
                         </div>
 
                         <div className={classes.tokenAmountBoxRow}>
-                            <div className={classes.tokenAmountBoxLabel}>Value</div>
+                            <div className={classes.tokenAmountBoxLabel} style={{marginLeft:'34px'}}>Total</div>
                             <div className={classes.tokenAmountBoxValue}>${positions.current.value.toFixed(2)}</div>
                         </div>
                     </div>
@@ -300,7 +300,7 @@ const LPBalance = ({ tokenAddress }) => {
                         </div>
 
                         <div className={classes.tokenAmountBoxRow}>
-                            <div className={classes.tokenAmountBoxLabel}>Value</div>
+                            <div className={classes.tokenAmountBoxLabel} style={{marginLeft:'34px'}}>Total</div>
                             <div className={classes.tokenAmountBoxValue}>
                                 {positions.changes.value > 0 ? '+' : ''}
                                 ${positions.changes.value.toFixed(2)}
