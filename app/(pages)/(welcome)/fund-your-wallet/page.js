@@ -7,7 +7,7 @@ import PageTitle from '@/app/components/PageTitle';
 import ListCaution from '@/app/components/ListCaution';
 import ListFinish from '@/app/components/ListFinish';
 
-export default function GetStarted() {
+export default function FundYourWalletPage() {
     const { address, isConnected } = useAccount();
 
     return (

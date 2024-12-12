@@ -6,7 +6,7 @@ import { useAccount, useBalance } from 'wagmi';
 import PageTitle from '@/app/components/PageTitle';
 import ListCaution from '@/app/components/ListCaution';
 
-export default function CreateAWallet() {
+export default function CreateAWalletPage() {
     const { address } = useAccount();
     const { data, isError, isLoading } = useBalance({
         address: address,

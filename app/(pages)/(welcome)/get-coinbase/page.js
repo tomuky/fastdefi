@@ -5,7 +5,7 @@ import Spacer from '@/app/components/Spacer';
 import PageTitle from '@/app/components/PageTitle';
 import ListNote from '@/app/components/ListNote';
 
-export default function GetStarted() {
+export default function CoinbasePage() {
 
     return (
         <div className={classes.container}>
