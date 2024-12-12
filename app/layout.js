@@ -25,6 +25,7 @@ export const metadata = {
     title: 'Fast DeFi',
     description: 'Learn DeFi by trying',
     images: ['https://www.fast-defi.com/images/fdt-social-1200x630.png'], // Replace with your image path
+    creator: '@tomuky'
   },
 }
 
