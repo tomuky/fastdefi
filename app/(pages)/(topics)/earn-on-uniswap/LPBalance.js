@@ -156,14 +156,19 @@ const LPBalance = ({ tokenAddress }) => {
             initial: {
                 token0: initialToken0,
                 token1: initialToken1,
-                share: historicalShare
+                share: historicalShare,
+                historicalReserves0: historicalReserves[0],
+                historicalReserves1: historicalReserves[1],
+                entryBlock: entryBlock
             },
             current: {
                 token0: currentToken0,
                 token1: currentToken1,
                 share: currentShare,
                 ethPrice: ethPrice,
-                value: currentValue
+                value: currentValue,
+                currentReserves0: currentReserves[0],
+                currentReserves1: currentReserves[1]
             },
             changes: {
                 token0: token0Change,
