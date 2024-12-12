@@ -12,7 +12,7 @@ export const metadata = {
     siteName: 'Fast DeFi',
     images: [
       {
-        url: 'https://www.fast-defi.com/images/fdt-social-1200-x630.png',
+        url: 'https://www.fast-defi.com/images/fdt-social-1200x630.png',
         width: 1200,
         height: 630,
       },
@@ -24,7 +24,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Fast DeFi',
     description: 'Learn DeFi by trying',
-    images: ['https://www.fast-defi.com/images/fdt-social-1200-x630.png'], // Replace with your image path
+    images: ['https://www.fast-defi.com/images/fdt-social-1200x630.png'], // Replace with your image path
   },
 }
 
