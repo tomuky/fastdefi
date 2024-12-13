@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Providers } from './providers'
 import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 
 export const metadata = {
   title: 'Fast DeFi',
@@ -40,6 +41,7 @@ export default function RootLayout({ children }) {
         <Providers>
           {children}
           <Analytics />
+          <SpeedInsights />
         </Providers>          
       </body>
     </html>
