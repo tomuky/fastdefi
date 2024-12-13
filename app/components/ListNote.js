@@ -1,9 +1,9 @@
 import classes from '@/app/(pages)/Pages.module.css';
 import Image from 'next/image';
 
-const ListNote = ({children}) => {  
+const ListNote = ({children, style}) => {  
     return (
-        <div className={classes.note}>
+        <div className={classes.note} style={style}>
             <Image 
                 src="/images/ui/info-icon.png" 
                 alt="info icon" 
