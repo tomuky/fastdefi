@@ -52,7 +52,7 @@ function Gradient({ children, style, isAnimationDisabled = false }) {
   );
 }
  
-export function BlackCreateWalletButton({ height = 48, width = 200, mobile = false }) {
+export function BlackCreateWalletButton({ height = 48, width = 200, mobile = false, style }) {
   const { connectors, connect } = useConnect();
 
   height = mobile ? 40 : height;
@@ -114,7 +114,7 @@ export function BlackCreateWalletButton({ height = 48, width = 200, mobile = fal
   }, [connectors, connect]);
 
   return (
-    <button style={buttonStyles} onClick={createWallet}>
+    <button style={{...buttonStyles, ...style}} onClick={createWallet}>
       <div style={styles.gradientContainer}>
         <Gradient style={styles.gradient}>
           <div style={styles.buttonBody}>

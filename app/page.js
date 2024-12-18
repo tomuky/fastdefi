@@ -1,6 +1,7 @@
+'use client'
 import classes from './Home.module.css';
-import Button from "./components/Button";
 import Image from 'next/image';
+import { BlackCreateWalletButton } from './components/BlackCreateWalletButton';
 
 export default function Home() {
   return (
@@ -21,10 +22,9 @@ export default function Home() {
           <p>Learn by trying.</p>
         </div>
 
-        <Button 
-          style={{marginTop: '30px',padding: '14px 36px'}}
-          title='Start' 
-          target={'/hello'}
+        <BlackCreateWalletButton 
+          style={{marginTop: '10px',padding: '14px 36px'}}
+          title='Create Wallet' 
         />
 
       </div>
