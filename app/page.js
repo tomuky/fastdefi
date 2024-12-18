@@ -2,8 +2,20 @@
 import classes from './Home.module.css';
 import Image from 'next/image';
 import { BlackCreateWalletButton } from './components/BlackCreateWalletButton';
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import { useAccount } from 'wagmi';
 
 export default function Home() {
+  const router = useRouter();
+  const { isConnected } = useAccount();
+
+  useEffect(() => {
+    if (isConnected) {
+      router.push('/hello');
+    }
+  }, [isConnected, router]);
+
   return (
     <div className={classes.container}>
       <div className={classes.content}>

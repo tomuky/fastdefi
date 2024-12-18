@@ -17,10 +17,10 @@ export default function CoinbasePage() {
             </div>
             <div className={classes.steps}>
                 <ol>
-                    <li>Go to <a href='https://coinbase.com/join/6A22LF6?src=referral-link' target='_blank'>coinbase.com</a> and signup for an account</li>
+                    <li>Go to <a href='https://coinbase.com/join/6A22LF6?src=referral-link' target='_blank'>coinbase.com</a> and signup</li>
                     <li>Go to My Assets page and click on Deposit Cash</li>
                     <li>Add payment method if needed, a bank account is best</li>
-                    <li>Deposit $100 (or whatever you want) and click to continue</li>
+                    <li>Deposit $100 (or any amount you want) and click to continue</li>
                     <ListNote>Takes ~4 days to clear your bank (blame your bank)</ListNote>
                     <li>Once clear, use half to buy ETH and other half to buy USDC</li>
                 </ol>
