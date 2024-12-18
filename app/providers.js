@@ -11,9 +11,11 @@ const config = createConfig({
     [base.id]: http(),
   },
   connectors: [
-    coinbaseWallet({ appName: 'Fast DeFi'}),
-    injected(),
-    coinbaseWallet({chains: [mainnet, base],options: {appName: 'Fast DeFi'}}),
+    coinbaseWallet({ 
+      appName: 'Fast DeFi', 
+      appLogoUrl: 'https://fast-defi.com/images/fdt-circle.png'
+    }),
+    injected()
   ],
 });
 
