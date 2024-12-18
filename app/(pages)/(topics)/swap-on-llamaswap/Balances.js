@@ -5,7 +5,7 @@ import Image from 'next/image';
 const Balances = ({ethBalance, cbBtcBalance, isConnected}) => {
 
     if (!isConnected) {
-        return <div style={{marginTop: '20px', marginBottom: '20px', width: '100%', textAlign: 'center', fontStyle: 'italic'}}>Connect your wallet to see your balances</div>;
+        return <div style={{marginTop: '20px', marginBottom: '20px', width: '100%', textAlign: 'center', fontStyle: 'italic', fontSize:'16px'}}>Connect your wallet to see your balances</div>;
     }
 
     return (

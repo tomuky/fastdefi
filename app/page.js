@@ -5,6 +5,7 @@ import { BlackCreateWalletButton } from './components/BlackCreateWalletButton';
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAccount } from 'wagmi';
+import Link from 'next/link';
 
 export default function Home() {
   const router = useRouter();
@@ -38,6 +39,19 @@ export default function Home() {
           style={{marginTop: '10px',padding: '14px 36px'}}
           title='Create Wallet' 
         />
+
+        <Link 
+          href="/hello" 
+          className={classes.subtleLink}
+          style={{
+            marginTop: '20px',
+            opacity: '0.4',
+            fontSize: '0.9rem',
+            textDecoration: 'underline'
+          }}
+        >
+          Look around first
+        </Link>
 
       </div>
     </div>

@@ -16,7 +16,7 @@ export default function EarnOnUniswap() {
             
             <Intro>
                 <p>Provide liquidity for token pairs</p>
-                <p>Earn fees from others using the pool to swap</p>
+                <p>Earn fees from others using the liquidity to swap between the tokens</p>
             </Intro>
 
             <div className={classes.steps}>

@@ -26,7 +26,7 @@ export default function CreateAWalletPage() {
             <div className={classes.steps}>
                 <ul>
                     <li>Click on Create Wallet on this page</li>
-                    <li>Done! Get your wallet address by clicking the address</li>
+                    <li>Done! Your wallet passkeys are stored for you on your device or browser</li>
                     <ListCaution>You should eventually add Account Recovery for better security</ListCaution>
                     {Number(data?.value) === 0 && (
                         <>

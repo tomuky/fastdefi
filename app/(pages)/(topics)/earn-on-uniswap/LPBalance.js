@@ -187,11 +187,11 @@ const LPBalance = ({ tokenAddress }) => {
     // 4. Render the component
     const positions = calculatePositions();
 
-    if (isLoading) {
+    if (isConnected &&isLoading) {
         return <div>Loading position data...</div>;
     }
 
-    if (!positions) {
+    if (isConnected && !positions) {
         return <div>No LP position found</div>;
     }
 
@@ -213,7 +213,7 @@ const LPBalance = ({ tokenAddress }) => {
     };
 
     if (!isConnected) {
-        return <div style={{marginTop: '20px', marginBottom: '20px'}}>Connect your wallet to see your LP balance</div>;
+        return <div style={{marginTop: '20px', marginBottom: '20px', fontSize:'16px'}}>Connect your wallet to see your LP balance</div>;
     }
 
     return (
