@@ -34,7 +34,7 @@ const SidebarSection = ({paths,completed, toggleSidebar}) => {
                 onTouchStart={handleTouchStart}
                 onTouchMove={handleTouchMove}
             >
-                {paths[0].icon && <Image className={classes.icon} src={paths[0].icon} alt={paths[0].title} width={20} height={20} /> }
+                {paths[0].icon && <Image className={`${classes.icon} ${classes.tiltIcon}`}  src={paths[0].icon} alt={paths[0].title} width={20} height={20} /> }
                 <span>{paths[0].title}</span>
                 {completed && <Image className={classes.completedIcon} src="/images/ui/check-mark.png" alt="completed" width={20} height={20} />}
             </div>

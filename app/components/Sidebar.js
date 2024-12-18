@@ -45,7 +45,7 @@ const Sidebar = ({isSidebarOpen, toggleSidebar}) => {
 
                 <SidebarSection toggleSidebar={toggleSidebar} completed={completedSections.welcome} paths={[
                     {path: '/hello', title: 'Hello', role: 'header', icon: '/images/ui/welcome-logo.png'},
-                    {path: '/must-knows', title: 'Know the must-knows'},
+                    {path: '/must-knows', title: 'The must-knows'},
                     {path: '/create-a-wallet', title: 'Create a wallet'},
                     {path: '/get-coinbase', title: 'Get Coinbase'},
                     {path: '/fund-your-wallet', title: 'Fund your wallet'}

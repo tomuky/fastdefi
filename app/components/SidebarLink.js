@@ -30,7 +30,15 @@ const SidebarLink = ({title, path, url, icon, completed, toggleSidebar}) => {
                 onTouchStart={handleTouchStart}
                 onTouchMove={handleTouchMove}
             >
-                {icon && <Image className={classes.icon} src={icon} alt={title} width={20} height={20} />}
+                {icon && (
+                    <Image 
+                        className={`${classes.icon} ${classes.tiltIcon}`} 
+                        src={icon} 
+                        alt={title} 
+                        width={20} 
+                        height={20} 
+                    />
+                )}
                 <span>{title}</span>
                 {completed && <Image className={classes.completedIcon} src="/images/ui/check-mark.png" alt="completed" width={20} height={20} />}
             </div>
