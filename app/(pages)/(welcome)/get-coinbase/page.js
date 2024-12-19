@@ -27,7 +27,7 @@ export default function CoinbasePage() {
             </div>
 
             <div className={classes.closer}>
-                <p>Now let's send some ETH to your wallet</p>
+                <p>Now let&apos;s send some ETH to your wallet</p>
             </div>
 
             <NextButton title="Fund your wallet" target='/fund-your-wallet'/>
