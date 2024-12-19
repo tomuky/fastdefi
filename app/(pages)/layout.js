@@ -15,7 +15,9 @@ export default function PagesLayout({ children }) {
         <div className={classes.container}>
             <Header isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar}/>
             <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar}/>
-            {children}
+            <div className={classes.content}>
+                {children}
+            </div>
         </div>
     )
 }
