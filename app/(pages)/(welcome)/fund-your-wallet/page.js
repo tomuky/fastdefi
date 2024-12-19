@@ -34,6 +34,11 @@ export default function FundYourWalletPage() {
                     <ListFinish>Your wallet is now funded and ready to use!</ListFinish>
                 </ol>
             </div>
+
+            <div className={classes.closer}>
+                <p>Time to try something in DeFi</p>
+            </div>
+
             <NextButton title="Earn on Aave" target='/earn-on-aave'/>
 
             <Spacer/>

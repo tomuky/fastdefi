@@ -65,6 +65,11 @@
 .steps p{
     padding-left: 20px;
 }
+.closer{
+    font-size: 20px;
+    margin-top: 30px;
+    text-align: center;
+}
 
 /* Mobile styles */
 @media (max-width: 1050px) {

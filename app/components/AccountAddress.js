@@ -26,7 +26,7 @@ const AccountAddress = () => {
         <div style={{ position: 'relative',width: '100%' }}>
             <div className={classes.addressArea} onClick={() => setModalOpen(true)}>
                 <div className={classes.addressLabel}>
-                    <Image src="/images/ui/user.png" alt="User" className={classes.accountImage} width={16} height={16} />
+                    <Image src="/images/ui/user-white.png" alt="User" className={classes.accountImage} width={16} height={16} />
                     {basename && basename.length < 17 && 'Account'}
                     {!basename && 'Account'}
                 </div>

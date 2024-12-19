@@ -25,6 +25,11 @@ export default function CoinbasePage() {
                     <li>Once clear, use half to buy ETH and other half to buy USDC</li>
                 </ol>
             </div>
+
+            <div className={classes.closer}>
+                <p>Now let's send some ETH to your wallet</p>
+            </div>
+
             <NextButton title="Fund your wallet" target='/fund-your-wallet'/>
 
             <Spacer/>

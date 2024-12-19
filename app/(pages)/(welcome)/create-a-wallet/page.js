@@ -4,7 +4,7 @@ import classes from '@/app/(pages)/Pages.module.css';
 import Spacer from '@/app/components/Spacer';
 import { useAccount, useBalance } from 'wagmi';
 import PageTitle from '@/app/components/PageTitle';
-import ListCaution from '@/app/components/ListCaution';
+import ListIcon from '@/app/components/ListIcon';
 
 export default function CreateAWalletPage() {
     const { address } = useAccount();
@@ -24,27 +24,18 @@ export default function CreateAWalletPage() {
                 <p>Create a wallet in seconds with Coinbase Smart Wallet</p>
             </div>
             <div className={classes.steps}>
-                <ul>
+                <ol>
                     <li>Click on Create Wallet on this page</li>
                     <li>Done! Your wallet passkeys are stored on your device or browser</li>
-                    <ListCaution>You should eventually add Account Recovery for better security</ListCaution>
-                    {Number(data?.value) === 0 && (
-                        <>
-                            <li>You need some ETH in your wallet first</li>
-                            <li>Go get a <a href='/get-coinbase'>coinbase.com account</a> and buy some ETH</li>
-                        </>
-                    )}
-                    {Number(data?.value) > 0 && (
-                        <>
-                            <li>Go to <a href='https://wallet.coinbase.com/' target='_blank'>wallet.coinbase.com</a></li>
-                            <li>Click on the gears icon</li>
-                            <li>Click Settings for your Smart Wallet</li>
-                            <li>Click on Generate Recovery key</li>
-                        </>
-                    )}
-                </ul>
+                    <ListIcon type='caution'>
+                        Eventually you need to set up <a href="https://keys.coinbase.com/settings/account-recovery" target="_blank">Account Recovery</a> so you can recover your wallet if you lose a device
+                    </ListIcon>
+                </ol>
             </div>
-            
+
+            <div className={classes.closer}>
+                <p>Now we need to get some ETH and USDC on Coinbase</p>
+            </div>
 
             <NextButton title="Get Coinbase" target='/get-coinbase'/>
 

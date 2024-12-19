@@ -35,7 +35,6 @@
     align-items: center;
 }
 .accountImage{
-    filter: invert(1);
     width: 16px;
     margin-right: 8px;
 }
