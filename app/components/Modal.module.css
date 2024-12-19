@@ -46,28 +46,30 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    gap: 20px;
+    gap: 10px;
 }
 .modalButton{
     flex: 1;
-    background-color: #fff;
-    color: #000;
+    background-color: #1a1b1f;
+    color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 14px 0;
     border-radius: 10px;
     font-weight: bold;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
+    justify-content: center;
+    gap: 8px;
     cursor: pointer;
+    font-size: 14px;
 }
 .modalButton:hover{
-    background-color: #dfdfdf;
-    color: #000;
+    background-color: #222325;
 }
 .modalButtonIcon{
     width: 20px;
+    filter: invert(1);
 }
 .modalButtonTitle{
     margin-bottom: 5px;
@@ -89,7 +91,7 @@
         width: 90%;
     }
     .modalButton{
-        font-size: 14px;
+        font-size: 12px;
         padding: 14px;
     }
 }

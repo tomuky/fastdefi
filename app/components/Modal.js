@@ -43,7 +43,11 @@ const Modal = ({ isOpen, onClose, address, chainName, chainId, onChangeNetwork, 
                 <div className={classes.modalButtonArea}>
                     <button className={classes.modalButton} onClick={handleCopyAddress}>
                         <Image src="/images/ui/copy.png" alt="Copy" className={classes.modalButtonIcon} width={20} height={20} />
-                        {copied ? 'Copied!' : 'Copy Address'}
+                        {copied ? 'Copied!' : 'Copy'}
+                    </button>
+                    <button className={classes.modalButton} onClick={() => window.open('https://keys.coinbase.com/settings', '_blank')}>
+                        <Image src="/images/ui/settings.png" alt="settings" className={classes.modalButtonIcon} width={20} height={20} />
+                        Settings
                     </button>
                     <button className={classes.modalButton} onClick={onSignOut}>
                         <Image src="/images/ui/logout.png" alt="Disconnect" className={classes.modalButtonIcon} width={20} height={20} />
