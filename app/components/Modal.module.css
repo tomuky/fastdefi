@@ -27,15 +27,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 4px;
 }
 .accountImage{
     width: 60px;
     height: 60px;
-    border-radius: 50%;
+    /* border-radius: 50%; */
     padding: 14px;
-    background-color: #fff;
-    filter: invert(1);
+    /* background-color: #fff; */
 }
 .accountName{
     font-size: 18px;

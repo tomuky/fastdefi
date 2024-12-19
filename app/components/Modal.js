@@ -35,7 +35,7 @@ const Modal = ({ isOpen, onClose, address, chainName, chainId, onChangeNetwork, 
         <div className={classes.modalBackground}>
             <div className={classes.modalContent}>
                 <div className={classes.modalTitleArea}>
-                    <Image src="/images/ui/user.png" alt="User" className={classes.accountImage} width={60} height={60} />
+                    <Image src="/images/ui/user-white.png" alt="User" className={classes.accountImage} width={60} height={60} />
                     {basename && <div className={classes.accountName}>{basename}</div>}
                     {!basename && <div className={classes.accountName}>{address.slice(0, 5)}...{address.slice(-4)}</div>}
                 </div>
