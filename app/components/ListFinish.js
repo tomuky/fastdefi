@@ -9,7 +9,7 @@ const ListFinish = ({children,style}) => {
                 alt="finish icon" 
                 width={20}
                 height={20}
-                className={`${classes.noteIcon} ${classes.invert}`}
+                className={`${classes.noteIcon}`}
             />
             {children}
         </div>

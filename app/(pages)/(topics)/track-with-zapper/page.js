@@ -1,9 +1,8 @@
 import classes from '@/app/(pages)/Pages.module.css';
-import ListFinish from '@/app/components/ListFinish';
-import ListNote from '@/app/components/ListNote';
 import NextButton from '@/app/components/NextButton';
 import Spacer from '@/app/components/Spacer';
 import PageTitle from '@/app/components/PageTitle';
+import ListIcon from '@/app/components/ListIcon';
 
 export default function TrackWithZapper() {
     return (
@@ -19,9 +18,9 @@ export default function TrackWithZapper() {
                     <li>Click Connect Wallet in top right corner</li>
                     <li>See your token balances on the <a href='https://zapper.xyz/dashboard?tab=dashboard' target='_blank'>Zapper Dashboard</a></li>
                     <li>See your Aave and Uniswap positions on the <a href='https://zapper.xyz/dashboard?tab=apps' target='_blank'>Zapper Positions</a></li>
-                    <ListNote>No need to create an account</ListNote>
-                    <ListNote style={{marginTop: '20px'}}>Zapper reads your balances from the blockchain</ListNote>
-                    <ListFinish style={{marginTop: '20px'}}>Done. Bookmark your Zapper dashboard for easy tracking</ListFinish>
+                    <ListIcon type='note'>No need to create an account</ListIcon>
+                    <ListIcon type='note' style={{marginTop: '20px'}}>Zapper reads your balances from the blockchain</ListIcon>
+                    <ListIcon type='finish' style={{marginTop: '20px'}}>Done. Bookmark your Zapper dashboard for easy tracking</ListIcon>
                 </ol>
             </div>
 
