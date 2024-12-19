@@ -34,16 +34,16 @@
 }
 
 @keyframes windUpAndSpin {
-    0% {
+    0%, 50% {
         transform: rotate(0deg) scale(1);
     }
-    8% {
+    58% {
         transform: rotate(-30deg) scale(1.1);
     }
-    39.8% {
+    89.8% {
         transform: rotate(360deg) scale(1);
     }
-    40%, 100% {
+    90%, 100% {
         transform: rotate(360deg) scale(1);
     }
 }
