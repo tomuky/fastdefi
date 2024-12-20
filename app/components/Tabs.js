@@ -1,6 +1,8 @@
 'use client';
 import classes from '@/app/(pages)/Pages.module.css';
 
+const ACRONYMS = ['faq'];
+
 export default function Tabs({ tabs, activeTab, onTabChange, className }) {
     const getTabIndex = (tab) => tabs.indexOf(tab);
 
@@ -14,7 +16,7 @@ export default function Tabs({ tabs, activeTab, onTabChange, className }) {
                     key={tab}
                     className={`${classes.tab} ${activeTab === tab ? classes.activeTab : ''}`}
                     onClick={() => onTabChange(tab)}>
-                        {tab.length <= 3 ? tab.toUpperCase() : tab.charAt(0).toUpperCase() + tab.slice(1)}
+                        {ACRONYMS.includes(tab) ? tab.toUpperCase() : tab.charAt(0).toUpperCase() + tab.slice(1)}
                 </button>
             ))}
         </div>
