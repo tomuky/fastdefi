@@ -24,7 +24,7 @@ export default function EarnOnUniswap() {
             <PageTitle title="Earn on Uniswap" image="/images/logos/uniswap-logo.png"/>
             
             <Intro>
-                <p>Provide liquidity for token pairs and earn fees</p>
+                <p>Provide liquidity for token pairs and earn fees from other people trading</p>
             </Intro>
 
             <Tabs
