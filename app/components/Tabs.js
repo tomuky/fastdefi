@@ -14,7 +14,7 @@ export default function Tabs({ tabs, activeTab, onTabChange, className }) {
                     key={tab}
                     className={`${classes.tab} ${activeTab === tab ? classes.activeTab : ''}`}
                     onClick={() => onTabChange(tab)}>
-                    {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                        {tab.length <= 3 ? tab.toUpperCase() : tab.charAt(0).toUpperCase() + tab.slice(1)}
                 </button>
             ))}
         </div>

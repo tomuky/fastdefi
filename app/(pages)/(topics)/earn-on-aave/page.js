@@ -11,11 +11,13 @@ import { useTabs } from '@/app/_hooks/useTabs';
 import Steps from '@/app/components/Steps';
 import Tabs from '@/app/components/Tabs';
 import Intro from '@/app/components/Intro';
+import FAQ from '@/app/components/FAQ';
+import FAQItem from '@/app/components/FAQItem';
 
 export default function EarnOnAave() {
 
     const { isConnected } = useAccount();
-    const TABS = ['deposit', 'withdraw', 'risks'];
+    const TABS = ['deposit', 'withdraw','faq'];
     const { activeTab, setActiveTab } = useTabs(TABS);
 
     return (
@@ -68,6 +70,15 @@ export default function EarnOnAave() {
                         <li><span style={{fontWeight: 'bold'}}>Network risk</span> - the Base network could have issues, but it is a very popular and maintained by a publicly traded company Coinbase</li>
                     </ul>
                 </Steps>
+            )}
+
+            {activeTab === 'faq' && (
+                <FAQ>
+                    <FAQItem question="What are the risks?" answer="There are 2 main risks: 1) Smart Contract bugs - there can be bugs, but Aave has had many audits and has secured billions of value with no issues. 2) Liquidity risk - available liquidity to withdraw could be low when demand to borrow is high, but interest rate mechanisms will incentivize more supply to bring available liquidity back"/>
+                    <FAQItem question="Where does the yield come from?" answer="The yield comes from the interest paid by borrowers to lenders. The interest rate is determined by the supply and demand for the asset in the market."/>
+                    <FAQItem question="Are there minimum deposits or lockup periods?" answer="There is no minimum amount to deposit. You can deposit any amount of USDC you want. There is no lockup period, you can withdraw your USDC anytime."/>
+                    <FAQItem question="How does borrowing work?" answer="Aave enables users to supply assets as collateral to borrow other assets. If the value of the collateral falls below the borrowed amount, the borrower must repay the loan or the collateral will be liquidated."/>
+                </FAQ>
             )}
 
             <AaveBalanceDisplay 

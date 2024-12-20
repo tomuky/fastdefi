@@ -140,11 +140,11 @@
 
 @media (max-width: 768px) {
     .tab{
-        width: 100px;
+        width: 90px;
         font-size: 16px;
     }
     .tabs::after{
-        width: 100px;
-        transform: translateX(calc(var(--tab-index) * (100px + 10px)));
+        width: 90px;
+        transform: translateX(calc(var(--tab-index) * (90px + 10px)));
     }
 }
