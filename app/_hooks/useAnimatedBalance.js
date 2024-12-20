@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export default function useAnimatedBalance(targetBalance, duration) {
+export default function useAnimatedBalance(targetBalance, duration=1000) {
     const [animatedBalance, setAnimatedBalance] = useState(0);
     
     useEffect(() => {

@@ -37,22 +37,12 @@ export default function EarnOnAave() {
                 <Steps>
                     <ol>
                         <li>Go to <a href='https://app.aave.com/?marketName=proto_base_v3' target='_blank'>app.aave.com</a> and click connect wallet, choose Coinbase Wallet</li>
-                        <ListNote>Your balance shows up! No new account setup needed.</ListNote>
+                        <ListNote>Notice how your USDC balance shows up automatically</ListNote>
                         <li>Click Supply next to USDC</li>
                         <li>You might be prompted to switch your network to Base</li>
                         <li>Type in $10, click Approve USDC and confirm tx in your wallet popup</li>
                         <li>After tx confirms, click Supply USDC and confirm tx in your wallet popup</li>
                         <ListFinish>Done. You are earning interest every few seconds!</ListFinish>
-                    </ol>
-                </Steps>
-            )}
-
-            {activeTab === 'risks' && (
-                <Steps>
-                    <ol>
-                        <li>Smart contract risk - Aave could have bugs</li>
-                        <li>Market risk - USDC could lose its peg</li>
-                        <li>Network risk - Base could have issues</li>
                     </ol>
                 </Steps>
             )}
@@ -64,7 +54,19 @@ export default function EarnOnAave() {
                         <li>Click Withdraw next to USDC</li>
                         <li>Enter the amount you want to withdraw</li>
                         <li>Click Withdraw and confirm the transaction</li>
+                        <ListFinish>Done. Your USDC will be back in your wallet!</ListFinish>
                     </ol>
+                </Steps>
+            )}
+
+            {activeTab === 'risks' && (
+                <Steps>
+                    <ul>
+                        <li><span style={{fontWeight: 'bold'}}>Smart contract risk</span> - Aave smart conrtracts could have bugs, but it has had maybe audits and has secured billions of value with no issues</li>
+                        <li><span style={{fontWeight: 'bold'}}>Liquidity risk</span> - available liquidity to withdraw could be low when demand to borrow is high, but interest rate mechanics will incentivize more supply to bring available liquidity back</li>
+                        <li><span style={{fontWeight: 'bold'}}>Market risk</span> - USDC could lose its peg to $1 but Circle.com releases quarterly reports that prove its reserves are backed by cash and cash equivalents</li>
+                        <li><span style={{fontWeight: 'bold'}}>Network risk</span> - the Base network could have issues, but it is a very popular and maintained by a publicly traded company Coinbase</li>
+                    </ul>
                 </Steps>
             )}
 
