@@ -1,7 +1,24 @@
 import classes from './AaveBalanceDisplay.module.css';
 import useAnimatedBalance from '@/app/_hooks/useAnimatedBalance';
+import { useAccount } from 'wagmi';
+import { useReadContract } from 'wagmi';
+import abi from '@/app/_abi/ERC20.json';
 
-const BalanceDisplay = ({title, balance=0, isBalanceLoading=false, style, isConnected}) => {
+const BalanceDisplay = ({title, style, isConnected}) => {
+    const { address } = useAccount();
+    const aBaseUSDC_Address = '0x4e65fE4DbA92790696d040ac24Aa414708F5c0AB';
+
+    const {data:balance, isLoading: isBalanceLoading} = useReadContract({
+        address: aBaseUSDC_Address,
+        abi: abi,
+        functionName: 'balanceOf',
+        args: [address],
+        watch: true,
+        query: {
+            enabled: Boolean(address),
+            refetchInterval: 10000,
+        }
+    });
 
     const animatedBalance = useAnimatedBalance(balance, 10000);
 

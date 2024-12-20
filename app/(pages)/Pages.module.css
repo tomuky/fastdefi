@@ -95,3 +95,56 @@
         padding-inline-start: 20px;  /* Update this value to match */
     }
 }
+
+
+
+.tabs {
+    display: flex;
+    gap: 10px;
+    position: relative;
+    margin-top: 20px;
+}
+
+.tab {
+    width: 120px;
+    padding: 10px 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #666;
+    border-bottom: none;
+    position: relative;
+}
+
+.activeTab {
+    color: #fff;
+    border-bottom: none;
+}
+
+.tabs::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    height: 2px;
+    width: 120px;
+    background-color: #fff;
+    transition: transform 0.3s ease;
+    transform: translateX(calc(var(--tab-index) * (120px + 10px)));
+}
+
+.content {
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .tab{
+        width: 100px;
+        font-size: 16px;
+    }
+    .tabs::after{
+        width: 100px;
+        transform: translateX(calc(var(--tab-index) * (100px + 10px)));
+    }
+}
