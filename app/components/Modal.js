@@ -63,7 +63,7 @@ const Modal = ({ isOpen, onClose, address, chainName, chainId, onChangeNetwork, 
                     </div>
                 )}
                 <div className={classes.modalButtonTitle}>
-                    {`Connected Network: `}<strong>{chainName}</strong>
+                    {`Network: `}<strong>{chainName}</strong>
                 </div>
             </div>
         </div>
