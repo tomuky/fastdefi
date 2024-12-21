@@ -36,17 +36,25 @@ export default function EarnOnAave() {
             />
 
             {activeTab === 'deposit' && (
-                <Steps>
-                    <ol>
-                        <li>Go to <a href='https://app.aave.com/?marketName=proto_base_v3' target='_blank'>app.aave.com</a> and click connect wallet, choose Coinbase Wallet</li>
-                        <ListNote>Notice how your USDC balance shows up automatically</ListNote>
-                        <li>Click Supply next to USDC</li>
-                        <li>You might be prompted to switch your network to Base</li>
-                        <li>Type in $10, click Approve USDC and confirm tx in your wallet popup</li>
-                        <li>After tx confirms, click Supply USDC and confirm tx in your wallet popup</li>
-                        <ListFinish>Done. You are earning interest every few seconds!</ListFinish>
-                    </ol>
-                </Steps>
+                <>
+                    <Steps>
+                        <ol>
+                            <li>Go to <a href='https://app.aave.com/?marketName=proto_base_v3' target='_blank'>app.aave.com</a> and click connect wallet, choose Coinbase Wallet</li>
+                            <ListNote>Notice how your USDC balance shows up automatically</ListNote>
+                            <li>Click Supply next to USDC</li>
+                            <li>You might be prompted to switch your network to Base</li>
+                            <li>Type in $10, click Approve USDC and confirm tx in your wallet popup</li>
+                            <li>After tx confirms, click Supply USDC and confirm tx in your wallet popup</li>
+                            <ListFinish>Done. You are earning interest every few seconds!</ListFinish>
+                        </ol>
+                    </Steps>
+
+                    <AaveBalanceDisplay 
+                        style={{marginTop: 20}} 
+                        title="Your USDC Deposit" 
+                        isConnected={isConnected}
+                    />
+                </>
             )}
 
             {activeTab === 'withdraw' && (
@@ -80,12 +88,6 @@ export default function EarnOnAave() {
                     <FAQItem question="How does borrowing work?" answer="Aave enables users to supply assets as collateral to borrow other assets. If the value of the collateral falls below the borrowed amount, the borrower must repay the loan or the collateral will be liquidated."/>
                 </FAQ>
             )}
-
-            <AaveBalanceDisplay 
-                style={{marginTop: 20}} 
-                title="Your USDC Deposit" 
-                isConnected={isConnected}
-            />
 
             <NextButton title="Swap on LlamaSwap" target='/swap-on-llamaswap'/>
 
