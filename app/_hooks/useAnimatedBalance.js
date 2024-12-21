@@ -16,7 +16,8 @@ export default function useAnimatedBalance(targetBalance, duration=1000) {
             const elapsed = currentTime - startTime;
             const progress = Math.min(elapsed / effectiveDuration, 1);
             
-            const currentBalance = startBalance + (targetValue - startBalance) * progress;
+            const easedProgress = Math.sqrt(progress);
+            const currentBalance = startBalance + (targetValue - startBalance) * easedProgress;
             setAnimatedBalance(currentBalance);
             
             if (progress < 1) {
