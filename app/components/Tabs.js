@@ -16,7 +16,11 @@ export default function Tabs({ tabs, activeTab, onTabChange, className }) {
                     key={tab}
                     className={`${classes.tab} ${activeTab === tab ? classes.activeTab : ''}`}
                     onClick={() => onTabChange(tab)}>
-                        {ACRONYMS.includes(tab) ? tab.toUpperCase() : tab.charAt(0).toUpperCase() + tab.slice(1)}
+                        {ACRONYMS.includes(tab) 
+                            ? tab.toUpperCase() 
+                            : tab.split(/[\s-_]/)
+                                .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                                .join(' ')}
                 </button>
             ))}
         </div>
