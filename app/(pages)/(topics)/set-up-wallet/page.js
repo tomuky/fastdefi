@@ -87,14 +87,14 @@ export default function SetUpWallet() {
             {activeTab === 'faq' && (
                 <>
                     <FAQ>
+                        <FAQItem question="What is a wallet?" answer="A wallet allows you to store, send, receive, and use crypto. It is self-custodial, meaning you are in control of your own funds."/>
                         <FAQItem question="What are the risks?" answer="If you lose your device without setting up Account Recvoery, you could lose your funds forever if you lose access to your device."/>
                         <FAQItem question="What is Account Recovery?" answer="Account Recovery allows you to create a secret recovery key you write down on paper and keep in a safe place. This key can be used to recover your wallet on a new device."/>
-                        <FAQItem question="What is a wallet?" answer="A wallet allows you to store, send, receive, and use crypto. It is self-custodial, meaning you are in control of your own funds."/>
                         <FAQItem question="What is ETH?" answer="ETH (Ether) is the native currency of the Ethereum blockchain. It is used to pay for transactions on the network."/>
                         <FAQItem question="What is USDC?" answer="USDC is a stablecoin pegged to the US dollar and is backed by cash reserves in a bank."/>
                         <FAQItem question="What is the Base network?" answer="Base is a Layer 2 blockchain that is compatible with Ethereum. It is cheaper to use, making it a great place to start."/>
                     </FAQ>
-                    <NextButton title="Next: Earn on Aave" target='/earn-on-aave'/>
+                    <NextButton title="Earn on Aave" target='/earn-on-aave'/>
                 </>
             )}
 
