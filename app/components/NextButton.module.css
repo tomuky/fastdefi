@@ -10,7 +10,7 @@
     align-items: center;
     background-color: rgb(14 118 253); 
     color: white;
-    padding: 14px 20px;
+    padding: 10px 16px;
     user-select: none;
     -webkit-user-select: none; /* Safari */
     -moz-user-select: none; /* Firefox */
@@ -27,4 +27,25 @@
 }
 .invert{
     filter: invert(1);
+}
+.smallButton{
+    border: none; 
+    border-radius: 12px; 
+    font-size: 16px; 
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s; 
+    
+    display: flex;
+    align-items: center;
+    background-color: rgb(14 118 253); 
+    color: white;
+    padding: 10px 14px;
+    user-select: none;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+}
+.smallButton:hover{
+    background-color: rgb(59, 144, 255); 
 }

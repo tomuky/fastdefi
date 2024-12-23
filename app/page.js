@@ -2,6 +2,7 @@
 import classes from './Home.module.css';
 import Image from 'next/image';
 import { BlackCreateWalletButton } from './components/BlackCreateWalletButton';
+import NextButton from '@/app/components/NextButton';
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAccount } from 'wagmi';
@@ -10,12 +11,6 @@ import Link from 'next/link';
 export default function Home() {
   const router = useRouter();
   const { isConnected } = useAccount();
-
-  useEffect(() => {
-    if (isConnected) {
-      router.push('/hello');
-    }
-  }, [isConnected, router]);
 
   return (
     <div className={classes.container}>
@@ -35,23 +30,31 @@ export default function Home() {
           <p>Learn by trying.</p>
         </div>
 
-        <BlackCreateWalletButton 
-          style={{marginTop: '10px',padding: '14px 36px'}}
-          title='Create Wallet' 
-        />
-
-        <Link 
-          href="/hello" 
-          className={classes.subtleLink}
-          style={{
-            marginTop: '20px',
-            opacity: '0.4',
-            fontSize: '0.9rem',
-            textDecoration: 'underline'
-          }}
-        >
-          Look around first
-        </Link>
+        { !isConnected ? (
+          <>
+            <BlackCreateWalletButton 
+              style={{marginTop: '10px',padding: '14px 36px'}}
+              title='Create Wallet' 
+            />
+            <Link 
+              href="/set-up-wallet" 
+              className={classes.subtleLink}
+              style={{
+                marginTop: '20px',
+                opacity: '0.4',
+                fontSize: '0.9rem',
+                textDecoration: 'underline'
+              }}
+            >
+              Look around first
+            </Link>
+          </>
+        ) : (
+          <NextButton
+            title='Try DeFi' 
+            target='/set-up-wallet'
+          />
+        )}
 
       </div>
     </div>
