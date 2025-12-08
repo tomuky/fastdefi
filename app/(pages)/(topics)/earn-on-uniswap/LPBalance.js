@@ -122,10 +122,22 @@ const LPBalance = ({ tokenAddress }) => {
     const calculatePositions = useCallback(() => {
         if (isLoadingCurrent || !currentData || (entryBlock && (!historicalData || isLoadingHistorical))) return null;
 
+        // Check that all required current data results exist
+        if (currentData[0]?.result === undefined || 
+            currentData[1]?.result === undefined || 
+            currentData[2]?.result === undefined) {
+            return null;
+        }
+
         // Current position
         const currentLPBalance = BigInt(currentData[0].result);
         const currentTotalSupply = BigInt(currentData[1].result);
         const currentReserves = currentData[2].result;
+
+        // Check historical data results if entryBlock exists
+        if (entryBlock && (historicalData[0]?.result === undefined || historicalData[1]?.result === undefined)) {
+            return null;
+        }
         
         // Historical position (if entryBlock exists)
         const historicalTotalSupply = entryBlock ? BigInt(historicalData[0].result) : currentTotalSupply;
@@ -181,14 +193,37 @@ const LPBalance = ({ tokenAddress }) => {
         return positions;
     }, [currentData, historicalData, isLoadingCurrent, isLoadingHistorical, entryBlock]);
 
-    // Update loading check
-    const isLoading = isLoadingHistory || isLoadingCurrent || (entryBlock && isLoadingHistorical);
+    // Check if current data results are still pending
+    const isCurrentDataPending = currentData && (
+        currentData[0]?.result === undefined ||
+        currentData[1]?.result === undefined ||
+        currentData[2]?.result === undefined
+    );
+
+    // Check if historical data results are still pending (when entryBlock exists)
+    const isHistoricalDataPending = entryBlock && historicalData && (
+        historicalData[0]?.result === undefined ||
+        historicalData[1]?.result === undefined
+    );
+
+    // Update loading check to include pending data states
+    const isLoading = isLoadingHistory || isLoadingCurrent || (entryBlock && isLoadingHistorical) || 
+        isCurrentDataPending || isHistoricalDataPending;
 
     // 4. Render the component
     const positions = calculatePositions();
 
-    if (isConnected &&isLoading) {
-        return <div>Loading position data...</div>;
+    if (isConnected && isLoading) {
+        return (
+            <div className={classes.loadingContainer}>
+                Loading position data
+                <span className={classes.loadingDots}>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </div>
+        );
     }
 
     if (isConnected && !positions) {
