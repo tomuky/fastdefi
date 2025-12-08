@@ -14,6 +14,7 @@ import FAQ from '@/app/components/FAQ';
 import FAQItem from '@/app/components/FAQItem';
 import Tabs from '@/app/components/Tabs';
 import { useTabs } from '@/app/_hooks/useTabs';
+import AnimatedBasename from './AnimatedBasename';
 
 export default function GetAUsername() {
     const { address, isConnected } = useAccount();
@@ -56,7 +57,7 @@ export default function GetAUsername() {
                     <ListNote>This allows your username to be used as your address</ListNote>
                     <li>Click Register Name and confirm the popup in your wallet</li>
                     {basename && <li>Complete more of your profile on <a href={`https://www.base.org/name/${basename}`} target="_blank" rel="noopener noreferrer">base.org/name/{basename}</a></li>}
-                        {basename && <ListFinish>Done! Your new username on Base is {basename}</ListFinish>}
+                        {basename && <ListFinish>Done! Your new username on Base is <AnimatedBasename>{basename}</AnimatedBasename></ListFinish>}
                     </ol>
                 </Steps>
             )}
