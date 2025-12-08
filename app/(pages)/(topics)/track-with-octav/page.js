@@ -22,7 +22,7 @@ export default function TrackWithOctav() {
             <PageTitle title="Track with Octav" image="/images/logos/octav-logo.png"/>
 
             <Intro>
-                <p>Track your portfolio just by connecting your wallet</p>
+                <p>Octav is a more advanced portfolio tracker that shows your balances and DeFi positions</p>
             </Intro>
 
             <Tabs
@@ -46,7 +46,7 @@ export default function TrackWithOctav() {
 
             {activeTab === 'faq' && (
                 <FAQ>
-                    <FAQItem question="What is Octav?" answer="Octav is a portfolio tracker that shows your balances and positions from multiple DeFi protocols."/>
+                    <FAQItem question="What is Octav?" answer="Octav is a more advancedportfolio tracker that shows your balances and DeFi positions. Octav offers a pro mode with more features."/>
                     <FAQItem question="How does it work?" answer="Octav connects to your wallet and reads your balances and positions from the blockchain."/>
                     <FAQItem question="What are the risks?" answer="There is minimal risk when using Octav as a read-only tool. It does not have access to your funds."/>
                 </FAQ>
