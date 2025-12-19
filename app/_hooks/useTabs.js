@@ -10,7 +10,8 @@ export function useTabs(tabs) {
     const goToNextTab = () => {
         if (!isLastTab) {
             setActiveTab(tabs[currentIndex + 1]);
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
         }
     };
     
