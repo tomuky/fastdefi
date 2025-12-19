@@ -48,6 +48,37 @@
     }
 }
 
+.startButton {
+    margin-top: 30px;
+    padding: 16px 48px;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6, #a855f7);
+    background-size: 200% 200%;
+    animation: shimmer 2s ease-in-out infinite;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+}
+
+.startButton:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.5);
+}
+
+.startButton:active {
+    transform: scale(0.98);
+}
+
+@keyframes shimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
 @media (max-width: 600px) {
     .title{
         font-size: 50px;
@@ -56,5 +87,8 @@
         width: 40px;
         height: 56px;
         margin-right: 14px;
+    }
+    .startButton {
+        padding: 14px 40px;
     }
 }
