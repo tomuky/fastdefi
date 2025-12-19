@@ -1,4 +1,5 @@
 'use client';
+import { useRouter } from 'next/navigation';
 import NextButton from '@/app/components/NextButton';
 import classes from '@/app/(pages)/Pages.module.css';
 import { useAccount } from 'wagmi';
@@ -11,13 +12,29 @@ import Tabs from '@/app/components/Tabs';
 import Intro from '@/app/components/Intro';
 import FAQ from '@/app/components/FAQ';
 import FAQItem from '@/app/components/FAQItem';
+import FooterMobile from '@/app/components/FooterMobile';
 
 export default function SetUpWallet() {
 
+    const router = useRouter();
     const { isConnected } = useAccount();
     const TABS = ['wallet', 'coinbase', 'fund it','faq'];
-    const { activeTab, setActiveTab } = useTabs(TABS);
-    console.log('activeTab',activeTab);
+    const nextTopic = '/earn-on-aave';
+    const TABS_FOOTER_MESSAGES = {
+        'wallet': 'Set up Coinbase',
+        'coinbase': 'Fund your wallet',
+        'fund it': 'See FAQ',
+        'faq': 'Earn on Aave'
+    }
+    const { activeTab, setActiveTab, isLastTab, goToNextTab } = useTabs(TABS);
+
+    const handleFooterClick = () => {
+        if (isLastTab) {
+            router.push(nextTopic);
+        } else {
+            goToNextTab();
+        }
+    };
 
     return (
         <div className={classes.container}>
@@ -98,9 +115,9 @@ export default function SetUpWallet() {
                 </>
             )}
 
-            {/* <NextButton title="Earn on Aave" target='/earn-on-aave'/> */}
-
             <Spacer/>
+
+            <FooterMobile message={TABS_FOOTER_MESSAGES[activeTab]} onClick={handleFooterClick} isNextTopic={isLastTab}/>
         </div>
     )
 }

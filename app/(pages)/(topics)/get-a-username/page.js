@@ -1,4 +1,5 @@
 'use client';
+import { useRouter } from 'next/navigation';
 import classes from '@/app/(pages)/Pages.module.css';
 import { useAccount } from 'wagmi';
 import { useEffect, useState } from 'react';
@@ -15,13 +16,28 @@ import FAQItem from '@/app/components/FAQItem';
 import Tabs from '@/app/components/Tabs';
 import { useTabs } from '@/app/_hooks/useTabs';
 import AnimatedBasename from './AnimatedBasename';
+import FooterMobile from '@/app/components/FooterMobile';
 
 export default function GetAUsername() {
+    const router = useRouter();
     const { address, isConnected } = useAccount();
     const [basename, setBasename] = useState(null);
 
     const TABS = ['claim', 'faq'];
-    const { activeTab, setActiveTab } = useTabs(TABS);
+    const nextTopic = '/track-with-zapper';
+    const TABS_FOOTER_MESSAGES = {
+        'claim': 'See FAQ',
+        'faq': 'Track with Zapper'
+    };
+    const { activeTab, setActiveTab, isLastTab, goToNextTab } = useTabs(TABS);
+
+    const handleFooterClick = () => {
+        if (isLastTab) {
+            router.push(nextTopic);
+        } else {
+            goToNextTab();
+        }
+    };
 
     useEffect(() => {
         async function fetchData() {
@@ -76,6 +92,7 @@ export default function GetAUsername() {
 
             <Spacer/>
 
+            <FooterMobile message={TABS_FOOTER_MESSAGES[activeTab]} onClick={handleFooterClick} isNextTopic={isLastTab}/>
         </div>
     );
 }

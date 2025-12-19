@@ -1,4 +1,5 @@
 'use client';
+import { useRouter } from 'next/navigation';
 import classes from '@/app/(pages)/Pages.module.css';
 import NextButton from '@/app/components/NextButton';
 import Spacer from '@/app/components/Spacer';
@@ -10,11 +11,26 @@ import FAQ from '@/app/components/FAQ';
 import FAQItem from '@/app/components/FAQItem';
 import Tabs from '@/app/components/Tabs';
 import { useTabs } from '@/app/_hooks/useTabs';
+import FooterMobile from '@/app/components/FooterMobile';
 
 export default function TrackWithZapper() {
 
+    const router = useRouter();
     const TABS = ['track', 'faq'];
-    const { activeTab, setActiveTab } = useTabs(TABS);
+    const nextTopic = '/use-basescan';
+    const TABS_FOOTER_MESSAGES = {
+        'track': 'See FAQ',
+        'faq': 'Use Basescan'
+    };
+    const { activeTab, setActiveTab, isLastTab, goToNextTab } = useTabs(TABS);
+
+    const handleFooterClick = () => {
+        if (isLastTab) {
+            router.push(nextTopic);
+        } else {
+            goToNextTab();
+        }
+    };
 
     return (
         <div className={classes.container}>
@@ -56,6 +72,8 @@ export default function TrackWithZapper() {
             <NextButton title="Use Basescan" target='/use-basescan'/>
 
             <Spacer/>
+
+            <FooterMobile message={TABS_FOOTER_MESSAGES[activeTab]} onClick={handleFooterClick} isNextTopic={isLastTab}/>
         </div>
     )
 }

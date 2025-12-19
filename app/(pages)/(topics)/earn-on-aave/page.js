@@ -1,4 +1,5 @@
 'use client';
+import { useRouter } from 'next/navigation';
 import NextButton from '@/app/components/NextButton';
 import classes from '@/app/(pages)/Pages.module.css';
 import { useAccount } from 'wagmi';
@@ -13,12 +14,28 @@ import Tabs from '@/app/components/Tabs';
 import Intro from '@/app/components/Intro';
 import FAQ from '@/app/components/FAQ';
 import FAQItem from '@/app/components/FAQItem';
+import FooterMobile from '@/app/components/FooterMobile';
 
 export default function EarnOnAave() {
 
+    const router = useRouter();
     const { isConnected } = useAccount();
     const TABS = ['deposit', 'withdraw','faq'];
-    const { activeTab, setActiveTab } = useTabs(TABS);
+    const nextTopic = '/swap-on-llamaswap';
+    const TABS_FOOTER_MESSAGES = {
+        'deposit': 'Withdraw',
+        'withdraw': 'See FAQ',
+        'faq': 'Swap on LlamaSwap'
+    };
+    const { activeTab, setActiveTab, isLastTab, goToNextTab } = useTabs(TABS);
+
+    const handleFooterClick = () => {
+        if (isLastTab) {
+            router.push(nextTopic);
+        } else {
+            goToNextTab();
+        }
+    };
 
     return (
         <div className={classes.container}>
@@ -92,6 +109,8 @@ export default function EarnOnAave() {
             <NextButton title="Swap on LlamaSwap" target='/swap-on-llamaswap'/>
 
             <Spacer/>
+
+            <FooterMobile message={TABS_FOOTER_MESSAGES[activeTab]} onClick={handleFooterClick} isNextTopic={isLastTab}/>
         </div>
     )
 }

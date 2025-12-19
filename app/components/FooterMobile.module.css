@@ -1,0 +1,63 @@
+.footer {
+    display: none;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .footer {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 60px;
+        background-color: #2d2d2d;
+        align-items: center;
+        justify-content: right;
+        padding: 0 20px;
+        z-index: 80;
+    }
+
+    .button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #555555;
+        color: white;
+        border: none;
+        border-radius: 12px;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        max-width: 400px;
+    }
+
+    .icon {
+        width: 20px;
+        height: 20px;
+        margin-left: 10px;
+        filter: invert(1);
+    }
+
+    .nextTopic {
+        background: linear-gradient(135deg, #6366f1, #8b5cf6, #a855f7);
+        background-size: 200% 200%;
+        animation: shimmer 2s ease-in-out infinite;
+        box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+    }
+
+    .nextTopic:active {
+        transform: scale(0.98);
+    }
+
+    @keyframes shimmer {
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+    }
+}

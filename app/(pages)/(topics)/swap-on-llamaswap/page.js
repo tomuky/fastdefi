@@ -1,4 +1,5 @@
 'use client';
+import { useRouter } from 'next/navigation';
 import NextNextButton from '@/app/components/NextButton';
 import Balances from '@/app/(pages)/(topics)/swap-on-llamaswap/Balances';
 import classes from '@/app/(pages)/Pages.module.css';
@@ -13,13 +14,28 @@ import Tabs from '@/app/components/Tabs';
 import { useTabs } from '@/app/_hooks/useTabs';
 import FAQ from '@/app/components/FAQ';
 import FAQItem from '@/app/components/FAQItem';
+import FooterMobile from '@/app/components/FooterMobile';
 
 export default function SwapOnLlamaSwap() {
+    const router = useRouter();
     const { address, isConnected } = useAccount();
     const TABS = ['swap','faq'];
-    const { activeTab, setActiveTab } = useTabs(TABS);
+    const nextTopic = '/earn-on-uniswap';
+    const TABS_FOOTER_MESSAGES = {
+        'swap': 'See FAQ',
+        'faq': 'Earn on Uniswap'
+    };
+    const { activeTab, setActiveTab, isLastTab, goToNextTab } = useTabs(TABS);
     const chainId = useChainId();
     const isBase = chainId === 8453; // Base network chain ID
+
+    const handleFooterClick = () => {
+        if (isLastTab) {
+            router.push(nextTopic);
+        } else {
+            goToNextTab();
+        }
+    };
     
     return (
         <div className={classes.container}>
@@ -82,6 +98,8 @@ export default function SwapOnLlamaSwap() {
             <NextNextButton title="Earn on Uniswap" target='/earn-on-uniswap'/>
 
             <Spacer/>
+
+            <FooterMobile message={TABS_FOOTER_MESSAGES[activeTab]} onClick={handleFooterClick} isNextTopic={isLastTab}/>
         </div>
     )
 }

@@ -1,51 +1,66 @@
-.button {
-    border: none; 
-    border-radius: 12px; 
-    font-size: 16px; 
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s; 
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-    background-color: rgb(14 118 253); 
-    color: white;
-    padding: 10px 16px;
-    user-select: none;
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+/Edge */
+/* hide on mobile */
+@media (max-width: 768px) {
+    .button{
+        display: none;
+    }
+    .smallButton{
+        display: none;
+    }
 }
 
-.button:hover {
-    background-color: rgb(59, 144, 255); 
-}
+/* show on desktop */
+@media (min-width: 768px) {
 
-.icon{
-    width: 20px;
-    margin-right: 10px;
-}
-.invert{
-    filter: invert(1);
-}
-.smallButton{
-    border: none; 
-    border-radius: 12px; 
-    font-size: 16px; 
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s; 
-    
-    display: flex;
-    align-items: center;
-    background-color: rgb(14 118 253); 
-    color: white;
-    padding: 10px 14px;
-    user-select: none;
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+/Edge */
-}
-.smallButton:hover{
-    background-color: rgb(59, 144, 255); 
+    .button {
+        border: none; 
+        border-radius: 12px; 
+        font-size: 16px; 
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s; 
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        background-color: rgb(14 118 253); 
+        color: white;
+        padding: 10px 16px;
+        user-select: none;
+        -webkit-user-select: none; /* Safari */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+/Edge */
+    }
+
+    .button:hover {
+        background-color: rgb(59, 144, 255); 
+    }
+
+    .icon{
+        width: 20px;
+        margin-right: 10px;
+    }
+    .invert{
+        filter: invert(1);
+    }
+    .smallButton{
+        border: none; 
+        border-radius: 12px; 
+        font-size: 16px; 
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s; 
+        
+        display: flex;
+        align-items: center;
+        background-color: rgb(14 118 253); 
+        color: white;
+        padding: 10px 14px;
+        user-select: none;
+        -webkit-user-select: none; /* Safari */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+/Edge */
+    }
+    .smallButton:hover{
+        background-color: rgb(59, 144, 255); 
+    }
+
 }

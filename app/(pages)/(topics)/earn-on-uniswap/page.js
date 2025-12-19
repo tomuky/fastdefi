@@ -1,4 +1,5 @@
 'use client';
+import { useRouter } from 'next/navigation';
 import classes from '@/app/(pages)/Pages.module.css';
 import ListNote from '@/app/components/ListNote';
 import ListFinish from '@/app/components/ListFinish';
@@ -12,11 +13,27 @@ import { useTabs } from '@/app/_hooks/useTabs';
 import Steps from '@/app/components/Steps';
 import FAQ from '@/app/components/FAQ';
 import FAQItem from '@/app/components/FAQItem';
+import FooterMobile from '@/app/components/FooterMobile';
 
 export default function EarnOnUniswap() {
 
+    const router = useRouter();
     const TABS = ['Add','Withdraw','faq'];
-    const { activeTab, setActiveTab }  = useTabs(TABS);
+    const nextTopic = '/track-with-zapper';
+    const TABS_FOOTER_MESSAGES = {
+        'Add': 'Withdraw',
+        'Withdraw': 'See FAQ',
+        'faq': 'Track with Zapper'
+    };
+    const { activeTab, setActiveTab, isLastTab, goToNextTab } = useTabs(TABS);
+
+    const handleFooterClick = () => {
+        if (isLastTab) {
+            router.push(nextTopic);
+        } else {
+            goToNextTab();
+        }
+    };
 
     return (
         <div className={classes.container}>
@@ -76,6 +93,8 @@ export default function EarnOnUniswap() {
             <NextNextButton title="Track with Zapper" target='/track-with-zapper'/>
 
             <Spacer/>
+
+            <FooterMobile message={TABS_FOOTER_MESSAGES[activeTab]} onClick={handleFooterClick} isNextTopic={isLastTab}/>
         </div>
     )
 }

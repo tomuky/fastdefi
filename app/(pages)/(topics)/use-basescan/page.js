@@ -1,4 +1,5 @@
 'use client';
+import { useRouter } from 'next/navigation';
 import classes from '@/app/(pages)/Pages.module.css';
 import ListNote from '@/app/components/ListNote';
 import ListFinish from '@/app/components/ListFinish';
@@ -12,11 +13,26 @@ import FAQ from '@/app/components/FAQ';
 import FAQItem from '@/app/components/FAQItem';
 import Tabs from '@/app/components/Tabs';
 import { useTabs } from '@/app/_hooks/useTabs';
+import FooterMobile from '@/app/components/FooterMobile';
 
 export default function UseBasescan() {
+    const router = useRouter();
     const { basename } = useBasename();
     const TABS = ['discover', 'faq'];
-    const { activeTab, setActiveTab } = useTabs(TABS);
+    const nextTopic = '/discover-more-apps';
+    const TABS_FOOTER_MESSAGES = {
+        'discover': 'See FAQ',
+        'faq': 'Discover more apps'
+    };
+    const { activeTab, setActiveTab, isLastTab, goToNextTab } = useTabs(TABS);
+
+    const handleFooterClick = () => {
+        if (isLastTab) {
+            router.push(nextTopic);
+        } else {
+            goToNextTab();
+        }
+    };
 
     return (
         <div className={classes.container}>
@@ -62,6 +78,8 @@ export default function UseBasescan() {
             <NextButton title="Discover more apps" target='/discover-more-apps'/>
 
             <Spacer/>
+
+            <FooterMobile message={TABS_FOOTER_MESSAGES[activeTab]} onClick={handleFooterClick} isNextTopic={isLastTab}/>
         </div>
     );
 }

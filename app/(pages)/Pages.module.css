@@ -6,14 +6,6 @@
     padding: 50px 50px 50px 50px;
     position: relative;
 }
-.title{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 50px;
-    padding: 20px 0;
-}
 .titleImage{
     width: 60px;
     margin-right: 20px;
@@ -80,16 +72,19 @@
 @media (max-width: 768px) {
     .container{
         margin-left: 0;
-        padding: 70px 20px 100px 20px;
+        padding: 70px 0 100px 0;
         height: 100vh;
         width: 100%;
+    }
+    .intro{
+        padding: 0 20px;
     }
     .intro p{
         padding: 10px 0;
     }
     .steps{
         font-size: 20px; 
-        padding: 10px;
+        padding: 10px 20px;
     }
     .steps ol{
         padding-inline-start: 20px;  /* Update this value to match */
