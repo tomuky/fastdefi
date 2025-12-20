@@ -23,7 +23,7 @@ export default function EarnOnUniswap() {
     const TABS_FOOTER_MESSAGES = {
         'Add': 'Withdraw',
         'Withdraw': 'See FAQ',
-        'faq': 'Track with Zapper'
+        'faq': 'Next Topic: Track with Zapper'
     };
     const { activeTab, setActiveTab, isLastTab, goToNextTab } = useTabs(TABS);
 

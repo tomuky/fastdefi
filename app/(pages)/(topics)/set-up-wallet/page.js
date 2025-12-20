@@ -24,7 +24,7 @@ export default function SetUpWallet() {
         'wallet': 'Set up Coinbase',
         'coinbase': 'Fund your wallet',
         'fund it': 'See FAQ',
-        'faq': 'Earn on Aave'
+        'faq': 'Next Topic: Earn on Aave'
     }
     const { activeTab, setActiveTab, isLastTab, goToNextTab } = useTabs(TABS);
 

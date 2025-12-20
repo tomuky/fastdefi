@@ -20,7 +20,7 @@ export default function TrackWithZapper() {
     const nextTopic = '/use-basescan';
     const TABS_FOOTER_MESSAGES = {
         'track': 'See FAQ',
-        'faq': 'Use Basescan'
+        'faq': 'Next Topic: Use Basescan'
     };
     const { activeTab, setActiveTab, isLastTab, goToNextTab } = useTabs(TABS);
 

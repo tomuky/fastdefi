@@ -25,7 +25,7 @@ export default function EarnOnAave() {
     const TABS_FOOTER_MESSAGES = {
         'deposit': 'Withdraw',
         'withdraw': 'See FAQ',
-        'faq': 'Swap on LlamaSwap'
+        'faq': 'Next Topic: Swap on LlamaSwap'
     };
     const { activeTab, setActiveTab, isLastTab, goToNextTab } = useTabs(TABS);
 

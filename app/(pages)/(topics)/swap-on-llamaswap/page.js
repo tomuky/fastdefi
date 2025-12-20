@@ -23,7 +23,7 @@ export default function SwapOnLlamaSwap() {
     const nextTopic = '/earn-on-uniswap';
     const TABS_FOOTER_MESSAGES = {
         'swap': 'See FAQ',
-        'faq': 'Earn on Uniswap'
+        'faq': 'Next Topic: Earn on Uniswap'
     };
     const { activeTab, setActiveTab, isLastTab, goToNextTab } = useTabs(TABS);
     const chainId = useChainId();

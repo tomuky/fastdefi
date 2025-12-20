@@ -22,7 +22,7 @@ export default function UseBasescan() {
     const nextTopic = '/discover-more-apps';
     const TABS_FOOTER_MESSAGES = {
         'discover': 'See FAQ',
-        'faq': 'Discover more apps'
+        'faq': 'Next Topic: Discover more apps'
     };
     const { activeTab, setActiveTab, isLastTab, goToNextTab } = useTabs(TABS);
 

@@ -27,7 +27,7 @@ export default function GetAUsername() {
     const nextTopic = '/track-with-zapper';
     const TABS_FOOTER_MESSAGES = {
         'claim': 'See FAQ',
-        'faq': 'Track with Zapper'
+        'faq': 'Next Topic: Track with Zapper'
     };
     const { activeTab, setActiveTab, isLastTab, goToNextTab } = useTabs(TABS);
 
