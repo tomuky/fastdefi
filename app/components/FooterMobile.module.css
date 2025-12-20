@@ -45,19 +45,39 @@
         filter: invert(1);
     }
 
-    .nextTopic {
-        background: linear-gradient(135deg, #6366f1, #8b5cf6, #a855f7);
-        background-size: 200% 200%;
-        animation: shimmer 2s ease-in-out infinite;
-        box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
-    }
-
     .nextTopic:active {
         transform: scale(0.98);
     }
 
-    @keyframes shimmer {
-        0%, 100% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
+    .nextTopic {
+        background: linear-gradient(135deg, #2563eb, #3b82f6);
+        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .nextTopic::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.4),
+            transparent
+        );
+        animation: shine 3s ease-in-out infinite;
+    }
+    
+    @keyframes shine {
+        0% {
+            left: -100%;
+        }
+        50%, 100% {
+            left: 100%;
+        }
     }
 }
