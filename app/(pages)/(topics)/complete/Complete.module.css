@@ -1,0 +1,137 @@
+.celebrationText {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.achievementsSection {
+    margin-top: 30px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.achievementsTitle {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #888;
+}
+
+.achievementsList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.achievementItem {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    margin: 8px 0;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    font-size: 16px;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.achievementItem:hover {
+    transform: translateX(5px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.achievementEmoji {
+    font-size: 24px;
+    margin-right: 12px;
+}
+
+.messageBox {
+    margin-top: 30px;
+    padding: 20px 25px;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(168, 85, 247, 0.15));
+    border-radius: 16px;
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    max-width: 400px;
+    text-align: center;
+}
+
+.messageTitle {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.messageText {
+    font-size: 15px;
+    color: #aaa;
+    line-height: 1.5;
+}
+
+.socialSection {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.socialSection p {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 12px;
+}
+
+.shareButton {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #fff;
+    color: #000;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.shareButton:hover {
+    background: #e0e0e0;
+    transform: scale(1.05);
+}
+
+.footer {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+}
+
+.footer a {
+    color: #888;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #fff;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .celebrationText {
+        font-size: 24px;
+    }
+
+    .achievementsSection {
+        padding: 0 20px;
+        max-width: 100%;
+    }
+
+    .messageBox {
+        margin: 30px 20px;
+        max-width: calc(100% - 40px);
+    }
+
+    .achievementItem {
+        padding: 10px 14px;
+        font-size: 15px;
+    }
+
+    .achievementEmoji {
+        font-size: 20px;
+    }
+}

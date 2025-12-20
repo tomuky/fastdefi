@@ -3,8 +3,12 @@ import classes from '@/app/(pages)/Pages.module.css';
 import Spacer from '@/app/components/Spacer';
 import Image from 'next/image';
 import PageTitle from '@/app/components/PageTitle';
+import FooterMobile from '@/app/components/FooterMobile';
+import { useRouter } from 'next/navigation';
 
 export default function DiscoverMoreApps() {
+
+    const router = useRouter();
 
     return (
         <div className={classes.container}>
@@ -12,7 +16,7 @@ export default function DiscoverMoreApps() {
             <PageTitle title="Discover more apps" image="/images/ui/blockchain.png"/>
             
             <div className={classes.intro}>
-                <p>Explore the Base ecosystem of apps</p>
+                <p>Base makes it easy to find more apps to try</p>
             </div>
 
             <div className={classes.steps}>
@@ -25,6 +29,8 @@ export default function DiscoverMoreApps() {
             </div>
 
             <Spacer/>
+
+            <FooterMobile message="Complete Fast DeFi" onClick={() => router.push('/complete')} isNextTopic={true}/>
 
         </div>
     );
