@@ -39,9 +39,11 @@
     background: rgba(255, 255, 255, 0.08);
 }
 
-.achievementEmoji {
-    font-size: 24px;
+.achievementIcon {
+    width: 24px;
+    height: 24px;
     margin-right: 12px;
+    border-radius: 6px;
 }
 
 .messageBox {
@@ -131,7 +133,9 @@
         font-size: 15px;
     }
 
-    .achievementEmoji {
-        font-size: 20px;
+    .achievementIcon {
+        width: 20px;
+        height: 20px;
     }
 }
+

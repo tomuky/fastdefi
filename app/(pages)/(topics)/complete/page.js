@@ -5,6 +5,7 @@ import Spacer from '@/app/components/Spacer';
 import PageTitle from '@/app/components/PageTitle';
 import Intro from '@/app/components/Intro';
 import Footer from '@/app/components/Footer';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
 export default function Complete() {
@@ -12,19 +13,19 @@ export default function Complete() {
     const router = useRouter();
 
     const achievements = [
-        { emoji: '👛', text: 'Created your first crypto wallet' },
-        { emoji: '💰', text: 'Bought crypto with your bank account' },
-        { emoji: '📈', text: 'Earned yield on Aave' },
-        { emoji: '🦄', text: 'Provided liquidity on Uniswap' },
-        { emoji: '🔄', text: 'Swapped tokens like a pro' },
-        { emoji: '📊', text: 'Tracked your portfolio with Zapper' },
+        { icon: '/images/logos/coinbase-wallet-logo.png', text: 'Created your first crypto wallet' },
+        { icon: '/images/logos/eth.png', text: 'Bought crypto with your bank account' },
+        { icon: '/images/logos/aave-logo.png', text: 'Earned yield on Aave' },
+        { icon: '/images/logos/uniswap-logo.png', text: 'Provided liquidity on Uniswap' },
+        { icon: '/images/logos/llamaswap.png', text: 'Swapped tokens like a pro' },
+        { icon: '/images/logos/zapper-logo.png', text: 'Tracked your portfolio with Zapper' },
     ];
 
     return (
         <div className={classes.container}>
             
             <Intro>
-                <p className={styles.celebrationText}>🎉 Congratulations! 🎉</p>
+                <p className={styles.celebrationText}>Congratulations!</p>
                 <p>You&apos;ve completed Fast DeFi!</p>
             </Intro>
 
@@ -33,7 +34,13 @@ export default function Complete() {
                 <ul className={styles.achievementsList}>
                     {achievements.map((item, index) => (
                         <li key={index} className={styles.achievementItem}>
-                            <span className={styles.achievementEmoji}>{item.emoji}</span>
+                            <Image 
+                                src={item.icon} 
+                                alt="" 
+                                width={24} 
+                                height={24} 
+                                className={styles.achievementIcon}
+                            />
                             <span>{item.text}</span>
                         </li>
                     ))}
@@ -41,7 +48,7 @@ export default function Complete() {
             </div>
 
             <div className={styles.messageBox}>
-                <p className={styles.messageTitle}>You&apos;re now a DeFi explorer! 🚀</p>
+                <p className={styles.messageTitle}>You&apos;re now a DeFi explorer</p>
                 <p className={styles.messageText}>
                     The world of DeFi is vast and always evolving. Keep experimenting, 
                     stay curious, and remember: not your keys, not your crypto!
@@ -51,7 +58,7 @@ export default function Complete() {
             <div className={styles.socialSection}>
                 <p>Share your achievement:</p>
                 <a 
-                    href="https://x.com/intent/tweet?text=I%20just%20completed%20Fast%20DeFi%20and%20learned%20the%20fundamentals%20of%20DeFi!%20🎉%20%40fastdefi" 
+                    href="https://x.com/intent/tweet?text=I%20just%20completed%20Fast%20DeFi%20and%20learned%20the%20fundamentals%20of%20DeFi!%20%40fastdefi" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className={styles.shareButton}>
