@@ -22,7 +22,7 @@ export default function EarnOnAave() {
         ['deposit', 'withdraw', 'faq'],
         '/swap-on-llamaswap',
         {
-            'deposit': 'Withdraw',
+            'deposit': 'Learn how to Withdraw',
             'withdraw': 'See FAQ',
             'faq': 'Next Topic: Swap on LlamaSwap'
         }

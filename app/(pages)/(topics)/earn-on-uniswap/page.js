@@ -19,7 +19,7 @@ export default function EarnOnUniswap() {
         ['Add', 'Withdraw', 'faq'],
         '/track-with-zapper',
         {
-            'Add': 'Withdraw',
+            'Add': 'Learn how to Withdraw',
             'Withdraw': 'See FAQ',
             'faq': 'Next Topic: Track with Zapper'
         }
