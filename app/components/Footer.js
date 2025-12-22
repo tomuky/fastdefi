@@ -1,9 +1,9 @@
 'use client'
 import { useState } from 'react';
-import classes from './FooterMobile.module.css';
+import classes from './Footer.module.css';
 import Image from 'next/image';
 
-const FooterMobile = ({message, onClick, isNextTopic}) => {
+const Footer = ({message, onClick, isNextTopic}) => {
     const [isLoading, setIsLoading] = useState(false);
 
     const handleClick = () => {
@@ -26,4 +26,5 @@ const FooterMobile = ({message, onClick, isNextTopic}) => {
     )
 }
 
-export default FooterMobile;
+export default Footer;
+

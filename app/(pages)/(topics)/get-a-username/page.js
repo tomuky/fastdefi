@@ -1,12 +1,10 @@
 'use client';
-import { useRouter } from 'next/navigation';
 import classes from '@/app/(pages)/Pages.module.css';
 import { useAccount } from 'wagmi';
 import { useEffect, useState } from 'react';
-import { getBasename, getBasenameAvatar, getBasenameTextRecord, BasenameTextRecordKeys } from '@/app/_apis/basenames';
+import { getBasename } from '@/app/_apis/basenames';
 import ListNote from '@/app/components/ListNote';
 import ListFinish from '@/app/components/ListFinish';
-import NextButton from '@/app/components/NextButton';
 import Spacer from '@/app/components/Spacer';
 import PageTitle from '@/app/components/PageTitle';
 import Intro from '@/app/components/Intro';
@@ -16,28 +14,20 @@ import FAQItem from '@/app/components/FAQItem';
 import Tabs from '@/app/components/Tabs';
 import { useTabs } from '@/app/_hooks/useTabs';
 import AnimatedBasename from './AnimatedBasename';
-import FooterMobile from '@/app/components/FooterMobile';
+import Footer from '@/app/components/Footer';
 
 export default function GetAUsername() {
-    const router = useRouter();
     const { address, isConnected } = useAccount();
     const [basename, setBasename] = useState(null);
 
-    const TABS = ['claim', 'faq'];
-    const nextTopic = '/track-with-zapper';
-    const TABS_FOOTER_MESSAGES = {
-        'claim': 'See FAQ',
-        'faq': 'Next Topic: Track with Zapper'
-    };
-    const { activeTab, setActiveTab, isLastTab, goToNextTab } = useTabs(TABS);
-
-    const handleFooterClick = () => {
-        if (isLastTab) {
-            router.push(nextTopic);
-        } else {
-            goToNextTab();
+    const { activeTab, setActiveTab, isLastTab, footerMessage, handleFooterClick } = useTabs(
+        ['claim', 'faq'],
+        '/track-with-zapper',
+        {
+            'claim': 'See FAQ',
+            'faq': 'Next Topic: Track with Zapper'
         }
-    };
+    );
 
     useEffect(() => {
         async function fetchData() {
@@ -58,7 +48,7 @@ export default function GetAUsername() {
             </Intro>
 
             <Tabs 
-                tabs={TABS}
+                tabs={['claim', 'faq']}
                 activeTab={activeTab}
                 onTabChange={setActiveTab}
             />
@@ -88,11 +78,9 @@ export default function GetAUsername() {
                 </FAQ>
             )}
 
-            <NextButton title="Track with Zapper" target='/track-with-zapper'/>
-
             <Spacer/>
 
-            <FooterMobile message={TABS_FOOTER_MESSAGES[activeTab]} onClick={handleFooterClick} isNextTopic={isLastTab}/>
+            <Footer message={footerMessage} onClick={handleFooterClick} isNextTopic={isLastTab}/>
         </div>
     );
 }

@@ -1,11 +1,14 @@
 'use client';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
-export function useTabs(tabs) {
+export function useTabs(tabs, nextTopic, footerMessages) {
+    const router = useRouter();
     const [activeTab, setActiveTab] = useState(tabs[0]);
     
     const currentIndex = tabs.indexOf(activeTab);
     const isLastTab = currentIndex === tabs.length - 1;
+    const footerMessage = footerMessages?.[activeTab] || '';
     
     const goToNextTab = () => {
         if (!isLastTab) {
@@ -14,11 +17,21 @@ export function useTabs(tabs) {
             document.body.scrollTop = 0;
         }
     };
+
+    const handleFooterClick = () => {
+        if (isLastTab) {
+            router.push(nextTopic);
+        } else {
+            goToNextTab();
+        }
+    };
     
     return {
         activeTab,
         setActiveTab,
         isLastTab,
-        goToNextTab
+        goToNextTab,
+        footerMessage,
+        handleFooterClick
     };
 }

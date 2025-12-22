@@ -1,10 +1,8 @@
 'use client';
-import { useRouter } from 'next/navigation';
 import classes from '@/app/(pages)/Pages.module.css';
 import ListNote from '@/app/components/ListNote';
 import ListFinish from '@/app/components/ListFinish';
 import Intro from '@/app/components/Intro';
-import NextNextButton from '@/app/components/NextButton';
 import LPBalance from './LPBalance';
 import Spacer from '@/app/components/Spacer';
 import PageTitle from '@/app/components/PageTitle';
@@ -13,27 +11,19 @@ import { useTabs } from '@/app/_hooks/useTabs';
 import Steps from '@/app/components/Steps';
 import FAQ from '@/app/components/FAQ';
 import FAQItem from '@/app/components/FAQItem';
-import FooterMobile from '@/app/components/FooterMobile';
+import Footer from '@/app/components/Footer';
 
 export default function EarnOnUniswap() {
 
-    const router = useRouter();
-    const TABS = ['Add','Withdraw','faq'];
-    const nextTopic = '/track-with-zapper';
-    const TABS_FOOTER_MESSAGES = {
-        'Add': 'Withdraw',
-        'Withdraw': 'See FAQ',
-        'faq': 'Next Topic: Track with Zapper'
-    };
-    const { activeTab, setActiveTab, isLastTab, goToNextTab } = useTabs(TABS);
-
-    const handleFooterClick = () => {
-        if (isLastTab) {
-            router.push(nextTopic);
-        } else {
-            goToNextTab();
+    const { activeTab, setActiveTab, isLastTab, footerMessage, handleFooterClick } = useTabs(
+        ['Add', 'Withdraw', 'faq'],
+        '/track-with-zapper',
+        {
+            'Add': 'Withdraw',
+            'Withdraw': 'See FAQ',
+            'faq': 'Next Topic: Track with Zapper'
         }
-    };
+    );
 
     return (
         <div className={classes.container}>
@@ -45,7 +35,7 @@ export default function EarnOnUniswap() {
             </Intro>
 
             <Tabs
-                tabs={TABS}
+                tabs={['Add', 'Withdraw', 'faq']}
                 activeTab={activeTab}
                 onTabChange={setActiveTab}
             />
@@ -90,11 +80,9 @@ export default function EarnOnUniswap() {
                 </FAQ>
             )}
 
-            <NextNextButton title="Track with Zapper" target='/track-with-zapper'/>
-
             <Spacer/>
 
-            <FooterMobile message={TABS_FOOTER_MESSAGES[activeTab]} onClick={handleFooterClick} isNextTopic={isLastTab}/>
+            <Footer message={footerMessage} onClick={handleFooterClick} isNextTopic={isLastTab}/>
         </div>
     )
 }

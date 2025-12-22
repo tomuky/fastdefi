@@ -3,7 +3,7 @@ import classes from '@/app/(pages)/Pages.module.css';
 import Spacer from '@/app/components/Spacer';
 import Image from 'next/image';
 import PageTitle from '@/app/components/PageTitle';
-import FooterMobile from '@/app/components/FooterMobile';
+import Footer from '@/app/components/Footer';
 import { useRouter } from 'next/navigation';
 
 export default function DiscoverMoreApps() {
@@ -30,7 +30,7 @@ export default function DiscoverMoreApps() {
 
             <Spacer/>
 
-            <FooterMobile message="Complete Fast DeFi" onClick={() => router.push('/complete')} isNextTopic={true}/>
+            <Footer message="Complete Fast DeFi" onClick={() => router.push('/complete')} isNextTopic={true}/>
 
         </div>
     );

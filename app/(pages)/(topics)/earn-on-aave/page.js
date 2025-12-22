@@ -1,6 +1,4 @@
 'use client';
-import { useRouter } from 'next/navigation';
-import NextButton from '@/app/components/NextButton';
 import classes from '@/app/(pages)/Pages.module.css';
 import { useAccount } from 'wagmi';
 import AaveBalanceDisplay from './AaveBalanceDisplay';
@@ -14,28 +12,21 @@ import Tabs from '@/app/components/Tabs';
 import Intro from '@/app/components/Intro';
 import FAQ from '@/app/components/FAQ';
 import FAQItem from '@/app/components/FAQItem';
-import FooterMobile from '@/app/components/FooterMobile';
+import Footer from '@/app/components/Footer';
 
 export default function EarnOnAave() {
 
-    const router = useRouter();
     const { isConnected } = useAccount();
-    const TABS = ['deposit', 'withdraw','faq'];
-    const nextTopic = '/swap-on-llamaswap';
-    const TABS_FOOTER_MESSAGES = {
-        'deposit': 'Withdraw',
-        'withdraw': 'See FAQ',
-        'faq': 'Next Topic: Swap on LlamaSwap'
-    };
-    const { activeTab, setActiveTab, isLastTab, goToNextTab } = useTabs(TABS);
-
-    const handleFooterClick = () => {
-        if (isLastTab) {
-            router.push(nextTopic);
-        } else {
-            goToNextTab();
+    
+    const { activeTab, setActiveTab, isLastTab, footerMessage, handleFooterClick } = useTabs(
+        ['deposit', 'withdraw', 'faq'],
+        '/swap-on-llamaswap',
+        {
+            'deposit': 'Withdraw',
+            'withdraw': 'See FAQ',
+            'faq': 'Next Topic: Swap on LlamaSwap'
         }
-    };
+    );
 
     return (
         <div className={classes.container}>
@@ -47,7 +38,7 @@ export default function EarnOnAave() {
             </Intro>
             
             <Tabs 
-                tabs={TABS}
+                tabs={['deposit', 'withdraw', 'faq']}
                 activeTab={activeTab}
                 onTabChange={setActiveTab}
             />
@@ -106,11 +97,9 @@ export default function EarnOnAave() {
                 </FAQ>
             )}
 
-            <NextButton title="Swap on LlamaSwap" target='/swap-on-llamaswap'/>
-
             <Spacer/>
 
-            <FooterMobile message={TABS_FOOTER_MESSAGES[activeTab]} onClick={handleFooterClick} isNextTopic={isLastTab}/>
+            <Footer message={footerMessage} onClick={handleFooterClick} isNextTopic={isLastTab}/>
         </div>
     )
 }

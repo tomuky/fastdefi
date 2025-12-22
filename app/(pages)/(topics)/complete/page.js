@@ -4,7 +4,7 @@ import styles from './Complete.module.css';
 import Spacer from '@/app/components/Spacer';
 import PageTitle from '@/app/components/PageTitle';
 import Intro from '@/app/components/Intro';
-import FooterMobile from '@/app/components/FooterMobile';
+import Footer from '@/app/components/Footer';
 import { useRouter } from 'next/navigation';
 
 export default function Complete() {
@@ -70,7 +70,7 @@ export default function Complete() {
 
             <Spacer/>
 
-            <FooterMobile message="Back to Home" onClick={() => router.push('/')} isNextTopic={true}/>
+            <Footer message="Back to Home" onClick={() => router.push('/')} isNextTopic={true}/>
 
         </div>
     );

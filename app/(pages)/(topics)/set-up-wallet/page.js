@@ -1,6 +1,4 @@
 'use client';
-import { useRouter } from 'next/navigation';
-import NextButton from '@/app/components/NextButton';
 import classes from '@/app/(pages)/Pages.module.css';
 import { useAccount } from 'wagmi';
 import ListIcon from '@/app/components/ListIcon';
@@ -12,29 +10,22 @@ import Tabs from '@/app/components/Tabs';
 import Intro from '@/app/components/Intro';
 import FAQ from '@/app/components/FAQ';
 import FAQItem from '@/app/components/FAQItem';
-import FooterMobile from '@/app/components/FooterMobile';
+import Footer from '@/app/components/Footer';
 
 export default function SetUpWallet() {
 
-    const router = useRouter();
     const { isConnected } = useAccount();
-    const TABS = ['wallet', 'coinbase', 'fund it','faq'];
-    const nextTopic = '/earn-on-aave';
-    const TABS_FOOTER_MESSAGES = {
-        'wallet': 'Set up Coinbase',
-        'coinbase': 'Fund your wallet',
-        'fund it': 'See FAQ',
-        'faq': 'Next Topic: Earn on Aave'
-    }
-    const { activeTab, setActiveTab, isLastTab, goToNextTab } = useTabs(TABS);
-
-    const handleFooterClick = () => {
-        if (isLastTab) {
-            router.push(nextTopic);
-        } else {
-            goToNextTab();
+    
+    const { activeTab, setActiveTab, isLastTab, footerMessage, handleFooterClick } = useTabs(
+        ['wallet', 'coinbase', 'fund it', 'faq'],
+        '/earn-on-aave',
+        {
+            'wallet': 'Set up Coinbase',
+            'coinbase': 'Fund your wallet',
+            'fund it': 'See FAQ',
+            'faq': 'Next Topic: Earn on Aave'
         }
-    };
+    );
 
     return (
         <div className={classes.container}>
@@ -46,7 +37,7 @@ export default function SetUpWallet() {
             </Intro>
             
             <Tabs 
-                tabs={TABS}
+                tabs={['wallet', 'coinbase', 'fund it', 'faq']}
                 activeTab={activeTab}
                 onTabChange={setActiveTab}
             />
@@ -64,7 +55,6 @@ export default function SetUpWallet() {
                             <li>Click on the Account button to do things like copying your wallet address for pasting into Coinbase later</li>
                         </ol>
                     </Steps>
-                    <NextButton title="Next" type='tab' setActiveTab={setActiveTab} targetTab='coinbase'/>
                 </>
             )}
 
@@ -80,7 +70,6 @@ export default function SetUpWallet() {
                             <li>Once clear, use half to buy ETH and other half to buy USDC</li>
                         </ol>
                     </Steps>
-                    <NextButton title="Next" type='tab' setActiveTab={setActiveTab} targetTab='fund it'/>
                 </>
             )}
 
@@ -97,7 +86,6 @@ export default function SetUpWallet() {
                             <ListIcon type='finish'>Your wallet is now funded and ready to use!</ListIcon>
                         </ol>
                     </Steps>
-                    <NextButton title="Next" type='tab' setActiveTab={setActiveTab} targetTab='faq'/>
                 </>
             )}
 
@@ -111,13 +99,12 @@ export default function SetUpWallet() {
                         <FAQItem question="What is USDC?" answer="USDC is a stablecoin pegged to the US dollar and is backed by cash reserves in a bank."/>
                         <FAQItem question="What is the Base network?" answer="Base is a Layer 2 blockchain that is compatible with Ethereum. It is cheaper to use, making it a great place to start."/>
                     </FAQ>
-                    <NextButton title="Earn on Aave" target='/earn-on-aave'/>
                 </>
             )}
 
             <Spacer/>
 
-            <FooterMobile message={TABS_FOOTER_MESSAGES[activeTab]} onClick={handleFooterClick} isNextTopic={isLastTab}/>
+            <Footer message={footerMessage} onClick={handleFooterClick} isNextTopic={isLastTab}/>
         </div>
     )
 }

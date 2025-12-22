@@ -1,7 +1,5 @@
 'use client';
-import { useRouter } from 'next/navigation';
 import classes from '@/app/(pages)/Pages.module.css';
-import NextButton from '@/app/components/NextButton';
 import Spacer from '@/app/components/Spacer';
 import PageTitle from '@/app/components/PageTitle';
 import ListIcon from '@/app/components/ListIcon';
@@ -11,26 +9,18 @@ import FAQ from '@/app/components/FAQ';
 import FAQItem from '@/app/components/FAQItem';
 import Tabs from '@/app/components/Tabs';
 import { useTabs } from '@/app/_hooks/useTabs';
-import FooterMobile from '@/app/components/FooterMobile';
+import Footer from '@/app/components/Footer';
 
 export default function TrackWithOctav() {
 
-    const router = useRouter();
-    const TABS = ['track', 'faq'];
-    const nextTopic = '/use-basescan';
-    const TABS_FOOTER_MESSAGES = {
-        'track': 'See FAQ',
-        'faq': 'Next Topic: Use Basescan'
-    };
-    const { activeTab, setActiveTab, isLastTab, goToNextTab } = useTabs(TABS);
-
-    const handleFooterClick = () => {
-        if (isLastTab) {
-            router.push(nextTopic);
-        } else {
-            goToNextTab();
+    const { activeTab, setActiveTab, isLastTab, footerMessage, handleFooterClick } = useTabs(
+        ['track', 'faq'],
+        '/use-basescan',
+        {
+            'track': 'See FAQ',
+            'faq': 'Next Topic: Use Basescan'
         }
-    };
+    );
 
     return (
         <div className={classes.container}>
@@ -42,7 +32,7 @@ export default function TrackWithOctav() {
             </Intro>
 
             <Tabs
-                tabs={TABS}
+                tabs={['track', 'faq']}
                 activeTab={activeTab}
                 onTabChange={setActiveTab}
             />
@@ -68,11 +58,9 @@ export default function TrackWithOctav() {
                 </FAQ>
             )}
 
-            <NextButton title="Use Basescan" target='/use-basescan'/>
-
             <Spacer/>
 
-            <FooterMobile message={TABS_FOOTER_MESSAGES[activeTab]} onClick={handleFooterClick} isNextTopic={isLastTab}/>
+            <Footer message={footerMessage} onClick={handleFooterClick} isNextTopic={isLastTab}/>
         </div>
     )
 }

@@ -1,12 +1,8 @@
 'use client';
-import { useRouter } from 'next/navigation';
-import NextNextButton from '@/app/components/NextButton';
 import Balances from '@/app/(pages)/(topics)/swap-on-llamaswap/Balances';
 import classes from '@/app/(pages)/Pages.module.css';
 import { useAccount, useChainId } from 'wagmi';
-import ListFinish from '@/app/components/ListFinish';
 import ListNote from '@/app/components/ListNote';
-import { formatUnits } from 'viem';
 import Spacer from '@/app/components/Spacer';
 import PageTitle from '@/app/components/PageTitle';
 import Intro from '@/app/components/Intro';
@@ -14,28 +10,21 @@ import Tabs from '@/app/components/Tabs';
 import { useTabs } from '@/app/_hooks/useTabs';
 import FAQ from '@/app/components/FAQ';
 import FAQItem from '@/app/components/FAQItem';
-import FooterMobile from '@/app/components/FooterMobile';
+import Footer from '@/app/components/Footer';
 
 export default function SwapOnLlamaSwap() {
-    const router = useRouter();
-    const { address, isConnected } = useAccount();
-    const TABS = ['swap','faq'];
-    const nextTopic = '/earn-on-uniswap';
-    const TABS_FOOTER_MESSAGES = {
-        'swap': 'See FAQ',
-        'faq': 'Next Topic: Earn on Uniswap'
-    };
-    const { activeTab, setActiveTab, isLastTab, goToNextTab } = useTabs(TABS);
+    const { isConnected } = useAccount();
     const chainId = useChainId();
     const isBase = chainId === 8453; // Base network chain ID
-
-    const handleFooterClick = () => {
-        if (isLastTab) {
-            router.push(nextTopic);
-        } else {
-            goToNextTab();
+    
+    const { activeTab, setActiveTab, isLastTab, footerMessage, handleFooterClick } = useTabs(
+        ['swap', 'faq'],
+        '/earn-on-uniswap',
+        {
+            'swap': 'See FAQ',
+            'faq': 'Next Topic: Earn on Uniswap'
         }
-    };
+    );
     
     return (
         <div className={classes.container}>
@@ -93,13 +82,9 @@ export default function SwapOnLlamaSwap() {
                 </FAQ>
             )}
 
-            
-
-            <NextNextButton title="Earn on Uniswap" target='/earn-on-uniswap'/>
-
             <Spacer/>
 
-            <FooterMobile message={TABS_FOOTER_MESSAGES[activeTab]} onClick={handleFooterClick} isNextTopic={isLastTab}/>
+            <Footer message={footerMessage} onClick={handleFooterClick} isNextTopic={isLastTab}/>
         </div>
     )
 }
