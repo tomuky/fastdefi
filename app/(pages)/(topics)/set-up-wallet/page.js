@@ -20,7 +20,7 @@ export default function SetUpWallet() {
         ['wallet', 'coinbase', 'fund it', 'faq'],
         '/earn-on-aave',
         {
-            'wallet': 'Set up Coinbase',
+            'wallet': 'Set up Coinbase account',
             'coinbase': 'Fund your wallet',
             'fund it': 'See FAQ',
             'faq': 'Next Topic: Earn on Aave'

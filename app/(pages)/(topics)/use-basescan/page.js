@@ -32,7 +32,7 @@ export default function UseBasescan() {
 
             <Intro>
                 <p>Basescan is a block explorer for the Base network</p>
-                <p>See more info about transactions, addresses, and more</p>
+                <p>See more raw info about transactions, addresses, and more</p>
             </Intro>
 
             <Tabs 
