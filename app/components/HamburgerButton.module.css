@@ -27,22 +27,25 @@
 }
 
 /* Stagger the lines slightly for a fun wave effect on hover */
-.hamburger:hover .line:nth-child(1) {
-    transform: scaleX(0.8);
-    transition-delay: 0s;
-}
-.hamburger:hover .line:nth-child(2) {
-    transform: scaleX(1.1);
-    transition-delay: 0.05s;
-}
-.hamburger:hover .line:nth-child(3) {
-    transform: scaleX(0.8);
-    transition-delay: 0.1s;
-}
+/* Only apply on devices that support hover (not touch) */
+@media (hover: hover) {
+    .hamburger:hover .line:nth-child(1) {
+        transform: scaleX(0.8);
+        transition-delay: 0s;
+    }
+    .hamburger:hover .line:nth-child(2) {
+        transform: scaleX(1.1);
+        transition-delay: 0.05s;
+    }
+    .hamburger:hover .line:nth-child(3) {
+        transform: scaleX(0.8);
+        transition-delay: 0.1s;
+    }
 
-/* Reset hover when open */
-.hamburger.open:hover .line {
-    transform: none;
+    /* Reset hover when open */
+    .hamburger.open:hover .line {
+        transform: none;
+    }
 }
 
 /* === OPEN STATE: Transform to X === */
@@ -75,9 +78,11 @@
     transform: rotate(180deg);
 }
 
-/* Hover effect when open - gentle pulse */
-.hamburger.open:hover {
-    transform: rotate(180deg) scale(1.1);
+/* Hover effect when open - gentle pulse (only on hover-capable devices) */
+@media (hover: hover) {
+    .hamburger.open:hover {
+        transform: rotate(180deg) scale(1.1);
+    }
 }
 
 /* Active press effect */
