@@ -126,7 +126,7 @@
     height: 2px;
     width: 120px;
     background-color: #fff;
-    transition: transform 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
     transform: translateX(calc(var(--tab-index) * (120px + 10px)));
 }
 
