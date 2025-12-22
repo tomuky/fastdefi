@@ -1,10 +1,14 @@
 'use client'
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import classes from './Footer.module.css';
 import Image from 'next/image';
+import { useElasticWidth } from '@/app/_hooks/useElasticWidth';
 
 const Footer = ({message, onClick, isNextTopic}) => {
     const [isLoading, setIsLoading] = useState(false);
+    const buttonRef = useRef(null);
+    
+    useElasticWidth(buttonRef, [message, isNextTopic]);
 
     const handleClick = () => {
         if (isNextTopic && !isLoading) {
@@ -16,6 +20,7 @@ const Footer = ({message, onClick, isNextTopic}) => {
     return (
         <div className={`${classes.footer} ${isLoading ? classes.loading : ''}`}>
             <div 
+                ref={buttonRef}
                 className={`${classes.button} ${isNextTopic ? classes.nextTopic : ''}`} 
                 onClick={handleClick}
             >
