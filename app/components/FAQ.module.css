@@ -22,17 +22,13 @@
 }
 
 .answer {
-    max-height: 0;
+    height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-in-out;
-}
-.answer p{
-    padding: 10px 0 0 30px;
-    line-height: 1.2;
 }
 
-.answer.open {
-    max-height: 200px; /* Adjust this value based on your content */
+.answer p {
+    padding: 10px 0 0 30px;
+    line-height: 1.2;
 }
 .questionIcon{
     width: 20px;
