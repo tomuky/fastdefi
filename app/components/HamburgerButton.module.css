@@ -1,0 +1,90 @@
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    gap: 5px;
+    position: relative;
+}
+
+.line {
+    display: block;
+    width: 22px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transform-origin: center;
+    transition: 
+        transform 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6),
+        opacity 0.2s ease,
+        width 0.3s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+/* Stagger the lines slightly for a fun wave effect on hover */
+.hamburger:hover .line:nth-child(1) {
+    transform: scaleX(0.8);
+    transition-delay: 0s;
+}
+.hamburger:hover .line:nth-child(2) {
+    transform: scaleX(1.1);
+    transition-delay: 0.05s;
+}
+.hamburger:hover .line:nth-child(3) {
+    transform: scaleX(0.8);
+    transition-delay: 0.1s;
+}
+
+/* Reset hover when open */
+.hamburger.open:hover .line {
+    transform: none;
+}
+
+/* === OPEN STATE: Transform to X === */
+
+/* Top line: rotate 45deg and translate down */
+.hamburger.open .line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+    transition-delay: 0.1s;
+}
+
+/* Middle line: shrink and fade */
+.hamburger.open .line:nth-child(2) {
+    transform: scaleX(0) rotate(180deg);
+    opacity: 0;
+    transition-delay: 0s;
+}
+
+/* Bottom line: rotate -45deg and translate up */
+.hamburger.open .line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+    transition-delay: 0.1s;
+}
+
+/* === FUN ANIMATION: Spin the whole button when toggling === */
+.hamburger {
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hamburger.open {
+    transform: rotate(180deg);
+}
+
+/* Hover effect when open - gentle pulse */
+.hamburger.open:hover {
+    transform: rotate(180deg) scale(1.1);
+}
+
+/* Active press effect */
+.hamburger:active {
+    transform: scale(0.9);
+}
+.hamburger.open:active {
+    transform: rotate(180deg) scale(0.9);
+}
+

@@ -8,6 +8,7 @@ import Modal from './Modal';
 import { useState } from 'react';
 import { base, mainnet } from 'wagmi/chains';
 import Image from 'next/image';
+import HamburgerButton from './HamburgerButton';
 
 const Header = ({toggleSidebar,isSidebarOpen}) => {
     const { isConnected, address } = useAccount();
@@ -53,10 +54,7 @@ const Header = ({toggleSidebar,isSidebarOpen}) => {
                     </div>
                 )}
                 
-                <div className={classes.hamburgerButton} onClick={toggleSidebar} >
-                    { isSidebarOpen && <Image src="/images/ui/menu-bar.png" alt="hamburger icon" width={24} height={24} /> }
-                    { !isSidebarOpen && <Image src="/images/ui/cross.png" alt="close menu icon" width={24} height={24} /> }
-                </div>
+                <HamburgerButton isOpen={!isSidebarOpen} onClick={toggleSidebar} />
             </div>
 
             <Modal
