@@ -248,7 +248,14 @@ const LPBalance = ({ tokenAddress }) => {
     };
 
     if (!isConnected) {
-        return <div style={{marginTop: '20px', marginBottom: '20px', fontSize:'16px'}}>Connect your wallet to see your LP balance</div>;
+        return <div style={{
+            marginTop: '20px', marginBottom: '20px', fontSize:'16px',
+            textAlign: 'center',
+            width: '100%',
+            padding: '20px',
+            backgroundColor: '#2d2d2d',
+            borderRadius: '14px',
+        }}>Connect your wallet to see your LP balance</div>;
     }
 
     return (
@@ -258,7 +265,7 @@ const LPBalance = ({ tokenAddress }) => {
                 <div className={classes.tokenAmountBox}>
 
                     <div className={classes.tokenAmountBoxTitle}>
-                        Your underlying assets:
+                        Your underlying assets
                     </div>
 
                     <div className={classes.tokenAmountBoxBody}>
@@ -302,7 +309,7 @@ const LPBalance = ({ tokenAddress }) => {
                 <div className={classes.tokenAmountBox}>
 
                     <div className={classes.tokenAmountBoxTitle}>
-                        Changes since entry:
+                        Changes since entry
                     </div>
 
                     <div className={classes.tokenAmountBoxBody}>

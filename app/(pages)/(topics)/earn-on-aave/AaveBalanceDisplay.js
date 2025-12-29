@@ -23,7 +23,13 @@ const BalanceDisplay = ({title, style, isConnected}) => {
     const animatedBalance = useAnimatedBalance(balance);
 
     if (!isConnected) {
-        return <div style={{marginTop: '20px', marginBottom: '20px', width: '100%', textAlign: 'center', fontStyle: 'italic'}}>Connect your wallet to see your balances</div>;
+        return <div style={{
+            marginTop: '20px', marginBottom: '20px', width: '100%', textAlign: 'center', fontStyle: 'italic',
+            padding: '20px',
+            backgroundColor: '#2d2d2d',
+            borderRadius: '14px',
+            fontSize: '16px',
+        }}>Connect your wallet to see your balances</div>;
     }
     return (
         <div className={classes.balanceContainer} style={style}>

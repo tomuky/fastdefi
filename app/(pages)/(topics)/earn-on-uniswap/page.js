@@ -16,10 +16,11 @@ import Footer from '@/app/components/Footer';
 export default function EarnOnUniswap() {
 
     const { tabs, activeTab, setActiveTab, isLastTab, footerMessage, handleFooterClick } = useTabs(
-        ['Add', 'Withdraw', 'faq'],
+        ['Add', 'View', 'Withdraw', 'faq'],
         '/track-with-zapper',
         {
-            'Add': 'Learn how to Withdraw',
+            'Add': 'See your balance',
+            'View': 'Learn how to withdraw',
             'Withdraw': 'See FAQ',
             'faq': 'Next Topic: Track with Zapper'
         }
@@ -54,9 +55,21 @@ export default function EarnOnUniswap() {
                             <ListFinish>Done. You&apos;re collecting fees that auto-compound into your position!</ListFinish>
                         </ol>
                     </Steps>
-
-                    <LPBalance tokenAddress='0x88a43bbdf9d098eec7bceda4e2494615dfd9bb9c' />
                 </>
+            )}
+
+            {activeTab === 'View' && (
+                <Steps>
+                    <ol>
+                        <li>We can view your position and the changes:</li>
+                    </ol>
+                    <LPBalance tokenAddress='0x88a43bbdf9d098eec7bceda4e2494615dfd9bb9c' />
+                    <ol start={2}>
+                        <li>Or go to <a href='https://app.uniswap.org/pools/v2' target='_blank'>app.uniswap.org/pools/v2</a> and click into your position</li>
+                        <li>Click View position</li>
+                        <li>You should see your balance and your fees</li>
+                    </ol>
+                </Steps>
             )}
 
             {activeTab === 'Withdraw' && (
