@@ -63,10 +63,7 @@ export default function EarnOnAave() {
             {activeTab === 'view' && (
                 <Steps>
                     <ol>
-                        <li>Go to <a href='https://app.aave.com/dashboard/' target='_blank'>app.aave.com/dashboard</a> and connect your wallet</li>
-                        <li>You should see your balance and interest rate</li>
-                        <ListNote>Aave&apos;s website is simply reading your balance from the blockchain</ListNote>
-                        <li>We can also read the balance ourselves right here</li>
+                        <li>With your wallet connected, we can view your balance:</li>
                     </ol>
 
                     <AaveBalanceDisplay 
@@ -75,6 +72,10 @@ export default function EarnOnAave() {
                         isConnected={isConnected}
                     />
 
+                    <ol start={2}>    
+                        <li>Or go to <a href='https://app.aave.com/dashboard/' target='_blank'>app.aave.com/dashboard</a> and connect your wallet</li>
+                        <li>You should see your balance and interest rate</li>
+                    </ol>
                 </Steps>
             )}
 

@@ -27,7 +27,7 @@ const BalanceDisplay = ({title, style, isConnected}) => {
     }
     return (
         <div className={classes.balanceContainer} style={style}>
-            <div className={classes.balanceLabel}>{`${title}:`}</div>
+            <div className={classes.balanceLabel}>{`${title}`}</div>
             <div className={classes.balance}>
                 {balance ? `$${animatedBalance.toFixed(10)}` : (isBalanceLoading ? '$...' : '$0.00')}
             </div>

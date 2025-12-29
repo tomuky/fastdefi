@@ -3,6 +3,9 @@
     justify-content: center;
     flex-direction: column;
     text-align: center;
+    padding: 20px;
+    background-color: #2d2d2d;
+    border-radius: 14px;
 }
 .balanceLabel{
     margin-bottom: 10px;
