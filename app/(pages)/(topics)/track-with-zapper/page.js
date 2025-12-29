@@ -13,7 +13,7 @@ import Footer from '@/app/components/Footer';
 
 export default function TrackWithZapper() {
 
-    const { activeTab, setActiveTab, isLastTab, footerMessage, handleFooterClick } = useTabs(
+    const { tabs, activeTab, setActiveTab, isLastTab, footerMessage, handleFooterClick } = useTabs(
         ['track', 'faq'],
         '/use-basescan',
         {
@@ -29,10 +29,10 @@ export default function TrackWithZapper() {
 
             <Intro>
                 <p>Track your portfolio just by connecting your wallet</p>
-            </Intro>
+            </Intro>  
 
             <Tabs 
-                tabs={['track', 'faq']}
+                tabs={tabs}
                 activeTab={activeTab}
                 onTabChange={setActiveTab}
             />

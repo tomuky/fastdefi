@@ -18,11 +18,12 @@ export default function EarnOnAave() {
 
     const { isConnected } = useAccount();
     
-    const { activeTab, setActiveTab, isLastTab, footerMessage, handleFooterClick } = useTabs(
-        ['deposit', 'withdraw', 'faq'],
+    const { tabs, activeTab, setActiveTab, isLastTab, footerMessage, handleFooterClick } = useTabs(
+        ['deposit', 'view','withdraw', 'faq'],
         '/swap-on-llamaswap',
         {
-            'deposit': 'Learn how to Withdraw',
+            'deposit':'View your balance',
+            'view': 'Learn how to withdraw',
             'withdraw': 'See FAQ',
             'faq': 'Next Topic: Swap on LlamaSwap'
         }
@@ -34,11 +35,11 @@ export default function EarnOnAave() {
             <PageTitle title="Earn with Aave" image="/images/logos/aave-logo.png"/>
 
             <Intro>
-                <p>You can earn interest with Aave&apos;s lending protocol</p>
+                <p>Earn interest with Aave&apos;s lending protocol</p>
             </Intro>
             
             <Tabs 
-                tabs={['deposit', 'withdraw', 'faq']}
+                tabs={tabs}
                 activeTab={activeTab}
                 onTabChange={setActiveTab}
             />
@@ -56,13 +57,25 @@ export default function EarnOnAave() {
                             <ListFinish>Done. You are earning interest every few seconds!</ListFinish>
                         </ol>
                     </Steps>
+                </>
+            )}
+
+            {activeTab === 'view' && (
+                <Steps>
+                    <ol>
+                        <li>Go to <a href='https://app.aave.com/dashboard/' target='_blank'>app.aave.com/dashboard</a> and connect your wallet</li>
+                        <li>You should see your balance and interest rate</li>
+                        <ListNote>Aave&apos;s website is simply reading your balance from the blockchain</ListNote>
+                        <li>We can also read the balance ourselves right here</li>
+                    </ol>
 
                     <AaveBalanceDisplay 
                         style={{marginTop: 20}} 
                         title="Your USDC Deposit" 
                         isConnected={isConnected}
                     />
-                </>
+
+                </Steps>
             )}
 
             {activeTab === 'withdraw' && (
@@ -74,17 +87,6 @@ export default function EarnOnAave() {
                         <li>Click Withdraw and confirm the transaction</li>
                         <ListFinish>Done. Your USDC will be back in your wallet!</ListFinish>
                     </ol>
-                </Steps>
-            )}
-
-            {activeTab === 'risks' && (
-                <Steps>
-                    <ul>
-                        <li><span style={{fontWeight: 'bold'}}>Smart contract risk</span> - Aave smart conrtracts could have bugs, but it has had maybe audits and has secured billions of value with no issues</li>
-                        <li><span style={{fontWeight: 'bold'}}>Liquidity risk</span> - available liquidity to withdraw could be low when demand to borrow is high, but interest rate mechanics will incentivize more supply to bring available liquidity back</li>
-                        <li><span style={{fontWeight: 'bold'}}>Market risk</span> - USDC could lose its peg to $1 but Circle.com releases quarterly reports that prove its reserves are backed by cash and cash equivalents</li>
-                        <li><span style={{fontWeight: 'bold'}}>Network risk</span> - the Base network could have issues, but it is a very popular and maintained by a publicly traded company Coinbase</li>
-                    </ul>
                 </Steps>
             )}
 

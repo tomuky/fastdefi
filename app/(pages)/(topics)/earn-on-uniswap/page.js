@@ -15,7 +15,7 @@ import Footer from '@/app/components/Footer';
 
 export default function EarnOnUniswap() {
 
-    const { activeTab, setActiveTab, isLastTab, footerMessage, handleFooterClick } = useTabs(
+    const { tabs, activeTab, setActiveTab, isLastTab, footerMessage, handleFooterClick } = useTabs(
         ['Add', 'Withdraw', 'faq'],
         '/track-with-zapper',
         {
@@ -35,7 +35,7 @@ export default function EarnOnUniswap() {
             </Intro>
 
             <Tabs
-                tabs={['Add', 'Withdraw', 'faq']}
+                tabs={tabs}
                 activeTab={activeTab}
                 onTabChange={setActiveTab}
             />

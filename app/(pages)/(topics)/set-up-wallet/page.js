@@ -16,7 +16,7 @@ export default function SetUpWallet() {
 
     const { isConnected } = useAccount();
     
-    const { activeTab, setActiveTab, isLastTab, footerMessage, handleFooterClick } = useTabs(
+    const { tabs, activeTab, setActiveTab, isLastTab, footerMessage, handleFooterClick } = useTabs(
         ['wallet', 'coinbase', 'fund it', 'faq'],
         '/earn-on-aave',
         {
@@ -37,7 +37,7 @@ export default function SetUpWallet() {
             </Intro>
             
             <Tabs 
-                tabs={['wallet', 'coinbase', 'fund it', 'faq']}
+                tabs={tabs}
                 activeTab={activeTab}
                 onTabChange={setActiveTab}
             />

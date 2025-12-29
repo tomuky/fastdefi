@@ -17,7 +17,7 @@ export default function SwapOnLlamaSwap() {
     const chainId = useChainId();
     const isBase = chainId === 8453; // Base network chain ID
     
-    const { activeTab, setActiveTab, isLastTab, footerMessage, handleFooterClick } = useTabs(
+    const { tabs, activeTab, setActiveTab, isLastTab, footerMessage, handleFooterClick } = useTabs(
         ['swap', 'faq'],
         '/earn-on-uniswap',
         {
@@ -36,7 +36,7 @@ export default function SwapOnLlamaSwap() {
             </Intro>
 
             <Tabs
-                tabs={['swap','faq']}
+                tabs={tabs}
                 activeTab={activeTab}
                 onTabChange={setActiveTab}
             />

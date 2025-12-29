@@ -13,7 +13,7 @@ import Footer from '@/app/components/Footer';
 
 export default function TrackWithOctav() {
 
-    const { activeTab, setActiveTab, isLastTab, footerMessage, handleFooterClick } = useTabs(
+    const { tabs, activeTab, setActiveTab, isLastTab, footerMessage, handleFooterClick } = useTabs(
         ['track', 'faq'],
         '/use-basescan',
         {
@@ -32,7 +32,7 @@ export default function TrackWithOctav() {
             </Intro>
 
             <Tabs
-                tabs={['track', 'faq']}
+                tabs={tabs}
                 activeTab={activeTab}
                 onTabChange={setActiveTab}
             />

@@ -20,7 +20,7 @@ export default function GetAUsername() {
     const { address, isConnected } = useAccount();
     const [basename, setBasename] = useState(null);
 
-    const { activeTab, setActiveTab, isLastTab, footerMessage, handleFooterClick } = useTabs(
+    const { tabs, activeTab, setActiveTab, isLastTab, footerMessage, handleFooterClick } = useTabs(
         ['claim', 'faq'],
         '/track-with-zapper',
         {
@@ -48,7 +48,7 @@ export default function GetAUsername() {
             </Intro>
 
             <Tabs 
-                tabs={['claim', 'faq']}
+                tabs={tabs}
                 activeTab={activeTab}
                 onTabChange={setActiveTab}
             />

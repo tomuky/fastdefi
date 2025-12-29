@@ -16,7 +16,7 @@ import Footer from '@/app/components/Footer';
 export default function UseBasescan() {
     const { basename } = useBasename();
     
-    const { activeTab, setActiveTab, isLastTab, footerMessage, handleFooterClick } = useTabs(
+    const { tabs, activeTab, setActiveTab, isLastTab, footerMessage, handleFooterClick } = useTabs(
         ['discover', 'faq'],
         '/discover-more-apps',
         {
@@ -36,7 +36,7 @@ export default function UseBasescan() {
             </Intro>
 
             <Tabs 
-                tabs={['discover', 'faq']}
+                tabs={tabs}
                 activeTab={activeTab}
                 onTabChange={setActiveTab}
             />

@@ -27,6 +27,7 @@ export function useTabs(tabs, nextTopic, footerMessages) {
     };
     
     return {
+        tabs,
         activeTab,
         setActiveTab,
         isLastTab,
